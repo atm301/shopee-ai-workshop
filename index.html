@@ -50,9 +50,12 @@
   .topbar{display:flex;align-items:center;gap:10px;padding:8px 0;}
   .logo{font-weight:900;font-size:1rem;color:var(--orange);white-space:nowrap;}
   .logo small{display:block;font-size:.66rem;color:var(--mute);font-weight:700;letter-spacing:.04em;}
-  .tabs{display:flex;gap:6px;overflow-x:auto;padding:0 0 8px;scrollbar-width:none;}
+  .tabwrap{position:relative;}
+  .tabwrap::after{content:"";position:absolute;right:-18px;top:0;bottom:8px;width:38px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.97));pointer-events:none;}
+  .tabs{display:flex;gap:6px;overflow-x:auto;padding:0 26px 8px 0;scrollbar-width:none;scroll-behavior:smooth;}
   .tabs::-webkit-scrollbar{display:none;}
-  .tab-btn{flex:0 0 auto;border:1px solid var(--line);background:var(--paper);color:var(--mute);border-radius:999px;padding:7px 14px;font-weight:800;font-size:.86rem;font-family:inherit;cursor:pointer;}
+  .tab-btn{flex:0 0 auto;border:1px solid var(--line);background:var(--paper);color:var(--mute);border-radius:999px;padding:7px 13px;font-weight:800;font-size:.84rem;font-family:inherit;cursor:pointer;}
+  @media (max-width:430px){.tab-btn{padding:7px 11px;font-size:.8rem;}}
   .tab-btn.on{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 4px 14px rgba(238,77,45,.3);}
   /* ---- hero ---- */
   .hero{background:linear-gradient(135deg,#ee4d2d,#c73a1f 60%,#8c2d18);color:#fff;padding:34px 0 30px;}
@@ -70,7 +73,7 @@
   .btn-teal{background:var(--teal);color:#fff;}
   .btn-sm{padding:7px 14px;font-size:.84rem;}
   /* ---- sections ---- */
-  .tab-section{display:none;padding:26px 0 46px;}
+  .tab-section{display:none;padding:26px 0 78px;}
   .tab-section.active{display:block;animation:fade .25s ease;}
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   .sec-tag{display:inline-block;background:var(--tint);color:var(--deep);border-radius:999px;padding:4px 13px;font-weight:800;font-size:.78rem;margin-bottom:10px;}
@@ -194,6 +197,7 @@
   .pill-live{display:inline-flex;align-items:center;gap:6px;background:var(--tint);color:var(--deep);border-radius:999px;padding:2px 11px;font-size:.74rem;font-weight:800;margin-left:8px;vertical-align:middle;}
   .hud{position:fixed;right:14px;bottom:14px;z-index:35;background:rgba(43,26,20,.93);color:#fff;border-radius:999px;padding:8px 15px;display:none;align-items:center;gap:9px;box-shadow:0 8px 26px rgba(0,0,0,.28);cursor:pointer;font-size:.82rem;font-weight:800;}
   .hud.show{display:flex;}
+  .hud.hide{display:none!important;}
   .hud .bar{width:54px;height:6px;border-radius:999px;background:rgba(255,255,255,.25);overflow:hidden;}
   .hud .bar i{display:block;height:100%;background:linear-gradient(90deg,#ffb199,#ee4d2d);width:0;transition:width .5s;}
   .hud .gp small{display:block;font-weight:600;font-size:.7rem;opacity:.8;}
@@ -210,7 +214,7 @@
   .skip{display:block;text-align:center;margin-top:11px;color:var(--mute);font-size:.84rem;}
   #toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%) translateY(14px);background:var(--ink);color:#fff;padding:10px 20px;border-radius:999px;font-weight:800;font-size:.88rem;opacity:0;pointer-events:none;transition:.25s;z-index:70;max-width:90vw;text-align:center;}
   #toast.show{opacity:1;transform:translateX(-50%);}
-  footer{background:var(--ink);color:#e9d9d3;padding:26px 0 34px;font-size:.86rem;}
+  footer{background:var(--ink);color:#e9d9d3;padding:26px 0 96px;font-size:.86rem;}
   footer a{color:#ffbfae;}
   footer .fl{display:flex;flex-wrap:wrap;gap:12px;margin-top:9px;}
   .srcs li{margin:6px 0;font-size:.9rem;}
@@ -232,7 +236,8 @@
     <div class="topbar">
       <div class="logo">🛒 AI 電商實戰工作坊<small>蝦皮大學 × 圭話行銷 · 2026.09.22</small></div>
     </div>
-    <nav class="tabs" id="tabs">
+    <div class="tabwrap">
+    <nav class="tabs" id="tabs" role="tablist">
       <button class="tab-btn on" data-tab="start" type="button">🚀 開始</button>
       <button class="tab-btn" data-tab="p1" type="button">① 素材</button>
       <button class="tab-btn" data-tab="p2" type="button">② 決策</button>
@@ -242,6 +247,7 @@
       <button class="tab-btn" data-tab="upload" type="button">📤 上傳</button>
       <button class="tab-btn" data-tab="done" type="button">🎁 帶走</button>
     </nav>
+    </div>
   </div>
 </header>
 
@@ -531,8 +537,8 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
   <div class="tw"><table>
     <thead><tr><th>維度</th><th>出問題的訊號</th><th>先看哪個數字</th></tr></thead>
     <tbody>
-      <tr><td><b>曝光</b></td><td>搜尋排名掉、活動報名沒過</td><td>商品瀏覽數、關鍵字排名</td></tr>
-      <tr><td><b>點擊</b></td><td>曝光有但沒人點</td><td>主圖點擊率、標題關鍵字覆蓋</td></tr>
+      <tr><td><b>曝光</b></td><td>搜尋排名掉、活動報名沒過</td><td>商品曝光數、關鍵字排名</td></tr>
+      <tr><td><b>點擊</b></td><td>曝光有但沒人點</td><td>主圖點擊率、商品瀏覽數、標題關鍵字覆蓋</td></tr>
       <tr><td><b>轉換</b></td><td>有人看沒人買</td><td>商品頁轉換率、加入購物車率</td></tr>
       <tr><td><b>客單</b></td><td>訂單數持平但營收掉</td><td>客單價、加購率、組合購買率</td></tr>
       <tr><td><b>回購</b></td><td>一直在拉新客，老客沒回來</td><td>30/60/90 天回購率、回購間隔</td></tr>
@@ -725,7 +731,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
 <section class="tab-section" data-tab="upload"><div class="wrap">
   <div class="sec-tag">分組競賽 · 交一篇 ＋1 分</div>
   <h2 class="sec-title">把你的實作成果 <span class="em">交上來</span> 📤</h2>
-  <div class="callout"><b>每一次上傳都會保留，不會蓋掉前一版。</b>同桌每個人都可以交，交幾版都算，講師會在後台看到全部，挑幾位上台分享（上台再加 2 分）。可以打字，也可以拍照或截圖上傳。</div>
+  <div class="callout"><b>每一次上傳都會保留，不會蓋掉前一版。</b>同桌每個人都可以交，交幾版都算，講師會在後台看到全部，挑幾位上台分享（上台再加 2 分）。可以打字，也可以拍照或截圖上傳。<br><b style="color:#b3341c">⚠️ 截圖前先遮掉客人的姓名、電話、地址與訂單編號。</b>上傳後的圖片是公開網址，自己撤不回來，要講師處理。</div>
   <div id="whoBox"></div>
   <div class="up">
     <label class="lb2" for="subTask">要交哪一段 *</label>
@@ -738,7 +744,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
       <textarea id="subText" placeholder="把你的成果貼在這裡，或先按「套用這段的範本」照格式填"></textarea>
     </div>
     <div id="subImgWrap" style="margin-top:9px;display:none">
-      <div class="dropz" id="dropz">📷 點這裡選一張圖片上傳<br><small>手機截圖、AI 產出的畫面、白板照片都可以（10MB 內）</small></div>
+      <div class="dropz" id="dropz">📷 點這裡選一張圖片上傳<br><small>手機截圖、AI 產出的畫面都可以（10MB 內）<br>⚠️ 有客人個資的畫面請先遮掉再傳</small></div>
       <input id="subFile" type="file" accept="image/*" style="display:none">
     </div>
     <div class="hero-btns" style="justify-content:flex-start;margin-top:14px"><button class="btn btn-primary" id="subBtn" type="button">🚀 送出這一版</button></div>
@@ -812,7 +818,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
       <a href="https://university.shopee.tw/Course/615" target="_blank" rel="noopener">蝦皮大學課程頁</a>
       <a href="board.html" target="_blank" rel="noopener">即時計分板</a>
     </div>
-    <div class="muted-note" style="color:#c2aba4;margin-top:10px">本頁僅記錄課堂互動所需的桌號、暱稱與作業內容，課後匯出即刪除，不會用於其他用途。請勿在上傳內容中填寫客戶個資。</div>
+    <div class="muted-note" style="color:#c2aba4;margin-top:10px">本頁會記錄：桌號、暱稱、販售品類、投票選項、時間差數字、7 天清單勾選、你寫的第一件事，以及你上傳的作業內容與圖片。作業與圖片設計成不可修改刪除（保留多版紀錄），課後由講師統一匯出並清除。本站也使用 Google Analytics 與 Meta Pixel 記錄瀏覽行為。請勿在上傳內容中填寫客戶姓名、電話、地址或訂單編號。</div>
   </div>
 </footer>
 
@@ -973,7 +979,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
       ext:'最低成本的做法：手機行事曆設重複提醒。每天早上 9 點看輿情雷達，每週一上午做競品檢查，每月 25 號排下個月檔期。三個提醒，比任何自動化工具都有效。'},
     pain:{q:'最後 10 分鐘：你最想看我現場示範哪一題？',o:[['1','有很多想法，但不知道怎麼下指令（22%）'],['2','AI 生成的內容不夠精準（18%）'],['3','商品圖片普通，突顯不出賣點（16%）'],['4','不知道怎麼設計商品情境圖（12%）'],['5','做商品圖文或影片太花時間（10%）'],['6','不會寫短影音腳本（8%）'],['7','商品文案寫不出吸引力（6%）'],['8','想做自動化，不知道從哪開始']],hint:'每人投一次，票數最高的那一題，講師現場直接做給你看。'}
   };
-  var pollAgg={}, pollN={};
+  var pollAgg={}, pollN={}, pollSig='';
   Object.keys(POLLS).forEach(function(k){pollAgg[k]={};pollN[k]=0;});
 
   /* ---------- 作業 ---------- */
@@ -1003,14 +1009,14 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
   var TIME_TASKS=['寫一篇商品社群貼文','寫一支 30 秒短影音腳本','整理一週的客服常見問題','準備一個檔期的行銷素材'];
 
   /* ---------- 狀態 ---------- */
-  var state={table:'',nick:'',cat:'',d7:[false,false,false,false,false,false,false],commitText:'',quiz:{},tmin:[['',''],['',''],['',''],['','']],freq:4,tools:{}};
+  var state={table:'',nick:'',cat:'',d7:[false,false,false,false,false,false,false],commitText:'',quiz:{},tmin:[['',''],['',''],['',''],['','']],freq:4,tools:{},drafts:{}};
   try{var raw=localStorage.getItem(STORE);if(raw){var ps=JSON.parse(raw);if(ps.cohort===COHORT){
     state.table=ps.table||'';state.nick=ps.nick||'';state.cat=ps.cat||'';
     state.d7=(ps.d7&&ps.d7.length===7)?ps.d7:state.d7;state.commitText=ps.commitText||'';
     state.quiz=ps.quiz||{};state.tmin=(ps.tmin&&ps.tmin.length===4)?ps.tmin:state.tmin;
-    state.freq=ps.freq||4;state.tools=ps.tools||{};
+    state.freq=ps.freq||4;state.tools=ps.tools||{};state.drafts=ps.drafts||{};
   }}}catch(e){}
-  function save(){try{localStorage.setItem(STORE,JSON.stringify({cohort:COHORT,table:state.table,nick:state.nick,cat:state.cat,d7:state.d7,commitText:state.commitText,quiz:state.quiz,tmin:state.tmin,freq:state.freq,tools:state.tools}));}catch(e){}}
+  function save(){try{localStorage.setItem(STORE,JSON.stringify({cohort:COHORT,table:state.table,nick:state.nick,cat:state.cat,d7:state.d7,commitText:state.commitText,quiz:state.quiz,tmin:state.tmin,freq:state.freq,tools:state.tools,drafts:state.drafts}));}catch(e){}}
   function loggedIn(){return !!(state.table&&state.nick);}
   function myCode(){return state.table+'｜'+state.nick;}
   function me(){return state.nick;}
@@ -1031,11 +1037,11 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
       return r.ok;
     }catch(e){return false;}
   }
-  async function fetchMe(){
+  async function fetchMe(ms){
     if(!loggedIn())return null;
     try{
       var u=SUPA_URL+'/rest/v1/lw_line_students?course=eq.'+encodeURIComponent(COURSE)+'&cohort=eq.'+encodeURIComponent(COHORT)+'&code=eq.'+encodeURIComponent(myCode())+'&select=quiz,commit_text,commit_checks';
-      var r=await fetchT(u,{headers:H()},12000); var rows=await r.json();
+      var r=await fetchT(u,{headers:H()},ms||12000); var rows=await r.json();
       return Array.isArray(rows)&&rows[0]?rows[0]:null;
     }catch(e){return null;}
   }
@@ -1043,7 +1049,9 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
   /* ---------- 分頁 ---------- */
   function switchTab(t){
     document.querySelectorAll('.tab-section').forEach(function(s){s.classList.toggle('active',s.getAttribute('data-tab')===t);});
-    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-tab')===t);});
+    document.querySelectorAll('.tab-btn').forEach(function(b){var on=b.getAttribute('data-tab')===t;b.classList.toggle('on',on);b.setAttribute('aria-selected',on?'true':'false');});
+    var ab=document.querySelector('.tab-btn.on'); if(ab&&ab.scrollIntoView)try{ab.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});}catch(e){}
+    document.getElementById('hud').classList.toggle('hide',t==='upload');
     window.scrollTo({top:0,behavior:'smooth'});
     track('tab',{tab:t});
     if(t==='upload'){loadSubs();loadBoard();}
@@ -1088,7 +1096,9 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
         var q=row.quiz||{};
         Object.keys(POLLS).forEach(function(k){ var v=q[k]; if(v){pollAgg[k][v]=(pollAgg[k][v]||0)+1;pollN[k]++;} });
       });
-      renderAllPolls();
+      var sig=JSON.stringify([pollAgg,pollN,state.quiz]);
+      if(sig===pollSig)return;            // 數字沒變就不重畫，避免正在點的按鈕被抽換
+      pollSig=sig; renderAllPolls();
     }catch(e){}
   }
 
@@ -1180,7 +1190,12 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     if(!loggedIn()){box.innerHTML='<div class="callout warn"><b>還沒報到：</b>要先選桌號、填暱稱，作業才會算進你們這桌。<br><button class="btn btn-primary btn-sm" type="button" style="margin-top:8px" onclick="openReg()">🙋 現在報到</button></div>';return;}
     box.innerHTML='<div class="who"><span class="g">'+esc(state.table)+'</span><span class="n">'+esc(state.nick)+(state.cat?' · '+esc(state.cat):'')+'</span><button type="button" onclick="openReg()">換桌／改資料</button></div>';
   }
-  function setTask(t){var sel=document.getElementById('subTask');if(t)sel.value=t;document.getElementById('taskHint').innerHTML=HINT[sel.value]||'';loadSubs();}
+  function setTask(t){
+    var sel=document.getElementById('subTask'); if(t)sel.value=t;
+    document.getElementById('taskHint').innerHTML=HINT[sel.value]||'';
+    var d=state.drafts[sel.value]; if(d!==undefined&&d!==null)document.getElementById('subText').value=d;   // 還原草稿
+    loadSubs();
+  }
   function applyTpl(force){
     var t=document.getElementById('subTask').value, ta=document.getElementById('subText');
     if(!TPL[t])return; if(ta.value.trim()&&!force){ if(!confirm('要用範本取代目前的內容嗎？'))return; }
@@ -1231,7 +1246,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
         if(!txt||txt===(TPL[task]||'').trim()){toast('請先填寫內容');btn.disabled=false;btn.innerHTML=orig;return;}
         btn.innerHTML='送出中…';
         await insertSub(Object.assign({kind:'text',content:txt},base));
-        document.getElementById('subText').value='';
+        document.getElementById('subText').value=''; delete state.drafts[task]; save();
       }else{
         if(!subFileObj){toast('請先選一張圖片');btn.disabled=false;btn.innerHTML=orig;return;}
         btn.innerHTML='處理圖片…';
@@ -1242,7 +1257,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
         await insertSub(Object.assign({kind:'image',image_url:url},base));
         subFileObj=null; document.getElementById('subFile').value='';
         var dz=document.getElementById('dropz'); dz.classList.remove('has');
-        dz.innerHTML='📷 點這裡選一張圖片上傳<br><small>手機截圖、AI 產出的畫面、白板照片都可以（10MB 內）</small>';
+        dz.innerHTML='📷 點這裡選一張圖片上傳<br><small>手機截圖、AI 產出的畫面都可以（10MB 內）<br>⚠️ 有客人個資的畫面請先遮掉再傳</small>';
       }
       state.tools.uploaded=1; save(); updateHud();
       toast('✓ 已送出！'+state.table+' ＋1 分');
@@ -1250,8 +1265,17 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
       track('submit_work',{task:task,table:state.table});
       try{if(window.fbq)fbq('trackCustom','SubmitWork',{task:task});}catch(e){}
       loadSubs(); loadBoard();
-    }catch(e){ toast(String(e.message||e)); st.textContent='⚠️ '+String(e.message||e)+'（可以再試一次）'; }
+    }catch(e){ var msg=friendlyErr(e); toast(msg); st.textContent='⚠️ '+msg; }
     btn.disabled=false; btn.innerHTML=orig;
+  }
+  function friendlyErr(e){
+    var m=String((e&&e.message)||e||'');
+    try{console.error('[upload]',m);}catch(x){}
+    if(/Failed to fetch|NetworkError|abort|timeout/i.test(m))return '網路不穩，這一版沒送出去。等幾秒再按一次「送出這一版」就好，你打的字還在。';
+    if(/413|too large|exceeded/i.test(m))return '圖片太大傳不上去。改用手機截圖，或換一張小一點的。';
+    if(/mime|content-?type|415/i.test(m))return '這個圖片格式不支援。用手機截圖（PNG 或 JPG）再傳一次。';
+    if(/^圖片上傳失敗/.test(m))return '圖片沒傳成功，換一張或改用截圖再試一次。還是不行就舉手，我過去看。';
+    return '沒送出去，再按一次試試。連續兩次都失敗就舉手，我過去看。';
   }
   function fmtTime(s){try{return new Date(s).toLocaleString('zh-TW',{hour12:false,month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
   async function loadSubs(){
@@ -1344,20 +1368,28 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     var changed=(state.table!==pickTable||state.nick!==nick);
     state.table=pickTable; state.nick=nick; state.cat=cat;
     if(changed){ state.quiz={}; state.d7=[false,false,false,false,false,false,false]; state.commitText=''; }
-    toast('報到中…');
-    var row=await fetchMe();
-    if(row){
-      var q=(row.quiz&&typeof row.quiz==='object')?row.quiz:{};
-      state.quiz=q;
-      if(Array.isArray(q.d7)&&q.d7.length===7)state.d7=q.d7.map(function(x){return !!x;});
-      if(Array.isArray(q.tmin)&&q.tmin.length===4)state.tmin=q.tmin;
-      if(q.freq)state.freq=q.freq;
-      state.commitText=row.commit_text||'';
+    save();                                   // 先存本機：等待中重新整理也不用重填
+    var b=document.getElementById('regBtn'), ob=b.textContent, er=document.getElementById('regErr');
+    b.disabled=true; b.textContent='報到中…';
+    er.style.display='block'; er.style.color='var(--mute)'; er.textContent='報到中，網路慢的話最多等 5 秒…';
+    try{
+      var row=await fetchMe(5000);
+      if(row){
+        var q=(row.quiz&&typeof row.quiz==='object')?row.quiz:{};
+        state.quiz=q;
+        if(Array.isArray(q.d7)&&q.d7.length===7)state.d7=q.d7.map(function(x){return !!x;});
+        if(Array.isArray(q.tmin)&&q.tmin.length===4)state.tmin=q.tmin;
+        if(q.freq)state.freq=q.freq;
+        state.commitText=row.commit_text||'';
+      }
+      save(); closeReg(); renderAll(); syncRow(); refreshPollStats(); loadSubs(); loadBoard();
+      track('reg',{table:state.table});
+      try{if(window.fbq)fbq('trackCustom','Register');}catch(e){}
+      toast('✓ 報到完成，'+state.table+' '+state.nick);
+    }finally{
+      b.disabled=false; b.textContent=ob;
+      er.style.display='none'; er.style.color=''; er.textContent='請選桌號，並填寫暱稱';
     }
-    save(); closeReg(); renderAll(); await syncRow(); refreshPollStats(); loadSubs(); loadBoard();
-    track('reg',{table:state.table});
-    try{if(window.fbq)fbq('trackCustom','Register');}catch(e){}
-    toast('✓ 報到完成，'+state.table+' '+state.nick);
   }
 
   /* ---------- HUD ---------- */
@@ -1377,7 +1409,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
   document.getElementById('hud').addEventListener('click',function(){ if(!loggedIn()){openReg();} else switchTab('upload'); });
   document.getElementById('heroReg').addEventListener('click',openReg);
   document.getElementById('tpick').addEventListener('click',function(e){var b=e.target.closest('[data-t]');if(!b)return;pickTable=b.getAttribute('data-t');renderTpick();});
-  document.getElementById('regBtn').addEventListener('click',doReg);
+  document.getElementById('regBtn').addEventListener('click',function(){if(!this.disabled)doReg();});
   document.getElementById('regNick').addEventListener('keydown',function(e){if(e.key==='Enter')doReg();});
   document.getElementById('regSkip').addEventListener('click',function(e){e.preventDefault();closeReg();});
   document.getElementById('regOverlay').addEventListener('click',function(e){if(e.target===this)closeReg();});
@@ -1399,6 +1431,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     if(tm){ state.tmin[+tm.getAttribute('data-tm')][+tm.getAttribute('data-col')]=tm.value; save(); calcTime(); updateHud(); if(loggedIn())clearTimeout(window._sy),window._sy=setTimeout(syncRow,1200); return; }
     if(e.target.id==='tFreq'){ state.freq=+e.target.value||4; save(); calcTime(); return; }
     if(e.target.id==='commitText'){ state.commitText=e.target.value; save(); updateHud(); return; }
+    if(e.target.id==='subText'){ state.drafts[document.getElementById('subTask').value]=e.target.value; save(); return; }
   });
   document.addEventListener('change',function(e){
     var c=e.target.closest('[data-d7]');

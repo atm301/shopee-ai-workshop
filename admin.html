@@ -112,12 +112,12 @@
     q5:{q:'PART3①　工作流最容易死掉的原因',o:[['A','提示詞不夠好'],['B','沒有固定觸發時機'],['C','工具選錯'],['D','模型不夠新']],ans:'B'},
     pain:{q:'最後 10 分鐘：最想看現場示範哪一題？',o:[['1','不知道怎麼下指令'],['2','內容不夠精準'],['3','商品圖普通'],['4','不會做情境圖'],['5','圖文影片太花時間'],['6','不會寫短影音腳本'],['7','文案沒吸引力'],['8','想做自動化']]}
   };
-  var subs=[],studs=[],scores=[],cohort='',view='wall',pickPts=1,pickReason='互動題答對';
+  var subs=[],studs=[],scores=[],cohort='',view='wall',pickPts=1,pickReason='互動題答對',pickIdx=0,pickTeam='',lastSig='';
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
   function fmt(s){try{return new Date(s).toLocaleString('zh-TW',{hour12:false,month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
   function todayStr(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
   async function jget(p){try{var r=await fetch(SUPA+'/rest/v1/'+p,{headers:H()});var j=await r.json();return Array.isArray(j)?j:[];}catch(e){return [];}}
-  async function load(){
+  async function load(force){
     var c='course=eq.'+encodeURIComponent(COURSE);
     var r=await Promise.all([
       jget('lw_workshop_submissions?'+c+'&select=*&order=created_at.asc'),
@@ -125,6 +125,9 @@
       jget('lw_workshop_scores?'+c+'&select=*&order=created_at.desc')
     ]);
     subs=r[0];studs=r[1];scores=r[2];
+    var sig=JSON.stringify([subs.length,scores.length,studs.map(function(x){return x.code+x.updated_at;}),subs.map(function(x){return x.id;}),scores.map(function(x){return x.id;})]);
+    var same=(sig===lastSig); lastSig=sig;
+    if(same&&!force)return;   // 資料沒變就不重畫，避免捲動位置被拉回與圖片閃動
     var cs={};subs.concat(studs).concat(scores).forEach(function(x){if(x.cohort)cs[x.cohort]=1;});
     cs[todayStr()]=1;
     var keys=Object.keys(cs).sort().reverse();
@@ -181,14 +184,14 @@
       var arr=totals(),medal=['🥇','🥈','🥉'];
       chips.innerHTML='<span class="chip">計分梯次 <b>'+esc(cohort||'請先選今天')+'</b></span><span class="chip">加減分紀錄 <b>'+fScores().length+'</b></span><span class="chip">更新 '+now+'</span>';
       var lead=arr.map(function(x,i){return '<div class="lrow'+(i===0&&x.p>0?' t1':'')+'"><div class="rk">'+(i<3&&x.p>0?medal[i]:(i+1))+'</div><div class="tm">'+esc(x.g)+'<span class="c">上傳 '+x.u+(x.b?' · 加減分 '+(x.b>0?'+':'')+x.b:'')+'</span></div><div class="pt">'+x.p+'</div></div>';}).join('');
-      var opts=TABLES.map(function(g){return '<option>'+g+'</option>';}).join('');
+      var opts=TABLES.map(function(g){return '<option'+(g===pickTeam?' selected':'')+'>'+g+'</option>';}).join('');
       var presets=[['1','互動題答對'],['2','實作上台分享'],['1','最先完成實作'],['3','講師加碼'],['-1','扣分']];
-      var quick=presets.map(function(p,i){return '<button type="button" data-q="'+i+'" data-p="'+p[0]+'" data-r="'+esc(p[1])+'"'+(i===0?' class="on"':'')+'>'+(p[0]>0?'＋':'－')+Math.abs(p[0])+'　'+esc(p[1])+'</button>';}).join('');
+      var quick=presets.map(function(p,i){return '<button type="button" data-q="'+i+'" data-p="'+p[0]+'" data-r="'+esc(p[1])+'"'+(i===pickIdx?' class="on"':'')+'>'+(p[0]>0?'＋':'－')+Math.abs(p[0])+'　'+esc(p[1])+'</button>';}).join('');
       var log=fScores().length?fScores().map(function(r){return '<div class="logi"><span class="p'+(+r.points<0?' neg':'')+'">'+(+r.points>0?'+':'')+r.points+'</span><b>'+esc(r.team)+'</b><span class="rs">'+esc(r.reason||'')+'</span><span class="dt">'+fmt(r.created_at)+'</span><button class="x" data-del="'+r.id+'">撤銷</button></div>';}).join(''):'<p style="color:var(--mute)">還沒有加減分紀錄。</p>';
       host.innerHTML='<div class="panel"><h2>🏆 各桌即時分數<a href="board.html'+(cohort?'?c='+encodeURIComponent(cohort):'')+'" target="_blank" rel="noopener">📺 開投影排行榜</a></h2>'+lead+'</div>'
         +'<div class="panel"><h2>⚡ 加減分</h2><p style="color:var(--mute);font-size:.84rem;margin:0 0 9px">每上傳 1 篇自動 ＋1，不用手動給。這裡只處理簡報上的三種加分與扣分。</p>'
         +'<div class="quick" id="quick">'+quick+'</div>'
-        +'<div class="ctl"><select class="s" id="scTeam">'+opts+'</select><input class="s rz" id="scReason" value="互動題答對" placeholder="理由"><button class="qbtn" id="scAdd">送出 ＋1</button></div></div>'
+        +'<div class="ctl"><select class="s" id="scTeam">'+opts+'</select><input class="s rz" id="scReason" value="'+esc(pickReason)+'" placeholder="理由"><button class="qbtn" id="scAdd">送出 '+(pickPts>0?'＋':'－')+Math.abs(pickPts)+'</button></div></div>'
         +'<div class="panel"><h2>🧾 加減分紀錄（可撤銷）</h2><div class="log">'+log+'</div></div>';
     }
     else if(view==='poll'){
@@ -252,7 +255,7 @@
   document.getElementById('view').addEventListener('click',function(e){var b=e.target.closest('[data-v]');if(!b)return;view=b.getAttribute('data-v');this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});render();});
   document.getElementById('cohortSel').addEventListener('change',function(){cohort=this.value;render();});
   document.getElementById('q').addEventListener('input',render);
-  document.getElementById('reload').addEventListener('click',load);
+  document.getElementById('reload').addEventListener('click',function(){load(true);});
   document.getElementById('csv').addEventListener('click',csv);
   document.getElementById('host').addEventListener('click',async function(e){
     var im=e.target.closest('img[data-full]');
@@ -260,7 +263,7 @@
     var cp=e.target.closest('[data-copy]');
     if(cp){var t=decodeURIComponent(cp.getAttribute('data-copy'));if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){cp.textContent='✓ 已複製';setTimeout(function(){cp.textContent='📋 複製文字';},1500);});return;}
     var qb=e.target.closest('[data-q]');
-    if(qb){pickPts=+qb.getAttribute('data-p');pickReason=qb.getAttribute('data-r');
+    if(qb){pickPts=+qb.getAttribute('data-p');pickReason=qb.getAttribute('data-r');pickIdx=+qb.getAttribute('data-q');
       document.getElementById('quick').querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===qb);});
       document.getElementById('scReason').value=pickReason;
       document.getElementById('scAdd').textContent='送出 '+(pickPts>0?'＋':'－')+Math.abs(pickPts);return;}
@@ -270,13 +273,15 @@
       var reason=(document.getElementById('scReason').value||'').trim();
       e.target.disabled=true;
       await addScore({course:COURSE,cohort:cohort,team:team,points:pickPts,reason:reason,category:'manual'});
-      await load();return;
+      await load(true);return;
     }
     var d=e.target.closest('[data-del]');
-    if(d){ if(!confirm('撤銷這筆加減分？'))return; await delScore(d.getAttribute('data-del')); await load(); }
+    if(d){ if(!confirm('撤銷這筆加減分？'))return; await delScore(d.getAttribute('data-del')); await load(true); }
   });
+  document.getElementById('host').addEventListener('change',function(e){if(e.target.id==='scTeam')pickTeam=e.target.value;});
+  document.getElementById('host').addEventListener('input',function(e){if(e.target.id==='scReason')pickReason=e.target.value;});
   document.getElementById('lb').addEventListener('click',function(){this.classList.remove('show');});
-  load();
+  load(true);
   setInterval(function(){ if(!document.activeElement||['INPUT','SELECT','TEXTAREA'].indexOf(document.activeElement.tagName)<0) load(); },15000);
 </script>
 </body>
