@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>後台｜AI 電商實戰工作坊</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{--orange:#ee4d2d;--deep:#a8321c;--ink:#2b1a14;--mute:#7a655d;--bg:#fff6f3;--bg2:#fff;--line:#f4d9d1;--tint:#fdeee9;--green:#1f8a4c;--gold:#d99a2b;}
+  body{font-family:'Noto Sans TC',system-ui,'PingFang TC','Microsoft JhengHei',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+  .wrap{max-width:1180px;margin:0 auto;padding:16px;}
+  header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+  h1{font-size:1.2rem;font-weight:900;color:var(--deep);}
+  .seg{display:flex;gap:6px;flex-wrap:wrap;}
+  .seg button,.qbtn{border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 14px;font-weight:800;font-size:.86rem;font-family:inherit;cursor:pointer;color:var(--mute);}
+  .seg button.on{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .qbtn{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .s,select.s,input.s{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-family:inherit;font-size:.86rem;background:var(--bg2);color:var(--ink);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .chip{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:4px 13px;font-size:.82rem;font-weight:700;color:var(--mute);}
+  .chip b{color:var(--deep);}
+  .team{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px;border-top:4px solid var(--orange);}
+  .team>h2{margin:0 0 10px;color:var(--deep);font-size:1.16rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .team>h2 .cnt{font-size:.72rem;font-weight:800;color:var(--mute);background:var(--tint);border:1px solid var(--line);padding:2px 10px;border-radius:999px;}
+  .taskblk{margin-bottom:14px;}
+  .taskblk h3{font-size:.92rem;color:var(--deep);margin-bottom:7px;display:flex;align-items:center;gap:7px;}
+  .taskblk h3 .n{background:var(--orange);color:#fff;border-radius:999px;padding:1px 9px;font-size:.72rem;}
+  .subgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));}
+  .sub{border:1px solid var(--line);border-radius:12px;padding:11px;background:var(--bg);}
+  .sub.latest{border-color:var(--orange);box-shadow:0 0 0 2px rgba(238,77,45,.12);}
+  .sub .h{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:7px;}
+  .sub .vN{background:var(--orange);color:#fff;border-radius:999px;padding:1px 9px;font-size:.7rem;font-weight:800;}
+  .sub .who{font-weight:800;font-size:.82rem;}
+  .sub .tm{color:var(--mute);font-size:.74rem;margin-left:auto;}
+  .sub .txt{white-space:pre-wrap;font-size:.86rem;max-height:250px;overflow:auto;background:var(--bg2);border-radius:8px;padding:9px;}
+  .sub img{width:100%;border-radius:8px;cursor:zoom-in;}
+  .cpy{margin-top:7px;display:inline-block;border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:4px 11px;font-size:.76rem;font-weight:800;cursor:pointer;font-family:inherit;color:var(--deep);text-decoration:none;}
+  .panel{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px;}
+  .panel h2{font-size:1.02rem;color:var(--deep);margin-bottom:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .panel h2 a{font-size:.8rem;font-weight:800;}
+  .lrow{display:grid;grid-template-columns:46px 1fr auto;align-items:center;gap:12px;padding:9px 11px;border-radius:12px;background:var(--bg);margin-bottom:7px;}
+  .lrow.t1{background:linear-gradient(100deg,#fff6e6,#ffeccd);}
+  .lrow .rk{font-size:1.2rem;font-weight:900;text-align:center;color:var(--orange);}
+  .lrow .tm{font-weight:900;}
+  .lrow .tm .c{display:block;font-size:.74rem;color:var(--mute);font-weight:700;}
+  .lrow .pt{font-size:1.4rem;font-weight:900;color:var(--orange);}
+  .ctl{display:flex;gap:7px;flex-wrap:wrap;align-items:center;}
+  .ctl .rz{flex:1;min-width:190px;}
+  .quick{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px;}
+  .quick button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:800;font-family:inherit;cursor:pointer;color:var(--deep);}
+  .quick button.on{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .log{max-height:300px;overflow:auto;}
+  .logi{display:flex;gap:9px;align-items:center;padding:7px 9px;border-bottom:1px solid var(--line);font-size:.84rem;flex-wrap:wrap;}
+  .logi .p{font-weight:900;color:var(--green);min-width:34px;} .logi .p.neg{color:#c0341b;}
+  .logi .rs{color:var(--mute);} .logi .dt{margin-left:auto;color:var(--mute);font-size:.74rem;}
+  .logi .x{border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:2px 9px;font-size:.72rem;cursor:pointer;font-family:inherit;color:var(--mute);}
+  .pq{font-weight:900;margin-bottom:8px;}
+  .pbar{display:flex;align-items:center;gap:9px;margin-bottom:6px;font-size:.86rem;}
+  .pbar .l{width:24px;height:24px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:.76rem;flex:0 0 auto;}
+  .pbar .l.ans{background:var(--green);}
+  .pbar .t{flex:1;background:var(--bg);border-radius:999px;height:26px;position:relative;overflow:hidden;}
+  .pbar .t i{position:absolute;left:0;top:0;bottom:0;background:#ffd9cf;}
+  .pbar .t span{position:absolute;left:10px;top:0;line-height:26px;font-size:.8rem;}
+  .pbar .v{font-weight:800;color:var(--deep);min-width:78px;text-align:right;font-size:.8rem;}
+  table.st{width:100%;border-collapse:collapse;font-size:.84rem;background:var(--bg2);}
+  table.st th{background:var(--orange);color:#fff;text-align:left;padding:8px 10px;position:sticky;top:0;}
+  table.st td{padding:8px 10px;border-top:1px solid var(--line);vertical-align:top;}
+  .tag{display:inline-block;background:var(--tint);color:var(--deep);border-radius:999px;padding:1px 8px;font-size:.72rem;font-weight:800;margin:1px 2px 1px 0;}
+  .empty{text-align:center;color:var(--mute);padding:40px 16px;}
+  #lb{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;z-index:90;padding:20px;}
+  #lb.show{display:flex;} #lb img{max-width:100%;max-height:92vh;border-radius:10px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📊 AI 電商實戰工作坊 · 後台</h1>
+    <div class="seg" id="view">
+      <button data-v="wall" class="on" type="button">🧱 上傳牆</button>
+      <button data-v="score" type="button">🏆 計分</button>
+      <button data-v="poll" type="button">📊 投票</button>
+      <button data-v="stud" type="button">🙋 學員</button>
+    </div>
+    <div style="margin-left:auto;display:flex;gap:7px;flex-wrap:wrap;align-items:center">
+      <select class="s" id="cohortSel"></select>
+      <input class="s" id="q" placeholder="搜尋桌號／暱稱" style="width:150px">
+      <button class="qbtn" id="reload" type="button">↻ 重新整理</button>
+      <button class="qbtn" id="csv" type="button">⬇ CSV</button>
+    </div>
+  </header>
+  <div class="chips" id="chips"></div>
+  <div id="host"><div class="empty">載入中…</div></div>
+</div>
+<div id="lb"><img id="lbimg" src="" alt="放大檢視"></div>
+<script>
+  var SUPA='https://dpglkagtzdwiovzbtase.supabase.co',KEY='sb_publishable_Tuj9p4DXvO-jEqVcBnumTg_TqZ1NnRu';
+  function H(){return {apikey:KEY,Authorization:'Bearer '+KEY};}
+  var COURSE='shopee-ai-workshop';
+  var TABLES=['第1桌','第2桌','第3桌','第4桌','第5桌','第6桌','第7桌'];
+  var TASKMAP={t1:'實作 1：商品素材包與四種素材',t2:'實作 2：營運健檢 ＋ ICE',t3:'實作 3：我的工作流五節點',other:'其他／加碼分享'};
+  var TASKORDER=['t1','t2','t3','other'];
+  var D7=['Day1 素材包','Day2 存提示詞','Day3 營運健檢','Day4 競品追蹤','Day5 排檔期','Day6 寫 SOP','Day7 設提醒'];
+  var POLLS={
+    lv:{q:'開場：你現在用 AI 的程度到哪裡？',o:[['A','沒用過／玩過幾次'],['B','偶爾寫文案，每次重打'],['C','有固定提示詞在用'],['D','已經串成流程']]},
+    fake:{q:'三真一假：哪一個是假的？',o:[['A','小圭＝佳字右半邊'],['B','蝦皮直播第二次破百萬'],['C','月交易 1 億美金虛擬貨幣'],['D','Podcast 連續超過 100 集']]},
+    q1:{q:'PART1①　最適合交給 AI 的工作',o:[['A','決定主推商品'],['B','30 則客服對話整理成 FAQ'],['C','跟供應商談價'],['D','判斷熱點該不該蹭']],ans:'B'},
+    q2:{q:'PART1②　哪一段沒寫好最容易空話',o:[['A','R 角色'],['B','T 任務'],['C','C 情境'],['D','F 格式']],ans:'C'},
+    q3:{q:'PART2①　結帳掉一半先修哪裡',o:[['A','加廣告預算'],['B','檢查運費金流結帳'],['C','主圖重拍'],['D','多發社群貼文']],ans:'B'},
+    q4:{q:'PART2②　客服對話最有價值的產出',o:[['A','更客氣的回覆'],['B','FAQ ＋ 自動回覆模板'],['C','客服績效評分'],['D','客人個資整理']],ans:'B'},
+    q5:{q:'PART3①　工作流最容易死掉的原因',o:[['A','提示詞不夠好'],['B','沒有固定觸發時機'],['C','工具選錯'],['D','模型不夠新']],ans:'B'},
+    pain:{q:'最後 10 分鐘：最想看現場示範哪一題？',o:[['1','不知道怎麼下指令'],['2','內容不夠精準'],['3','商品圖普通'],['4','不會做情境圖'],['5','圖文影片太花時間'],['6','不會寫短影音腳本'],['7','文案沒吸引力'],['8','想做自動化']]}
+  };
+  var subs=[],studs=[],scores=[],cohort='',view='wall',pickPts=1,pickReason='互動題答對';
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
+  function fmt(s){try{return new Date(s).toLocaleString('zh-TW',{hour12:false,month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
+  function todayStr(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+  async function jget(p){try{var r=await fetch(SUPA+'/rest/v1/'+p,{headers:H()});var j=await r.json();return Array.isArray(j)?j:[];}catch(e){return [];}}
+  async function load(){
+    var c='course=eq.'+encodeURIComponent(COURSE);
+    var r=await Promise.all([
+      jget('lw_workshop_submissions?'+c+'&select=*&order=created_at.asc'),
+      jget('lw_line_students?'+c+'&select=*&order=updated_at.desc'),
+      jget('lw_workshop_scores?'+c+'&select=*&order=created_at.desc')
+    ]);
+    subs=r[0];studs=r[1];scores=r[2];
+    var cs={};subs.concat(studs).concat(scores).forEach(function(x){if(x.cohort)cs[x.cohort]=1;});
+    cs[todayStr()]=1;
+    var keys=Object.keys(cs).sort().reverse();
+    if(cohort===''&&keys.indexOf(todayStr())>=0)cohort=todayStr();
+    var sel=document.getElementById('cohortSel');
+    sel.innerHTML='<option value="">全部梯次</option>'+keys.map(function(k){return '<option value="'+esc(k)+'">'+esc(k)+'</option>';}).join('');
+    if(cohort&&keys.indexOf(cohort)<0)cohort='';
+    sel.value=cohort;
+    render();
+  }
+  function q(){return (document.getElementById('q').value||'').trim().toLowerCase();}
+  function inC(r){return !cohort||r.cohort===cohort;}
+  function fSubs(){var s=q();return subs.filter(function(r){if(!inC(r))return false;if(s)return ((r.team||'')+(r.submitter||'')).toLowerCase().indexOf(s)>=0;return true;});}
+  function fStuds(){var s=q();return studs.filter(function(r){if(!inC(r))return false;if(s)return ((r.code||'')+(r.name||'')).toLowerCase().indexOf(s)>=0;return true;});}
+  function fScores(){return scores.filter(inC);}
+  function parseCode(code){var p=String(code||'').split('｜');return {t:p[0]||'',n:p.slice(1).join('｜')||''};}
+  function totals(){
+    var up={},bo={};
+    subs.filter(inC).forEach(function(x){up[x.team]=(up[x.team]||0)+1;});
+    fScores().forEach(function(x){bo[x.team]=(bo[x.team]||0)+(+x.points||0);});
+    var names=TABLES.slice();
+    Object.keys(up).concat(Object.keys(bo)).forEach(function(k){if(k&&names.indexOf(k)<0)names.push(k);});
+    return names.map(function(g){return {g:g,u:up[g]||0,b:bo[g]||0,p:(up[g]||0)+(bo[g]||0)};})
+      .sort(function(a,b){return b.p-a.p||b.u-a.u||(a.g<b.g?-1:1);});
+  }
+  function render(){
+    var host=document.getElementById('host'),chips=document.getElementById('chips'),now=new Date().toLocaleTimeString('zh-TW',{hour12:false});
+    if(view==='wall'){
+      var list=fSubs(),by={};
+      list.forEach(function(r){(by[r.team]=by[r.team]||[]).push(r);});
+      var teams=TABLES.filter(function(g){return by[g];}).concat(Object.keys(by).filter(function(k){return TABLES.indexOf(k)<0;}));
+      chips.innerHTML='<span class="chip">上傳總數 <b>'+list.length+'</b></span><span class="chip">有交作業的桌 <b>'+teams.length+'</b> / 7</span><span class="chip">圖片 <b>'+list.filter(function(r){return r.kind==='image';}).length+'</b></span><span class="chip">更新 '+now+'</span>';
+      if(!list.length){host.innerHTML='<div class="empty">這個梯次還沒有人交作業。</div>';return;}
+      host.innerHTML=teams.map(function(tk){
+        var rows=by[tk],bt={};
+        rows.forEach(function(r){(bt[r.task||'other']=bt[r.task||'other']||[]).push(r);});
+        var order=TASKORDER.filter(function(t){return bt[t];}).concat(Object.keys(bt).filter(function(t){return TASKORDER.indexOf(t)<0;}));
+        return '<div class="team"><h2>🛒 '+esc(tk)+' <span class="cnt">'+rows.length+' 筆</span></h2>'+order.map(function(t){
+          var items=bt[t];
+          return '<div class="taskblk"><h3><span class="n">'+items.length+' 版</span>'+esc(TASKMAP[t]||t)+'</h3><div class="subgrid">'+items.map(function(r,i){
+            var last=i===items.length-1;
+            var body=r.kind==='image'
+              ?'<img src="'+esc(r.image_url)+'" data-full="'+esc(r.image_url)+'" alt="學員上傳的成果" loading="lazy">'
+              :'<div class="txt">'+esc(r.content||'')+'</div>';
+            var act=r.kind==='text'
+              ?'<button class="cpy" data-copy="'+esc(encodeURIComponent(r.content||''))+'">📋 複製文字</button>'
+              :'<a class="cpy" href="'+esc(r.image_url)+'" target="_blank" rel="noopener">🔗 開原圖</a>';
+            return '<div class="sub'+(last?' latest':'')+'"><div class="h"><span class="vN">第 '+(i+1)+' 版'+(last?' · 最新':'')+'</span><span class="who">'+esc(r.submitter||'')+'</span><span class="tm">'+fmt(r.created_at)+'</span></div>'+body+act+'</div>';
+          }).join('')+'</div></div>';
+        }).join('')+'</div>';
+      }).join('');
+    }
+    else if(view==='score'){
+      var arr=totals(),medal=['🥇','🥈','🥉'];
+      chips.innerHTML='<span class="chip">計分梯次 <b>'+esc(cohort||'請先選今天')+'</b></span><span class="chip">加減分紀錄 <b>'+fScores().length+'</b></span><span class="chip">更新 '+now+'</span>';
+      var lead=arr.map(function(x,i){return '<div class="lrow'+(i===0&&x.p>0?' t1':'')+'"><div class="rk">'+(i<3&&x.p>0?medal[i]:(i+1))+'</div><div class="tm">'+esc(x.g)+'<span class="c">上傳 '+x.u+(x.b?' · 加減分 '+(x.b>0?'+':'')+x.b:'')+'</span></div><div class="pt">'+x.p+'</div></div>';}).join('');
+      var opts=TABLES.map(function(g){return '<option>'+g+'</option>';}).join('');
+      var presets=[['1','互動題答對'],['2','實作上台分享'],['1','最先完成實作'],['3','講師加碼'],['-1','扣分']];
+      var quick=presets.map(function(p,i){return '<button type="button" data-q="'+i+'" data-p="'+p[0]+'" data-r="'+esc(p[1])+'"'+(i===0?' class="on"':'')+'>'+(p[0]>0?'＋':'－')+Math.abs(p[0])+'　'+esc(p[1])+'</button>';}).join('');
+      var log=fScores().length?fScores().map(function(r){return '<div class="logi"><span class="p'+(+r.points<0?' neg':'')+'">'+(+r.points>0?'+':'')+r.points+'</span><b>'+esc(r.team)+'</b><span class="rs">'+esc(r.reason||'')+'</span><span class="dt">'+fmt(r.created_at)+'</span><button class="x" data-del="'+r.id+'">撤銷</button></div>';}).join(''):'<p style="color:var(--mute)">還沒有加減分紀錄。</p>';
+      host.innerHTML='<div class="panel"><h2>🏆 各桌即時分數<a href="board.html'+(cohort?'?c='+encodeURIComponent(cohort):'')+'" target="_blank" rel="noopener">📺 開投影排行榜</a></h2>'+lead+'</div>'
+        +'<div class="panel"><h2>⚡ 加減分</h2><p style="color:var(--mute);font-size:.84rem;margin:0 0 9px">每上傳 1 篇自動 ＋1，不用手動給。這裡只處理簡報上的三種加分與扣分。</p>'
+        +'<div class="quick" id="quick">'+quick+'</div>'
+        +'<div class="ctl"><select class="s" id="scTeam">'+opts+'</select><input class="s rz" id="scReason" value="互動題答對" placeholder="理由"><button class="qbtn" id="scAdd">送出 ＋1</button></div></div>'
+        +'<div class="panel"><h2>🧾 加減分紀錄（可撤銷）</h2><div class="log">'+log+'</div></div>';
+    }
+    else if(view==='poll'){
+      var ls=studs.filter(inC);
+      chips.innerHTML='<span class="chip">報到人數 <b>'+ls.length+'</b></span><span class="chip">更新 '+now+'</span>';
+      host.innerHTML=Object.keys(POLLS).map(function(k){
+        var P=POLLS[k],cnt={},n=0;
+        ls.forEach(function(r){var v=(r.quiz||{})[k];if(v){n++;cnt[v]=(cnt[v]||0)+1;}});
+        return '<div class="panel"><p class="pq">'+esc(P.q)+'　<span style="color:var(--mute);font-weight:700">（'+n+' 人作答'+(P.ans?'，正解 '+P.ans:'')+'）</span></p>'
+          +P.o.map(function(o){
+            var c=cnt[o[0]]||0,pct=n?Math.round(c/n*100):0,isAns=P.ans===o[0];
+            return '<div class="pbar"><span class="l'+(isAns?' ans':'')+'">'+o[0]+'</span><div class="t"><i style="width:'+pct+'%"></i><span>'+esc(o[1])+(isAns?' ✅':'')+'</span></div><span class="v">'+c+' 人 · '+pct+'%</span></div>';
+          }).join('')+'</div>';
+      }).join('');
+    }
+    else{
+      var st=fStuds().map(function(r){return {r:r,p:parseCode(r.code)};})
+        .sort(function(a,b){return (a.p.t<b.p.t?-1:a.p.t>b.p.t?1:0)||(a.p.n<b.p.n?-1:1);});
+      var done=st.filter(function(x){var q2=x.r.quiz||{};return (Array.isArray(q2.d7)&&q2.d7.some(Boolean))||(x.r.commit_text||'').trim();}).length;
+      chips.innerHTML='<span class="chip">報到人數 <b>'+st.length+'</b></span><span class="chip">有寫行動清單 <b>'+done+'</b></span><span class="chip">更新 '+now+'</span>';
+      if(!st.length){host.innerHTML='<div class="empty">這個梯次還沒有人報到。</div>';return;}
+      host.innerHTML='<div style="overflow:auto;max-height:76vh;border:1px solid var(--line);border-radius:14px"><table class="st"><tr><th>桌號</th><th>暱稱</th><th>品類</th><th>投票</th><th>7 天清單</th><th>我的第一件事</th><th>時間差</th><th>更新</th></tr>'
+        +st.map(function(x){
+          var r=x.r,qz=r.quiz||{};
+          var pv=['lv','q1','q2','q3','q4','q5','pain','fake'].filter(function(k){return qz[k];}).map(function(k){return '<span class="tag">'+k+' '+esc(qz[k])+'</span>';}).join('');
+          var d7=Array.isArray(qz.d7)?qz.d7:[];
+          var cv=D7.map(function(c,i){return d7[i]?'<span class="tag">✓ '+c+'</span>':'';}).join('');
+          var tm=Array.isArray(qz.tmin)?qz.tmin.filter(function(p){return p&&p[0]!==''&&p[1]!=='';}).reduce(function(s,p){return s+Math.max(0,(+p[0])-(+p[1]));},0):0;
+          return '<tr><td><b>'+esc(x.p.t)+'</b></td><td><b>'+esc(x.p.n||r.name)+'</b></td><td>'+esc(qz.cat||'')+'</td><td>'+(pv||'<span style="color:var(--mute)">未投</span>')+'</td><td>'+(cv||'<span style="color:var(--mute)">未勾</span>')+'</td><td style="white-space:pre-wrap;max-width:260px">'+esc(r.commit_text||'')+'</td><td>'+(tm?('省 '+tm+' 分'):'')+'</td><td style="color:var(--mute);font-size:.76rem">'+fmt(r.updated_at)+'</td></tr>';
+        }).join('')+'</table></div>';
+    }
+  }
+  function csv(){
+    var lines=[];
+    if(view==='wall'){
+      lines.push(['梯次','桌號','段落','版次','上傳者','類型','文字內容','圖片網址','時間'].join(','));
+      var by={};fSubs().forEach(function(r){var k=r.team+'|'+r.task;(by[k]=by[k]||[]).push(r);});
+      Object.keys(by).forEach(function(k){by[k].forEach(function(r,i){lines.push([r.cohort,r.team,'"'+(TASKMAP[r.task]||r.task)+'"',i+1,'"'+String(r.submitter||'').replace(/"/g,'""')+'"',r.kind,'"'+String(r.content||'').replace(/"/g,'""')+'"',r.image_url||'',fmt(r.created_at)].join(','));});});
+    } else if(view==='score'){
+      lines.push(['名次','桌號','上傳數','加減分','總分'].join(','));
+      totals().forEach(function(x,i){lines.push([i+1,x.g,x.u,x.b,x.p].join(','));});
+    } else if(view==='poll'){
+      lines.push(['題目','選項','人數'].join(','));
+      var ls=studs.filter(inC);
+      Object.keys(POLLS).forEach(function(k){var P=POLLS[k];P.o.forEach(function(o){
+        var c=ls.filter(function(r){return (r.quiz||{})[k]===o[0];}).length;
+        lines.push(['"'+P.q+'"','"'+o[0]+' '+o[1]+'"',c].join(','));});});
+    } else {
+      lines.push(['梯次','桌號','暱稱','品類','行動清單勾選數','我的第一件事','省下分鐘','更新'].join(','));
+      fStuds().forEach(function(r){
+        var p=parseCode(r.code),qz=r.quiz||{},d7=Array.isArray(qz.d7)?qz.d7:[];
+        var tm=Array.isArray(qz.tmin)?qz.tmin.filter(function(x){return x&&x[0]!==''&&x[1]!=='';}).reduce(function(s,x){return s+Math.max(0,(+x[0])-(+x[1]));},0):0;
+        lines.push([r.cohort,p.t,'"'+(p.n||r.name)+'"','"'+(qz.cat||'')+'"',d7.filter(Boolean).length,'"'+String(r.commit_text||'').replace(/"/g,'""')+'"',tm,fmt(r.updated_at)].join(','));
+      });
+    }
+    var blob=new Blob(['﻿'+lines.join('\n')],{type:'text/csv;charset=utf-8'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='蝦皮AI電商_'+view+'_'+(cohort||'全部')+'.csv';a.click();
+  }
+  async function addScore(o){try{var r=await fetch(SUPA+'/rest/v1/lw_workshop_scores',{method:'POST',headers:Object.assign(H(),{'Content-Type':'application/json',Prefer:'return=minimal'}),body:JSON.stringify(o)});return r.ok;}catch(e){return false;}}
+  async function delScore(id){try{var r=await fetch(SUPA+'/rest/v1/lw_workshop_scores?id=eq.'+id,{method:'DELETE',headers:H()});return r.ok;}catch(e){return false;}}
+  document.getElementById('view').addEventListener('click',function(e){var b=e.target.closest('[data-v]');if(!b)return;view=b.getAttribute('data-v');this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});render();});
+  document.getElementById('cohortSel').addEventListener('change',function(){cohort=this.value;render();});
+  document.getElementById('q').addEventListener('input',render);
+  document.getElementById('reload').addEventListener('click',load);
+  document.getElementById('csv').addEventListener('click',csv);
+  document.getElementById('host').addEventListener('click',async function(e){
+    var im=e.target.closest('img[data-full]');
+    if(im){document.getElementById('lbimg').src=im.getAttribute('data-full');document.getElementById('lb').classList.add('show');return;}
+    var cp=e.target.closest('[data-copy]');
+    if(cp){var t=decodeURIComponent(cp.getAttribute('data-copy'));if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){cp.textContent='✓ 已複製';setTimeout(function(){cp.textContent='📋 複製文字';},1500);});return;}
+    var qb=e.target.closest('[data-q]');
+    if(qb){pickPts=+qb.getAttribute('data-p');pickReason=qb.getAttribute('data-r');
+      document.getElementById('quick').querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===qb);});
+      document.getElementById('scReason').value=pickReason;
+      document.getElementById('scAdd').textContent='送出 '+(pickPts>0?'＋':'－')+Math.abs(pickPts);return;}
+    if(e.target.id==='scAdd'){
+      if(!cohort){alert('請先在右上角選今天的梯次再給分');return;}
+      var team=document.getElementById('scTeam').value;
+      var reason=(document.getElementById('scReason').value||'').trim();
+      e.target.disabled=true;
+      await addScore({course:COURSE,cohort:cohort,team:team,points:pickPts,reason:reason,category:'manual'});
+      await load();return;
+    }
+    var d=e.target.closest('[data-del]');
+    if(d){ if(!confirm('撤銷這筆加減分？'))return; await delScore(d.getAttribute('data-del')); await load(); }
+  });
+  document.getElementById('lb').addEventListener('click',function(){this.classList.remove('show');});
+  load();
+  setInterval(function(){ if(!document.activeElement||['INPUT','SELECT','TEXTAREA'].indexOf(document.activeElement.tagName)<0) load(); },15000);
+</script>
+</body>
+</html>

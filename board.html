@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ee4d2d">
+<meta name="robots" content="noindex,nofollow">
+<title>各桌即時積分｜AI 電商實戰工作坊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Noto Sans TC',system-ui,'PingFang TC','Microsoft JhengHei',sans-serif;background:radial-gradient(120% 90% at 50% 0,#ee4d2d,#8c2d18 65%,#4a1a0e);color:#fff;min-height:100vh;}
+  .wrap{max-width:1100px;margin:0 auto;padding:26px 22px 50px;}
+  header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  h1{font-size:clamp(1.6rem,4.5vw,2.7rem);font-weight:900;}
+  .sub{color:#ffd9cf;font-weight:700;font-size:clamp(.85rem,2vw,1.05rem);}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 22px;align-items:center;}
+  .pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:5px 14px;font-weight:800;font-size:.9rem;}
+  .pill b{color:#ffe6de;}
+  select{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:5px 12px;font-weight:800;font-family:inherit;}
+  select option{color:#2b1a14;}
+  .rows{display:grid;gap:11px;}
+  .row{display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:15px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:13px 20px;}
+  .rank{font-size:1.9rem;font-weight:900;text-align:center;color:#ffd9cf;}
+  .nm{font-size:clamp(1.25rem,3.2vw,1.9rem);font-weight:900;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .cnt{font-size:.78rem;font-weight:700;color:#ffd9cf;background:rgba(0,0,0,.22);border-radius:999px;padding:3px 11px;}
+  .pts{font-size:clamp(1.7rem,4.6vw,2.7rem);font-weight:900;color:#fff;white-space:nowrap;}
+  .pts small{font-size:1rem;color:#ffd9cf;}
+  .row.top1{background:linear-gradient(100deg,rgba(217,154,43,.42),rgba(255,255,255,.1));border-color:#ffd77a;box-shadow:0 0 30px rgba(217,154,43,.3);}
+  .row.top2{background:linear-gradient(100deg,rgba(255,255,255,.22),rgba(255,255,255,.08));border-color:#ffe0d6;}
+  .row.top3{background:linear-gradient(100deg,rgba(255,170,120,.24),rgba(255,255,255,.08));border-color:#ffc79a;}
+  .row.bump{animation:bump .7s ease;}
+  @keyframes bump{30%{transform:scale(1.035);box-shadow:0 0 34px rgba(255,214,122,.65)}}
+  .bar{height:8px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden;margin-top:6px;grid-column:2/4;}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#ffd9cf,#d99a2b);transition:width .6s;}
+  .foot{margin-top:24px;color:#ffd9cf;font-size:.85rem;text-align:center;}
+  .flash{position:fixed;left:50%;top:18px;transform:translateX(-50%);background:#fff;color:#a8321c;font-weight:900;padding:10px 22px;border-radius:999px;box-shadow:0 8px 30px rgba(0,0,0,.35);opacity:0;transition:.3s;}
+  .flash.show{opacity:1;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><h1>🏆 各桌即時積分</h1><span class="sub">AI 電商實戰工作坊 · 蝦皮大學 2026.09.22</span></header>
+  <div class="meta">
+    <select id="cohortSel"></select>
+    <span class="pill">總上傳 <b id="mSubs">0</b></span>
+    <span class="pill">每上傳 1 篇 ＋1・互動題答對 ＋1・上台分享 ＋2・最先完成 ＋1</span>
+    <span class="pill" id="mUpd">…</span>
+  </div>
+  <div class="rows" id="rows"></div>
+  <div class="foot">每 6 秒自動更新 · 講師投影用</div>
+</div>
+<div class="flash" id="flash"></div>
+<script>
+  var SUPA='https://dpglkagtzdwiovzbtase.supabase.co',KEY='sb_publishable_Tuj9p4DXvO-jEqVcBnumTg_TqZ1NnRu',H={apikey:KEY,Authorization:'Bearer '+KEY};
+  var COURSE='shopee-ai-workshop',TABLES=['第1桌','第2桌','第3桌','第4桌','第5桌','第6桌','第7桌'];
+  function todayStr(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+  var cohort=(new URLSearchParams(location.search).get('c')||'').trim()||todayStr();
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
+  var prev={},medals=['🥇','🥈','🥉'];
+  async function load(){
+    try{
+      var r1=await fetch(SUPA+'/rest/v1/lw_workshop_submissions?course=eq.'+COURSE+'&select=cohort,team',{headers:H});
+      var r2=await fetch(SUPA+'/rest/v1/lw_workshop_scores?course=eq.'+COURSE+'&select=cohort,team,points',{headers:H});
+      var subs=await r1.json(),sc=await r2.json();
+      if(!Array.isArray(subs))subs=[]; if(!Array.isArray(sc))sc=[];
+      var cs={};cs[cohort]=1;subs.concat(sc).forEach(function(x){if(x.cohort)cs[x.cohort]=1;});
+      var keys=Object.keys(cs).sort().reverse(),sel=document.getElementById('cohortSel');
+      if(sel.options.length!==keys.length)sel.innerHTML=keys.map(function(k){return '<option value="'+esc(k)+'"'+(k===cohort?' selected':'')+'>'+esc(k)+'</option>';}).join('');
+      var up={},bo={};
+      subs.filter(function(x){return x.cohort===cohort;}).forEach(function(x){up[x.team]=(up[x.team]||0)+1;});
+      sc.filter(function(x){return x.cohort===cohort;}).forEach(function(x){bo[x.team]=(bo[x.team]||0)+(+x.points||0);});
+      var names=TABLES.slice();
+      Object.keys(up).concat(Object.keys(bo)).forEach(function(k){if(k&&names.indexOf(k)<0)names.push(k);});
+      var arr=names.map(function(g){return {g:g,u:up[g]||0,b:bo[g]||0,p:(up[g]||0)+(bo[g]||0)};})
+        .sort(function(a,b){return b.p-a.p||b.u-a.u||(a.g<b.g?-1:1);});
+      var max=Math.max(1,arr[0]?arr[0].p:1);
+      document.getElementById('mSubs').textContent=arr.reduce(function(s,a){return s+a.u;},0);
+      document.getElementById('mUpd').textContent='更新 '+new Date().toLocaleTimeString('zh-TW',{hour12:false});
+      document.getElementById('rows').innerHTML=arr.map(function(x,i){
+        var lead=x.p>0&&i<3,bump=(prev[x.g]!==undefined&&prev[x.g]!==x.p)?' bump':'';
+        return '<div class="row'+(lead?' top'+(i+1):'')+bump+'"><div class="rank">'+(lead?medals[i]:(i+1))+'</div>'
+          +'<div class="nm">'+esc(x.g)+' <span class="cnt">上傳 '+x.u+(x.b?' · 加減分 '+(x.b>0?'+':'')+x.b:'')+'</span></div>'
+          +'<div class="pts">'+x.p+' <small>分</small></div>'
+          +'<div class="bar"><i style="width:'+Math.round(x.p/max*100)+'%"></i></div></div>';
+      }).join('');
+      var up2=arr.filter(function(x){return prev[x.g]!==undefined&&x.p>prev[x.g];})[0];
+      if(up2){var f=document.getElementById('flash');f.textContent='＋ '+up2.g+' 加分了！';f.classList.add('show');setTimeout(function(){f.classList.remove('show');},2200);}
+      prev={};arr.forEach(function(x){prev[x.g]=x.p;});
+    }catch(e){}
+  }
+  document.getElementById('cohortSel').addEventListener('change',function(){cohort=this.value;prev={};load();});
+  load();setInterval(load,6000);
+</script>
+</body>
+</html>

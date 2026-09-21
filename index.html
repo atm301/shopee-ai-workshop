@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ee4d2d">
+<title>AI 電商實戰工作坊｜三小時，把 AI 變成你店裡多請的那一個人</title>
+<meta name="description" content="蝦皮大學 AI 電商實戰工作坊學員站（講師 何佳勳／小圭）。R-T-C-F 提示語公式、商品素材包一次餵四個通道、六維度營運健檢與 ICE 排序、蝦皮全年檔期與自動化工作流，所有提示詞與工具連結一次給你。">
+<link rel="canonical" href="https://atm301.github.io/shopee-ai-workshop/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="圭話行銷 ATMarketing">
+<meta property="og:title" content="AI 電商實戰工作坊｜蝦皮大學 2026.09.22">
+<meta property="og:description" content="三小時，把 AI 變成你店裡多請的那一個人。素材、決策、流程三段實作，提示詞可直接複製，工具連結一次給你。">
+<meta property="og:url" content="https://atm301.github.io/shopee-ai-workshop/">
+<meta property="og:image" content="https://atm301.github.io/shopee-ai-workshop/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 電商實戰工作坊｜蝦皮大學 2026.09.22">
+<meta name="twitter:description" content="素材、決策、流程三段實作，提示詞可直接複製，工具連結一次給你。">
+<meta name="twitter:image" content="https://atm301.github.io/shopee-ai-workshop/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%92%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%92%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Event","name":"AI 電商實戰工作坊","startDate":"2026-09-22T13:00+08:00","endDate":"2026-09-22T16:30+08:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"蝦皮總部 9 樓","address":{"@type":"PostalAddress","streetAddress":"信義區菸廠路 88 號 9 樓","addressLocality":"台北市","addressCountry":"TW"}},"performer":{"@type":"Person","name":"何佳勳（小圭）"},"organizer":{"@type":"Organization","name":"圭話行銷股份有限公司","url":"https://atmarketing.tw/"},"description":"三小時，把 AI 變成你店裡多請的那一個人。R-T-C-F 提示語公式、商品素材包、六維度營運健檢、ICE 排序、蝦皮檔期與自動化工作流。","image":"https://atm301.github.io/shopee-ai-workshop/og.png"}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RDJD1YVHR7"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RDJD1YVHR7');
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','4979950938896019');fbq('track','PageView');
+</script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --orange:#ee4d2d; --deep:#a8321c; --ink:#2b1a14; --mute:#7a655d;
+    --cream:#fff6f3; --paper:#fff; --line:#f4d9d1; --tint:#fdeee9; --sunken:#fff1ec;
+    --teal:#0e7c86; --gold:#d99a2b; --green:#1f8a4c;
+    --brand-primary:var(--orange);
+    --shadow:0 10px 30px rgba(168,50,28,.08);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Noto Sans TC',system-ui,'PingFang TC','Microsoft JhengHei',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;-webkit-text-size-adjust:100%;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px;}
+  a{color:var(--deep);}
+  /* ---- header / tabs ---- */
+  header.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .topbar{display:flex;align-items:center;gap:10px;padding:8px 0;}
+  .logo{font-weight:900;font-size:1rem;color:var(--orange);white-space:nowrap;}
+  .logo small{display:block;font-size:.66rem;color:var(--mute);font-weight:700;letter-spacing:.04em;}
+  .tabs{display:flex;gap:6px;overflow-x:auto;padding:0 0 8px;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab-btn{flex:0 0 auto;border:1px solid var(--line);background:var(--paper);color:var(--mute);border-radius:999px;padding:7px 14px;font-weight:800;font-size:.86rem;font-family:inherit;cursor:pointer;}
+  .tab-btn.on{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 4px 14px rgba(238,77,45,.3);}
+  /* ---- hero ---- */
+  .hero{background:linear-gradient(135deg,#ee4d2d,#c73a1f 60%,#8c2d18);color:#fff;padding:34px 0 30px;}
+  .hero .kicker{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:4px 14px;font-weight:800;font-size:.8rem;margin-bottom:12px;}
+  .hero h1{font-size:clamp(1.6rem,5.4vw,2.6rem);font-weight:900;line-height:1.25;letter-spacing:-.01em;}
+  .hero .sub{margin-top:10px;font-size:clamp(.95rem,2.4vw,1.1rem);opacity:.95;font-weight:500;}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .hero .meta span{background:rgba(0,0,0,.16);border-radius:999px;padding:5px 13px;font-size:.84rem;font-weight:700;}
+  .hero-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .btn{display:inline-flex;align-items:center;gap:7px;border:0;border-radius:999px;padding:11px 20px;font-weight:800;font-size:.94rem;font-family:inherit;cursor:pointer;text-decoration:none;transition:transform .12s,box-shadow .12s;}
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(238,77,45,.35);}
+  .btn-light{background:#fff;color:var(--deep);}
+  .btn-ghost{background:var(--paper);color:var(--deep);border:1px solid var(--line);}
+  .btn-teal{background:var(--teal);color:#fff;}
+  .btn-sm{padding:7px 14px;font-size:.84rem;}
+  /* ---- sections ---- */
+  .tab-section{display:none;padding:26px 0 46px;}
+  .tab-section.active{display:block;animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .sec-tag{display:inline-block;background:var(--tint);color:var(--deep);border-radius:999px;padding:4px 13px;font-weight:800;font-size:.78rem;margin-bottom:10px;}
+  .sec-title{font-size:clamp(1.3rem,3.8vw,1.9rem);font-weight:900;margin-bottom:14px;line-height:1.35;}
+  .sec-title .em{color:var(--orange);}
+  .h3{font-size:1.06rem;font-weight:900;margin:26px 0 12px;padding-left:11px;border-left:5px solid var(--orange);}
+  .lead{color:var(--mute);margin-bottom:14px;}
+  .callout{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:12px;padding:13px 16px;margin:12px 0;box-shadow:var(--shadow);}
+  .callout.warn{border-left-color:var(--gold);background:#fffaf0;}
+  .callout.ok{border-left-color:var(--green);background:#f3fbf6;}
+  .muted-note{color:var(--mute);font-size:.88rem;}
+  .grid{display:grid;gap:12px;}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(215px,1fr));}
+  .g4{grid-template-columns:repeat(auto-fit,minmax(175px,1fr));}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:var(--shadow);}
+  .card h3{font-size:1rem;font-weight:900;margin-bottom:6px;color:var(--deep);display:flex;align-items:center;gap:7px;}
+  .card p{font-size:.9rem;color:var(--mute);}
+  .card .num{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;align-items:center;justify-content:center;font-size:.82rem;flex:0 0 auto;}
+  .card.dk{background:linear-gradient(140deg,#2b1a14,#4a2419);border-color:#4a2419;}
+  .card.dk h3,.card.dk p{color:#ffe9e2;}
+  .stat{text-align:center;}
+  .stat b{display:block;font-size:clamp(1.6rem,5vw,2.2rem);font-weight:900;color:var(--orange);line-height:1.2;}
+  .stat span{font-size:.86rem;font-weight:800;}
+  .stat small{display:block;color:var(--mute);font-size:.76rem;margin-top:3px;}
+  /* ---- tables ---- */
+  .tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:14px;background:var(--paper);box-shadow:var(--shadow);}
+  table{width:100%;border-collapse:collapse;min-width:520px;font-size:.88rem;}
+  thead th{background:var(--orange);color:#fff;text-align:left;padding:10px 12px;font-weight:800;white-space:nowrap;}
+  tbody td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--sunken);}
+  tbody td b{color:var(--deep);}
+  .tw.sm table{min-width:420px;}
+  /* ---- vs ---- */
+  .vs{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin:12px 0;}
+  .col{border-radius:14px;padding:15px 16px;border:1px solid var(--line);background:var(--paper);}
+  .col h4{font-size:.95rem;font-weight:900;margin-bottom:8px;}
+  .col.bad{background:#fdf1ef;border-color:#f2c9c0;} .col.bad h4{color:#b3341c;}
+  .col.good{background:#f2fbf6;border-color:#bfe6d1;} .col.good h4{color:var(--green);}
+  .col ul{margin:0;padding-left:19px;} .col li{font-size:.88rem;margin:5px 0;}
+  .col pre{white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem;background:#fff;border:1px dashed var(--line);border-radius:10px;padding:10px;margin-top:8px;}
+  /* ---- guide ---- */
+  .elf{display:flex;gap:11px;align-items:flex-start;background:linear-gradient(120deg,#fff3ef,#ffe7e0);border:1px solid #f6cfc4;border-radius:14px;padding:13px 15px;margin:14px 0;}
+  .elf .ic{font-size:1.6rem;line-height:1.2;flex:0 0 auto;}
+  .elf .t{font-size:.9rem;} .elf .t b{display:block;color:var(--deep);font-size:.8rem;letter-spacing:.03em;margin-bottom:2px;}
+  /* ---- polls ---- */
+  .poll{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin:12px 0;box-shadow:var(--shadow);}
+  .poll .q{font-weight:900;margin-bottom:10px;font-size:1rem;}
+  .popt{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:1px solid var(--line);background:var(--sunken);border-radius:11px;padding:10px 12px;margin-bottom:7px;font-family:inherit;font-size:.9rem;color:var(--ink);cursor:pointer;position:relative;overflow:hidden;}
+  .popt .k{flex:0 0 auto;width:25px;height:25px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:.8rem;z-index:1;}
+  .popt .lb{flex:1;z-index:1;}
+  .popt .pc{font-weight:900;color:var(--deep);font-size:.84rem;z-index:1;}
+  .popt .bar{position:absolute;left:0;top:0;bottom:0;background:#ffdfd6;width:0;transition:width .5s;}
+  .popt.mine{border-color:var(--orange);box-shadow:0 0 0 2px rgba(238,77,45,.16);}
+  .poll .n{font-size:.8rem;color:var(--mute);margin-top:6px;}
+  .ansbox{display:none;margin-top:10px;border-radius:12px;padding:12px 14px;background:#f2fbf6;border:1px solid #bfe6d1;}
+  .ansbox.show{display:block;animation:fade .3s ease;}
+  .ansbox .a{font-weight:900;color:var(--green);margin-bottom:5px;}
+  .ansbox p{font-size:.88rem;margin-bottom:6px;}
+  .ansbox .ext{font-size:.84rem;color:var(--mute);}
+  /* ---- prompts / tools ---- */
+  .tcard{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:var(--shadow);}
+  .tcard .hd{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+  .tcard h3{font-size:1.04rem;font-weight:900;flex:1;min-width:180px;}
+  .badge{background:var(--tint);color:var(--deep);border-radius:999px;padding:3px 11px;font-size:.72rem;font-weight:800;white-space:nowrap;}
+  .badge.t{background:#e6f4f5;color:var(--teal);}
+  .badge.g{background:#fdf3e0;color:#9a6a12;}
+  .pbody{white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.83rem;line-height:1.66;background:var(--sunken);border:1px dashed var(--line);border-radius:12px;padding:13px;max-height:260px;overflow:auto;}
+  .pbody.open{max-height:none;}
+  .prow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px;}
+  .ai-go{display:flex;gap:8px;flex-wrap:wrap;}
+  .ai-go a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 13px;font-size:.82rem;font-weight:800;text-decoration:none;color:var(--deep);}
+  .src{font-size:.76rem;color:var(--mute);margin-left:auto;}
+  .toolgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));}
+  .toolcard{display:flex;flex-direction:column;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 15px;box-shadow:var(--shadow);}
+  .toolcard .tn{font-weight:900;font-size:.98rem;display:flex;align-items:center;gap:7px;}
+  .toolcard .td{font-size:.85rem;color:var(--mute);flex:1;}
+  .toolcard .tu{font-size:.76rem;color:var(--mute);word-break:break-all;}
+  .toolcard a.go{align-self:flex-start;margin-top:4px;}
+  .star{color:var(--gold);}
+  /* ---- calculators ---- */
+  .calc{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);margin:12px 0;}
+  .calc table{min-width:460px;}
+  .calc input[type=number]{width:74px;border:1px solid var(--line);border-radius:9px;padding:6px 8px;font-family:inherit;font-size:.9rem;text-align:center;background:var(--sunken);}
+  .calc .out{margin-top:12px;background:linear-gradient(120deg,#fff3ef,#ffe7e0);border:1px solid #f6cfc4;border-radius:12px;padding:12px 14px;font-weight:800;}
+  .calc .out b{color:var(--orange);font-size:1.15rem;}
+  /* ---- checklist ---- */
+  .chk{display:flex;gap:10px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:8px;cursor:pointer;}
+  .chk.on{border-color:var(--orange);background:#fff7f4;}
+  .chk input{margin-top:5px;width:17px;height:17px;accent-color:var(--orange);flex:0 0 auto;}
+  .chk .t{font-size:.92rem;font-weight:700;} .chk .t small{display:block;font-weight:400;color:var(--mute);font-size:.82rem;}
+  .chk .d{flex:0 0 auto;font-weight:900;color:var(--orange);font-size:.8rem;background:var(--tint);border-radius:999px;padding:2px 9px;margin-top:2px;}
+  textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px;font-family:inherit;font-size:.93rem;background:var(--sunken);resize:vertical;min-height:110px;}
+  /* ---- upload ---- */
+  .up{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);}
+  .lb2{display:block;font-weight:800;font-size:.88rem;margin:10px 0 5px;}
+  select,input[type=text]{width:100%;border:1px solid var(--line);border-radius:11px;padding:10px 12px;font-family:inherit;font-size:.93rem;background:var(--sunken);color:var(--ink);}
+  .modeseg{display:flex;gap:7px;}
+  .modeseg button{flex:1;border:1px solid var(--line);background:var(--sunken);border-radius:11px;padding:9px;font-weight:800;font-family:inherit;font-size:.88rem;cursor:pointer;color:var(--mute);}
+  .modeseg button.on{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .dropz{border:2px dashed var(--line);border-radius:12px;padding:22px 14px;text-align:center;color:var(--mute);font-weight:700;cursor:pointer;background:var(--sunken);font-size:.9rem;}
+  .dropz.has{border-color:var(--orange);color:var(--deep);}
+  .dropz img{max-width:100%;max-height:190px;border-radius:10px;margin-top:9px;}
+  .who{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:var(--tint);border:1px solid var(--line);border-radius:12px;padding:10px 13px;margin-bottom:12px;}
+  .who .g{font-weight:900;color:var(--orange);}
+  .who .n{font-weight:700;}
+  .who button{margin-left:auto;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:800;font-family:inherit;cursor:pointer;color:var(--mute);}
+  .subitem{display:flex;gap:11px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:9px;}
+  .subitem .vN{flex:0 0 auto;background:var(--orange);color:#fff;border-radius:999px;padding:2px 10px;font-size:.74rem;font-weight:800;height:fit-content;}
+  .subitem .who2{font-size:.78rem;color:var(--mute);margin-bottom:5px;}
+  .subitem .txt{white-space:pre-wrap;font-size:.88rem;}
+  .subitem img{max-width:100%;border-radius:10px;}
+  .mboard{display:grid;gap:9px;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));}
+  .mb{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;}
+  .mb.me{border-color:var(--orange);box-shadow:0 0 0 2px rgba(238,77,45,.14);}
+  .mb.top{background:linear-gradient(140deg,#fff6e6,#ffeccd);border-color:var(--gold);}
+  .mb .gn{font-weight:900;font-size:.88rem;}
+  .mb .pt{font-size:1.5rem;font-weight:900;color:var(--orange);line-height:1.2;}
+  .mb .sm{font-size:.72rem;color:var(--mute);}
+  /* ---- misc ---- */
+  .pill-live{display:inline-flex;align-items:center;gap:6px;background:var(--tint);color:var(--deep);border-radius:999px;padding:2px 11px;font-size:.74rem;font-weight:800;margin-left:8px;vertical-align:middle;}
+  .hud{position:fixed;right:14px;bottom:14px;z-index:35;background:rgba(43,26,20,.93);color:#fff;border-radius:999px;padding:8px 15px;display:none;align-items:center;gap:9px;box-shadow:0 8px 26px rgba(0,0,0,.28);cursor:pointer;font-size:.82rem;font-weight:800;}
+  .hud.show{display:flex;}
+  .hud .bar{width:54px;height:6px;border-radius:999px;background:rgba(255,255,255,.25);overflow:hidden;}
+  .hud .bar i{display:block;height:100%;background:linear-gradient(90deg,#ffb199,#ee4d2d);width:0;transition:width .5s;}
+  .hud .gp small{display:block;font-weight:600;font-size:.7rem;opacity:.8;}
+  .overlay{position:fixed;inset:0;background:rgba(43,26,20,.6);z-index:60;display:none;align-items:center;justify-content:center;padding:18px;}
+  .overlay.show{display:flex;}
+  .modal{background:var(--paper);border-radius:20px;padding:22px;max-width:430px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3);max-height:92vh;overflow:auto;}
+  .modal h2{font-size:1.2rem;font-weight:900;margin-bottom:5px;}
+  .modal .sub{color:var(--mute);font-size:.88rem;margin-bottom:14px;}
+  .modal label{display:block;font-weight:800;font-size:.86rem;margin:11px 0 5px;}
+  .tpick{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;}
+  .tpick button{border:2px solid var(--line);background:var(--sunken);border-radius:11px;padding:11px 2px;font-weight:900;font-size:.94rem;color:var(--deep);font-family:inherit;cursor:pointer;}
+  .tpick button.on{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .err{display:none;color:#c0341b;font-weight:800;font-size:.84rem;margin-top:9px;}
+  .skip{display:block;text-align:center;margin-top:11px;color:var(--mute);font-size:.84rem;}
+  #toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%) translateY(14px);background:var(--ink);color:#fff;padding:10px 20px;border-radius:999px;font-weight:800;font-size:.88rem;opacity:0;pointer-events:none;transition:.25s;z-index:70;max-width:90vw;text-align:center;}
+  #toast.show{opacity:1;transform:translateX(-50%);}
+  footer{background:var(--ink);color:#e9d9d3;padding:26px 0 34px;font-size:.86rem;}
+  footer a{color:#ffbfae;}
+  footer .fl{display:flex;flex-wrap:wrap;gap:12px;margin-top:9px;}
+  .srcs li{margin:6px 0;font-size:.9rem;}
+  @media print{
+    header.top,.hud,.tabs,.hero-btns,#toast{display:none!important;}
+    .tab-section{display:block!important;}
+    body{background:#fff;}
+  }
+  @media (max-width:520px){
+    .src{margin-left:0;width:100%;}
+    .tpick{grid-template-columns:repeat(4,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="logo">🛒 AI 電商實戰工作坊<small>蝦皮大學 × 圭話行銷 · 2026.09.22</small></div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button class="tab-btn on" data-tab="start" type="button">🚀 開始</button>
+      <button class="tab-btn" data-tab="p1" type="button">① 素材</button>
+      <button class="tab-btn" data-tab="p2" type="button">② 決策</button>
+      <button class="tab-btn" data-tab="p3" type="button">③ 流程</button>
+      <button class="tab-btn" data-tab="prompts" type="button">📋 提示詞</button>
+      <button class="tab-btn" data-tab="tools" type="button">🧰 工具</button>
+      <button class="tab-btn" data-tab="upload" type="button">📤 上傳</button>
+      <button class="tab-btn" data-tab="done" type="button">🎁 帶走</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== 開始 ===================== -->
+<section class="tab-section active" data-tab="start">
+  <div class="hero">
+    <div class="wrap">
+      <span class="kicker">蝦皮大學 · 賣家實戰班</span>
+      <h1>三小時，把 AI 變成<br>你店裡多請的那一個人</h1>
+      <p class="sub">今天不賣工具，也不教你「AI 有多神」。三小時結束，你要能帶著一套自己店可以直接跑的流程回家。</p>
+      <div class="meta"><span>📅 2026/09/22（二）13:00-16:00</span><span>📍 蝦皮總部 9F</span><span>🎤 何佳勳（小圭）· 圭話行銷</span></div>
+      <div class="hero-btns">
+        <button class="btn btn-light" id="heroReg" type="button">🙋 報到（選桌號＋填暱稱）</button>
+        <button class="btn btn-primary" type="button" onclick="switchTab('prompts')">📋 直接看提示詞</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h2 class="h3">今天怎麼上課：三件事先準備好</h2>
+    <div class="grid g3">
+      <div class="card"><h3><span class="num">1</span>手機或電腦，擇一就好</h3><p>不用兩個都帶。用手機的人，實作時可以跟同桌的電腦一起看。</p></div>
+      <div class="card"><h3><span class="num">2</span>登入電商營運工具箱</h3><p>免費註冊，每天有免費額度；很多工具按「載入範例」不耗額度。</p><a class="btn btn-ghost btn-sm" id="ecomLogin" href="https://ecom.atmarketing.tw/" target="_blank" rel="noopener">開工具箱 →</a></div>
+      <div class="card"><h3><span class="num">3</span>這一頁加到主畫面</h3><p>素材包、三段實作提示詞、所有工具連結，都整理在這一頁。等一下每段實作都會用到。</p></div>
+    </div>
+
+    <div class="elf"><div class="ic">🛒</div><div class="t"><b>電商小幫手｜喊話</b>先按右上角「報到」選你這一桌，等一下的互動題、加分、作業上傳都會算進你們桌。</div></div>
+
+    <h2 class="h3">三小時怎麼走</h2>
+    <div class="tw"><table>
+      <thead><tr><th>時間</th><th>段落</th><th>內容</th></tr></thead>
+      <tbody>
+        <tr><td><b>13:00</b></td><td>開場 ＋ 講師介紹 ＋ 分組</td><td>你現在卡在哪裡，先講清楚</td></tr>
+        <tr><td><b>13:15</b></td><td>PART 1　AI 觀念建立與素材製作</td><td>R-T-C-F 提示語公式 ＋ 商品內容一次到位</td></tr>
+        <tr><td><b>14:05</b></td><td>【現場實作 1】</td><td>一個商品，同時產出貼文、短影音、直播腳本</td></tr>
+        <tr><td><b>14:20</b></td><td>PART 2　電商營運應用</td><td>競品分析、數據整理、客服管理、多通路儀表板</td></tr>
+        <tr><td><b>15:05</b></td><td>【現場實作 2】</td><td>用 AI 幫自己的店做一次營運健檢</td></tr>
+        <tr><td><b>15:20</b></td><td>PART 3　AI 實戰應用</td><td>自動化工作流、蝦皮檔期規劃、完整營運 SOP</td></tr>
+        <tr><td><b>15:50</b></td><td>【現場示範】＋ 總結 ＋ 頒獎</td><td>票選最多的痛點直接做給你看，分組競賽頒獎</td></tr>
+        <tr><td><b>16:00</b></td><td>大合照 ＋ 課後問卷 ＋ 抽獎</td><td>由蝦皮主持</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted-note">休息約 10 分鐘，穿插在實作時間裡，依現場狀況調整。</p>
+
+    <h2 class="h3">分組競賽：一桌一組，最高分有獎 🏆</h2>
+    <div class="grid g3">
+      <div class="card"><h3>＋1　互動題答對</h3><p>每段都有互動題，舉手最快且答對的那一桌加分。</p></div>
+      <div class="card"><h3>＋2　實作上台分享</h3><p>實作結束時上台分享成果，每桌每次限一人。</p></div>
+      <div class="card"><h3>＋1　最先完成實作</h3><p>三段實作裡，全桌最先完成並舉手的那一桌。</p></div>
+    </div>
+    <div class="callout"><b>加碼：作業上傳也加分。</b>每上傳一篇實作成果自動 ＋1 分，同桌交幾篇算幾篇。課程最後統計，總分最高的那一桌，可以拿到蝦皮準備的小禮物。
+      <div class="hero-btns" style="margin-top:10px"><button class="btn btn-ghost btn-sm" type="button" onclick="switchTab('upload')">📤 去上傳作業</button><a class="btn btn-ghost btn-sm" href="board.html" target="_blank" rel="noopener">📺 即時計分板</a></div>
+    </div>
+
+    <h2 class="h3">今天在座的你們（課前問卷）</h2>
+    <div class="grid g4">
+      <div class="card stat"><b>41</b><span>位賣家報名</span><small>其中 19 位填了課前問卷</small></div>
+      <div class="card stat"><b>89%</b><span>是老闆或共同經營者</span><small>另外 11% 是營運主管或店長</small></div>
+      <div class="card stat"><b>74%</b><span>落在 40 到 59 歲</span><small>40-49 歲 47%、50-59 歲 26%</small></div>
+      <div class="card stat"><b>42%</b><span>經營 6 年以上</span><small>1-2 年的新手賣家占 26%</small></div>
+    </div>
+    <div class="tw sm"><table>
+      <thead><tr><th>項目</th><th>問卷結果</th></tr></thead>
+      <tbody>
+        <tr><td><b>賣什麼</b></td><td>居家生活 11 家最多，食品飲料 5 家居次，其他是美妝、保健、母嬰等零星品類</td></tr>
+        <tr><td><b>AI 用到哪</b></td><td>偶爾使用 53%、經常使用 32%、高度依賴 11%；最常拿來生成商品圖片和寫商品文案</td></tr>
+        <tr><td><b>經營狀態</b></td><td>有穩定出單但想再提升效率 37%；會照建議調整，但不確定做得對不對 37%</td></tr>
+        <tr><td><b>最想聽</b></td><td>電商營運應用 47%、AI 實戰應用 47%，觀念建立只有 5%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout ok"><b>所以今天：</b>例子以居家生活商品為主，營運與實戰講得比觀念多，每一段都有能直接帶回去用的提示詞。</div>
+
+    <h2 class="h3">你們最困擾的事，今天這樣回答</h2>
+    <div class="tw"><table>
+      <thead><tr><th>你的困擾</th><th>比例</th><th>快速回應</th><th>今天在哪解</th></tr></thead>
+      <tbody>
+        <tr><td><b>商品圖普通、不會做情境圖</b></td><td>28%</td><td>先把場景、光線、使用的人寫清楚，再叫 AI 畫</td><td>PART 1 商品圖</td></tr>
+        <tr><td><b>有想法，但不知道怎麼下指令</b></td><td>22%</td><td>不用想措辭，照 R-T-C-F 四格填空就好</td><td>PART 1 提示語公式</td></tr>
+        <tr><td><b>AI 生成的內容不夠精準</b></td><td>18%</td><td>多半是情境給太少；再學三招追問，把它校正回來</td><td>PART 1 校正三招</td></tr>
+        <tr><td><b>製作圖文或影片太花時間</b></td><td>10%</td><td>一份素材包，一次產出貼文、短影音、直播</td><td>實作 1</td></tr>
+        <tr><td><b>不會寫短影音腳本</b></td><td>8%</td><td>工具一次給三版，挑前三秒鉤子分數最高的</td><td>PART 1 短影音</td></tr>
+        <tr><td><b>不知道文案怎麼寫才吸引人</b></td><td>6%</td><td>賣點要具體到數字與使用場景</td><td>PART 1 社群貼文</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted-note">複選題，共 50 個回答，比例為各選項占總回答數；商品圖一列為「圖片普通 16%」加「不會做情境圖 12%」。</p>
+
+    <h2 class="h3">你們希望這堂課解決的問題（開放題 10 則）</h2>
+    <div class="tw sm"><table>
+      <thead><tr><th>類型</th><th>則數</th><th>今天怎麼回應</th><th>在哪一段</th></tr></thead>
+      <tbody>
+        <tr><td><b>全面提升效率</b></td><td>4</td><td>AI 在電商做三件事，工具總覽一次給你</td><td>PART 1、收尾</td></tr>
+        <tr><td><b>自動化與串接</b></td><td>3</td><td>先把提示詞組做穩，再談串接；說明 API 門檻</td><td>PART 3</td></tr>
+        <tr><td><b>高流量低轉換</b></td><td>1</td><td>六個維度找破口，先查商品頁與結帳</td><td>PART 2</td></tr>
+        <tr><td><b>蝦皮實戰經驗</b></td><td>1</td><td>全年檔期節奏與 30 天作戰流程</td><td>PART 3</td></tr>
+        <tr><td><b>AI 短影音</b></td><td>1</td><td>短影音腳本產生器，一次出三版</td><td>PART 1</td></tr>
+      </tbody>
+    </table></div>
+    <div class="elf"><div class="ic">🛒</div><div class="t"><b>電商小幫手｜真心話</b>想做自動化的人很多，但問卷裡真的在用 AI「自動化串接」的只有 5%。先有固定流程，才有自動化；今天先把流程寫出來。</div></div>
+
+    <h2 class="h3">開場計時小任務：這四件事，你現在要花多久？</h2>
+    <p class="lead">憑感覺估就好，重點是跟最後對照。下課前我們回來再填一次右邊那一欄。</p>
+    <div class="calc">
+      <div class="tw sm" style="margin:0;border:0;box-shadow:none"><table>
+        <thead><tr><th>工作</th><th>現在花多久</th><th>用 AI 之後</th><th>省下</th></tr></thead>
+        <tbody id="timeRows"></tbody>
+      </table></div>
+      <div style="margin-top:10px;font-size:.88rem">這四件事，平均一個月各做 <input type="number" id="tFreq" value="4" min="1" max="60"> 次</div>
+      <div class="out" id="timeOut">先填「現在花多久」，下課前再回來填「用 AI 之後」。</div>
+      <div class="prow"><button class="btn btn-ghost btn-sm" id="timeCopy" type="button">📋 複製這張對照表</button><span class="muted-note">資料存在這支手機裡，下課前打開還在。</span></div>
+    </div>
+
+    <h2 class="h3">現場互動 🙋</h2>
+    <div class="poll" id="poll_lv"></div>
+    <div class="poll" id="poll_fake"></div>
+    <div class="callout warn"><b>Slido 有獎徵答：</b>想問的問題寫在 Slido 上（掃簡報上的 QR，記得填暱稱），被挑到的有禮物。也可以直接舉手問。</div>
+  </div>
+</section>
+
+<!-- ===================== PART 1 素材 ===================== -->
+<section class="tab-section" data-tab="p1"><div class="wrap">
+  <div class="sec-tag">PART 1 · 13:15 - 14:05</div>
+  <h2 class="sec-title">AI 觀念建立與 <span class="em">素材製作</span></h2>
+  <p class="lead">看懂 AI 在電商能做什麼，然後一次把素材做完。</p>
+
+  <h3 class="h3">心法：AI 不是搜尋引擎，是你的新同事</h3>
+  <div class="vs">
+    <div class="col bad"><h4>✗ 把 AI 當搜尋引擎</h4>
+      <p><b>「幫我分析一下廣告成效」</b></p>
+      <ul><li>得到一段看似合理、其實沒重點的廢話</li><li>問題出在：你沒給它角色、沒給它資料、沒說要什麼格式，它只能亂猜</li></ul>
+    </div>
+    <div class="col good"><h4>✓ 把 AI 當新進資深分析師</h4>
+      <p>交辦一位新同事，你會怎麼講？</p>
+      <pre>你是操作媒合平台五年的成效行銷主管，這是近 30 天數據，只根據附件、不要推測，給我三個發現，每個發現附數字。</pre>
+      <ul><li>他什麼都會一點，但完全不懂你們公司</li><li>交辦越清楚，產出越可用</li></ul>
+    </div>
+  </div>
+
+  <h3 class="h3">AI 在電商，實際上在做三件事</h3>
+  <div class="grid g3">
+    <div class="card"><h3><span class="num">1</span>一份資料 → 很多版本</h3><p>商品規格一次輸入，貼文、短影音、直播、廣告文案同時產出。省的是重打的時間。</p></div>
+    <div class="card"><h3><span class="num">2</span>一堆資料 → 一句結論</h3><p>後台報表、客服對話、競品頁面，AI 幫你讀完再告訴你哪裡有問題。</p></div>
+    <div class="card"><h3><span class="num">3</span>想到才做 → 固定會做</h3><p>邀請評論、追蹤棄單、回購提醒，寫成流程之後就不會忘記。</p></div>
+  </div>
+  <div class="callout">這三件事對應到今天的三個 PART，也對應到你每天最花時間的三塊：<b>做素材、看數字、跑流程</b>。</div>
+
+  <h3 class="h3">三個最常見的迷思，先拆掉</h3>
+  <div class="tw"><table>
+    <thead><tr><th>✗ 迷思</th><th>✓ 實際上</th></tr></thead>
+    <tbody>
+      <tr><td><b>「AI 會取代小編」</b></td><td>取代的是重複的那部分。企劃、選品、判斷要不要蹭，這些還是你在做，AI 只是把打字的時間還給你</td></tr>
+      <tr><td><b>「問一次就要出完美答案」</b></td><td>把它當新來的員工。第一次給的東西一定要改，改的過程就是在建立你自己的提示詞資產</td></tr>
+      <tr><td><b>「AI 寫的東西都很假掰」</b></td><td>假掰是因為你沒給它素材。給它真實的商品規格、真實的客服對話、真實的評論，它就寫得出人話</td></tr>
+    </tbody>
+  </table></div>
+  <div class="elf"><div class="ic">🛒</div><div class="t"><b>電商小幫手｜真心話</b>一句話：AI 不是幫你想，是幫你把想好的事情做完、做齊、做得夠快。</div></div>
+
+  <div class="poll" id="poll_q1"></div>
+
+  <h3 class="h3">R-T-C-F：一句話變成一份可用的產出</h3>
+  <div class="grid g4">
+    <div class="card"><h3>R｜角色</h3><p>你是誰、對誰說話。「你是專接台灣女性保養品的蝦皮賣場小編」比「你是行銷專家」有用十倍。</p></div>
+    <div class="card"><h3>T｜任務</h3><p>要做什麼、做幾個、多長。「寫 3 版 IG 貼文，每版 150 字以內」。</p></div>
+    <div class="card"><h3>C｜情境</h3><p>商品規格、目標客群、檔期、限制。這裡塞越多真實資料，結果越不假掰。</p></div>
+    <div class="card"><h3>F｜格式</h3><p>用什麼形式交回來。表格、條列、含 hashtag、含開頭三秒鉤子。</p></div>
+  </div>
+  <div class="callout"><b>記法：</b>先說「你是誰」，再說「做什麼」，接著「給背景」，最後「要什麼格式」。四段都寫齊，重寫次數會少一半以上。</div>
+
+  <h3 class="h3">同一個需求，兩種寫法的差距</h3>
+  <div class="vs">
+    <div class="col bad"><h4>✗ 常見寫法</h4>
+      <pre>幫我寫一篇保溫瓶的 IG 貼文</pre>
+      <ul><li>看起來很順，但誰都能用</li><li>沒有你的商品真正的賣點</li><li>沒有 hashtag、沒有導購動作</li><li>你要再改三次才能貼</li></ul>
+    </div>
+    <div class="col good"><h4>✓ R-T-C-F 寫法</h4>
+      <pre>R：你是專做上班族通勤用品的蝦皮賣場小編
+T：寫 3 版 IG 貼文，每版 150 字內
+C：日本 316 不鏽鋼保溫瓶，12 小時保溫保冷，230g，週年慶 85 折，客群 25-35 歲上班族
+F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
+      <ul><li>三版風格不同，可以直接 A/B 測</li><li>賣點是你的商品真的有的</li><li>格式齊全，複製就能貼</li><li>下次換商品只要改 C 那一段</li></ul>
+    </div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start"><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f1')">📋 複製這組 R-T-C-F 範本</button></div>
+
+  <h3 class="h3">AI 給得不準？三招把它校正回來</h3>
+  <div class="grid g3">
+    <div class="card"><h3>第 1 招　給範例</h3><p>不要只說風格，直接給它看：「參考下面這篇我覺得寫得好的貼文，語氣和長度照這個來寫。」</p></div>
+    <div class="card"><h3>第 2 招　指出錯在哪</h3><p>不要說再寫好一點：「第二段太誇張了，改成實際使用一週的感受，不要用最、第一這種字。」</p></div>
+    <div class="card"><h3>第 3 招　叫它先問你</h3><p>資料不夠時讓它補問：「開始寫之前，先問我 5 個問題，確認你需要的商品資訊，我回答完你再寫。」</p></div>
+  </div>
+  <div class="callout warn"><b>校正之前，先回頭檢查一件事：</b>大部分的不準，不是 AI 不夠聰明，是 R-T-C-F 裡的「情境」給太少。先把商品規格、客群、真實好評補進去，再用這三招修細節。<button class="btn btn-ghost btn-sm" style="margin-left:8px" type="button" onclick="goPrompt('f2')">📋 複製三招</button></div>
+
+  <h3 class="h3">商品素材包：今天最重要的一份文件</h3>
+  <div class="vs">
+    <div class="col good"><h4>素材包要有這六項</h4>
+      <ul><li>商品規格與材質</li><li>三個真實賣點</li><li>目標客群輪廓</li><li>價格與檔期優惠</li><li>常見客訴或疑慮</li><li>已有的好評兩則</li></ul>
+    </div>
+    <div class="col"><h4>一份素材包，同時餵飽四個通道</h4>
+      <ul>
+        <li><b>社群貼文</b>：IG / FB / LINE / Threads 四平台，各自的語氣與長度都不一樣</li>
+        <li><b>短影音腳本</b>：15 到 60 秒，含前三秒鉤子、分鏡、字卡</li>
+        <li><b>直播腳本</b>：開場、破冰、商品輪播、逼單、收尾的時間表</li>
+        <li><b>廣告文案</b>：以時事趨勢型內容切入，讓自然曝光先跑起來</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="h3">為什麼要用時事趨勢型內容</h3>
+  <div class="grid g3">
+    <div class="card"><h3>平台想要什麼</h3><p>演算法會優先推「現在很多人在看」的題目。搭上正在熱的話題，自然觸及就會比平常高。</p></div>
+    <div class="card"><h3>消費者想要什麼</h3><p>沒有人想看廣告，但大家想看正在討論的事。用熱點當開場，商品放在後面，接受度差很多。</p></div>
+    <div class="card"><h3>你自己想要什麼</h3><p>不用一直加預算。同一支商品，換一個時事切角重發，等於免費多一次曝光。</p></div>
+  </div>
+  <div class="callout warn"><b>但是，蹭錯會翻車。</b>天災傷亡、疾病、刑案、政治與族群爭議，這五類一律不要碰。判斷標準很簡單：如果這個熱點裡面有人正在受苦，你的商品就不該出現在旁邊。真的想做，改成純粹的關懷發文，不要放商品連結。</div>
+
+  <h3 class="h3">貼文格式與撰寫技巧（七個步驟）</h3>
+  <div class="tw"><table>
+    <thead><tr><th>步驟</th><th>重點</th><th>範例引導句</th></tr></thead>
+    <tbody>
+      <tr><td><b>1. 引題＋痛點切入</b></td><td>用問題句、誇張對比、情境描寫開場</td><td>「颱風天外送停擺，家裡備糧夠嗎？」</td></tr>
+      <tr><td><b>2. 帶入真實情境</b></td><td>生活化語句、具體場景描寫</td><td>「風聲呼呼、孩子在旁邊喊餓…這時才發現冰箱空了。」</td></tr>
+      <tr><td><b>3. 產品優勢＋解決方案</b></td><td>避免硬性推銷，用「陪伴」語氣切入</td><td>「這時候，一包天然少添加的蘇打餅，就是你的安心選擇。」</td></tr>
+      <tr><td><b>4. 限定優惠／緊迫感</b></td><td>倒數、限量、限定字眼</td><td>「颱風前 48 小時限定優惠」「限量 100 組備糧包」</td></tr>
+      <tr><td><b>5. 呼籲行動（CTA）</b></td><td>動詞開頭，搭配購買連結或互動</td><td>「立即點擊購買」「私訊領取折扣」</td></tr>
+      <tr><td><b>6. 視覺設計</b></td><td>天氣元素、居家氛圍、商品特寫</td><td>「窗外風雨聲＋手拿商品的溫馨畫面」</td></tr>
+      <tr><td><b>7. 互動設計</b></td><td>問問題、做投票、邀請留言</td><td>「留言告訴我：你家最不能少的防颱食物是什麼？」</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 class="h3">引人注意的標題：CBI 配方</h3>
+  <div class="grid g3">
+    <div class="card"><h3>Connection 30%</h3><p>與對象連結。《網際網路運營人員必備：常用工具 18 款》</p></div>
+    <div class="card"><h3>Benefit 40%</h3><p>明確利益。《43 頁精華 PPT！從零開始把內容行銷講透了》</p></div>
+    <div class="card"><h3>Interesting 30%</h3><p>情緒共鳴引好奇。《我們利用這三點，一個月把「冷門」寫出 10 篇爆紅文章》</p></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start"><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f4')">📋 十個高點閱標題提示詞</button><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f5')">🎭 換風格寫（瓊瑤／金庸／偶像劇／哈利波特）</button></div>
+
+  <h3 class="h3">同一支商品，六種客群六種寫法</h3>
+  <div class="tw"><table>
+    <thead><tr><th>客群</th><th>特徵</th><th>社群主題方向</th><th>內容示例</th></tr></thead>
+    <tbody>
+      <tr><td><b>健康意識上班族</b></td><td>挑低糖低鈉、看成分標示、下午嘴饞</td><td>無添加成分、辦公室零食、熱量控制</td><td>下午三點嘴饞又怕負擔？一片約 30 大卡，撐到下班不心慌</td></tr>
+      <tr><td><b>育兒家庭</b></td><td>替孩子挑安心點心，重視原料與過敏標示</td><td>兒童點心挑選、成分解讀、分裝攜帶</td><td>給孩子的第一片餅乾怎麼挑？看這三個成分標示就夠了</td></tr>
+      <tr><td><b>健身／減脂族</b></td><td>會算熱量與碳水，需要好攜帶</td><td>運動前後補碳、熱量標示、備餐清單</td><td>練前補碳怎麼吃？兩片加花生醬，運動前 15 分鐘剛好</td></tr>
+      <tr><td><b>露營／戶外族</b></td><td>耐放、好攜帶、方便分食</td><td>露營野餐清單、創意吃法、分享包</td><td>露營必帶清單第一名：一包配不同抹醬變十種吃法</td></tr>
+      <tr><td><b>送禮／企業採購</b></td><td>包裝體面、可客製 LOGO、量大下單</td><td>禮盒包裝、企業客製、節慶送禮</td><td>中秋伴手禮不想再送月餅？客製禮盒 50 盒起訂</td></tr>
+      <tr><td><b>電商回購客</b></td><td>買過至少一次、對價格敏感</td><td>訂閱制、箱購折扣、新口味試吃</td><td>老顧客限定：箱購直接省 200 元，還能搶先試吃新品</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="poll" id="poll_q2"></div>
+
+  <h3 class="h3">🔥 現場實作 1：一個商品，四種素材一次做完</h3>
+  <div class="grid g4">
+    <div class="card"><h3><span class="num">1</span>準備素材包</h3><p>找一支你店裡真的在賣、而且想推的商品。把規格、三個賣點、客群、價格打成一段文字。</p></div>
+    <div class="card"><h3><span class="num">2</span>跑 R-T-C-F</h3><p>把素材包貼進提示詞 1-1 的 C 那一段，先在 ChatGPT 或 Gemini 跑一次社群貼文。</p></div>
+    <div class="card"><h3><span class="num">3</span>用工具對照</h3><p>同一份素材包貼到社群貼文產生器與短影音腳本產生器，比較兩邊的差別。</p></div>
+    <div class="card"><h3><span class="num">4</span>挑一版修完</h3><p>選一版真的可以用的，當場改成你自己會講的話，改完舉手，我挑兩位上來分享。</p></div>
+  </div>
+  <div class="callout"><b>實作時間 12 分鐘，最後 3 分鐘分享。</b>做不完沒關係，重點是把素材包留下來，後面兩段實作都會用到它。<br><b>驗收標準：</b>你的產出裡面，有沒有出現「只有你的商品才寫得出來」的句子？如果整段換成別家商品也通順，代表 C 那段給得不夠。</div>
+  <div class="hero-btns" style="justify-content:flex-start">
+    <button class="btn btn-primary" type="button" onclick="goPrompt('c1')">📋 提示詞 1-1：商品內容一次到位</button>
+    <button class="btn btn-teal" type="button" onclick="goUpload('t1')">📤 繳交實作 1</button>
+  </div>
+
+  <h3 class="h3">重點彙整</h3>
+  <div class="grid g3">
+    <div class="card"><h3><span class="num">1</span>AI 在電商做三件事</h3><p>把一份資料變多版本、把一堆資料變一句結論、把想到才做變成固定會做。</p></div>
+    <div class="card"><h3><span class="num">2</span>R-T-C-F 四段都要寫</h3><p>其中情境是決定內容能不能用的關鍵，素材包給得越真實，結果越像人話。</p></div>
+    <div class="card"><h3><span class="num">3</span>時事型內容先評估再發</h3><p>曝光確實會翻倍，但天災、疾病、刑案、政治、族群這五類一律跳過。</p></div>
+  </div>
+  <div class="card dk" style="margin-top:12px"><h3>💡 一句話帶走</h3><p>你的競爭力不是「會用 AI」，是你手上那份別人沒有的商品素材包。</p></div>
+</div></section>
+
+<!-- ===================== PART 2 決策 ===================== -->
+<section class="tab-section" data-tab="p2"><div class="wrap">
+  <div class="sec-tag">PART 2 · 14:20 - 15:05</div>
+  <h2 class="sec-title">電商營運應用：從做內容換到 <span class="em">做決策</span></h2>
+  <p class="lead">素材做得快，不等於生意變好。這一段讓 AI 幫你看數字。</p>
+
+  <div class="vs">
+    <div class="col bad"><h4>很多人卡在這裡</h4><ul><li>貼文變多了，但轉換率沒動</li><li>知道業績掉了，但說不出掉在哪一段</li><li>每個平台的報表分開看，看不出全貌</li></ul></div>
+    <div class="col good"><h4>AI 能補上的</h4><ul><li>把分散的數字整理成一頁</li><li>指出異常在哪一個環節</li><li>把「該修什麼」排出先後順序</li></ul></div>
+  </div>
+  <div class="callout"><b>這一段的核心觀念：</b>不要問 AI「我的業績為什麼掉」，它答不出來。要把資料給它，然後問「這份資料裡面，哪三件事最值得先修，理由是什麼」。</div>
+
+  <h3 class="h3">六個維度，找出你現在真正的問題</h3>
+  <div class="tw"><table>
+    <thead><tr><th>維度</th><th>出問題的訊號</th><th>先看哪個數字</th></tr></thead>
+    <tbody>
+      <tr><td><b>曝光</b></td><td>搜尋排名掉、活動報名沒過</td><td>商品瀏覽數、關鍵字排名</td></tr>
+      <tr><td><b>點擊</b></td><td>曝光有但沒人點</td><td>主圖點擊率、標題關鍵字覆蓋</td></tr>
+      <tr><td><b>轉換</b></td><td>有人看沒人買</td><td>商品頁轉換率、加入購物車率</td></tr>
+      <tr><td><b>客單</b></td><td>訂單數持平但營收掉</td><td>客單價、加購率、組合購買率</td></tr>
+      <tr><td><b>回購</b></td><td>一直在拉新客，老客沒回來</td><td>30/60/90 天回購率、回購間隔</td></tr>
+      <tr><td><b>口碑</b></td><td>評分掉、差評開始出現</td><td>評分變化、負評主題、回覆率</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><b>順序是有意義的：</b>曝光沒有就別談轉換，轉換沒修好就別急著加廣告預算。</div>
+
+  <h3 class="h3">AI 幫你看競品的五個維度</h3>
+  <div class="tw"><table>
+    <thead><tr><th>維度</th><th>要看什麼</th><th>怎麼問 AI</th></tr></thead>
+    <tbody>
+      <tr><td><b>價格與促銷</b></td><td>標價、常態折扣、滿額門檻、加購價</td><td>「比較這三個賣場的實際到手價，列出誰最便宜、差多少」</td></tr>
+      <tr><td><b>商品頁</b></td><td>主圖文案、賣點順序、規格表完整度</td><td>「這三個商品頁，賣點的排序有什麼不同，誰的第一屏最有說服力」</td></tr>
+      <tr><td><b>評價內容</b></td><td>好評誇什麼、差評罵什麼、回覆速度</td><td>「把這些評價分成五類，告訴我對手最大的弱點是什麼」</td></tr>
+      <tr><td><b>社群與內容</b></td><td>發文頻率、內容型態、互動數落差</td><td>「這個對手最近 20 篇貼文，哪三種型態互動最好」</td></tr>
+      <tr><td><b>出貨與服務</b></td><td>出貨天數、退換貨政策、客服話術</td><td>「整理出這三家的出貨與退換貨條件差異表」</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><b>課堂建議：</b>先只做「價格與促銷」跟「評價內容」這兩欄，做得完、看得懂，比五欄都做一半有用。<button class="btn btn-ghost btn-sm" style="margin-left:8px" type="button" onclick="goPrompt('f7')">📋 複製五句提問</button></div>
+
+  <h3 class="h3">排優先順序：用 ICE 分數決定先做什麼</h3>
+  <div class="grid g3">
+    <div class="card"><h3>I｜Impact 影響力</h3><p>修好之後，對營收或成本的影響有多大。1 到 10 分。</p></div>
+    <div class="card"><h3>C｜Confidence 把握度</h3><p>你有多確定這件事真的是問題，而不是猜的。1 到 10 分。</p></div>
+    <div class="card"><h3>E｜Ease 容易度</h3><p>以你現在的人力，這件事多快能做完。越快分數越高。</p></div>
+  </div>
+  <div class="callout"><b>三個分數相乘，數字最大的先做。</b>把所有想做的事列出來評一次分，你會發現最想做的那件常常不是最該做的。<button class="btn btn-ghost btn-sm" style="margin-left:8px" type="button" onclick="goPrompt('f6')">📋 ICE 排序提示詞</button></div>
+
+  <h3 class="h3">儀表板應用：從數字走到行動</h3>
+  <div class="grid g4">
+    <div class="card"><h3><span class="num">1</span>數字</h3><p>營收、流量、轉換率、客單價、退貨率，先把五個數字放在同一頁。</p></div>
+    <div class="card"><h3><span class="num">2</span>異常</h3><p>跟上週、上月、去年同期比，哪一個掉最多、掉在哪一個平台。</p></div>
+    <div class="card"><h3><span class="num">3</span>洞察</h3><p>AI 把異常對應到可能原因：流量掉？頁面轉換掉？還是客單價被折扣吃掉。</p></div>
+    <div class="card"><h3><span class="num">4</span>行動</h3><p>轉成這週真的做得完的三件事，寫上負責人跟完成時間。</p></div>
+  </div>
+  <div class="elf"><div class="ic">🛒</div><div class="t"><b>電商小幫手｜延伸建議</b>課堂上會現場示範一次：貼一份月報數據進去，看它怎麼從「營收掉 18%」推到「是加購率掉了，不是流量掉了」。</div></div>
+
+  <div class="poll" id="poll_q3"></div>
+  <div class="poll" id="poll_q4"></div>
+
+  <h3 class="h3">🔥 現場實作 2：用 AI 幫自己的店做一次營運健檢</h3>
+  <div class="grid g4">
+    <div class="card"><h3><span class="num">1</span>拿出真實數字</h3><p>打開蝦皮賣家中心，抓最近 30 天的曝光、瀏覽、轉換率、客單價、退貨率。抓不到就用你記得的大概數字。</p></div>
+    <div class="card"><h3><span class="num">2</span>貼進提示詞</h3><p>用健檢提示詞，把六個維度的數字貼進去，讓 AI 指出破口在哪一段。</p></div>
+    <div class="card"><h3><span class="num">3</span>做 ICE 排序</h3><p>把 AI 給的建議列成清單，用 ICE 評分排序，逼自己只留三件。</p></div>
+    <div class="card"><h3><span class="num">4</span>寫下第一件事</h3><p>越具體越好。寫「改主圖」不算，要寫「把 A 商品主圖加上免運字樣」。</p></div>
+  </div>
+  <div class="callout"><b>實作時間 12 分鐘。</b>中場休息 3 分鐘接在後面，做不完可以延到休息時間。<br><b>驗收標準：</b>你寫下的第一件事，是不是「這週真的做得完」而且「做完可以用數字驗證」？兩個條件都要滿足。</div>
+  <div class="hero-btns" style="justify-content:flex-start">
+    <button class="btn btn-primary" type="button" onclick="goPrompt('c3')">📋 提示詞 2-1：蝦皮賣場營運健檢</button>
+    <button class="btn btn-teal" type="button" onclick="goUpload('t2')">📤 繳交實作 2</button>
+  </div>
+
+  <h3 class="h3">重點彙整</h3>
+  <div class="grid g3">
+    <div class="card"><h3><span class="num">1</span>先問對問題再問 AI</h3><p>把資料給它再問「哪三件事最值得先修」。給資料的品質決定答案的品質。</p></div>
+    <div class="card"><h3><span class="num">2</span>六個維度定位破口</h3><p>曝光、點擊、轉換、客單、回購、口碑。前面沒修好，後面加預算只是漏得更快。</p></div>
+    <div class="card"><h3><span class="num">3</span>用 ICE 逼自己只做三件</h3><p>影響力乘上把握度乘上容易度，分數最高的先做。</p></div>
+  </div>
+  <div class="card dk" style="margin-top:12px"><h3>💡 一句話帶走</h3><p>看數字的目的不是知道發生什麼事，是知道這週該動哪一顆螺絲。</p></div>
+</div></section>
+
+<!-- ===================== PART 3 流程 ===================== -->
+<section class="tab-section" data-tab="p3"><div class="wrap">
+  <div class="sec-tag">PART 3 · 15:20 - 15:50</div>
+  <h2 class="sec-title">AI 實戰應用：把一次性提問，變成 <span class="em">每天自己會跑的流程</span></h2>
+
+  <h3 class="h3">工作流的三個層次，你現在在哪一層</h3>
+  <div class="tw sm"><table>
+    <thead><tr><th>層次</th><th>在做什麼</th><th>每次花多久</th></tr></thead>
+    <tbody>
+      <tr><td><b>LV.1 一次性提問</b></td><td>想到才問，問完就忘。每次都要重打，品質看當天心情</td><td>每次 10 分鐘</td></tr>
+      <tr><td><b>LV.2 提示詞組</b></td><td>把常用的提示詞存起來，換商品只改變數。品質穩定了</td><td>每次 2 分鐘</td></tr>
+      <tr><td><b>LV.3 自動化工作流</b></td><td>串成流程，資料自動抓、內容自動生、時間到自動發</td><td>每次 0 分鐘</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout ok"><b>今天最後這一段，就是要把你從 LV.1 推到 LV.2，並且看懂 LV.3 長什麼樣子。</b></div>
+
+  <h3 class="h3">想自動串接？先搞懂蝦皮 API 的門檻</h3>
+  <div class="vs">
+    <div class="col bad"><h4>一般賣家：目前無法申請蝦皮 API</h4>
+      <ul><li>從賣家中心匯出訂單與商品報表 CSV</li><li>丟進多通路儀表板，或直接上傳給 ChatGPT／Gemini 分析</li><li>固定每週做一次，就是你的半自動流程</li></ul>
+    </div>
+    <div class="col good"><h4>商家帳號：可以申請蝦皮 API</h4>
+      <ul><li>訂單、商品、庫存資料可以自動拉取</li><li>串接儀表板與自動報表，不用手動匯出</li><li>通常需要工程人力或服務商協助</li></ul>
+    </div>
+  </div>
+  <p class="muted-note">API 申請資格與開放範圍以蝦皮開放平台公告為準。</p>
+
+  <h3 class="h3">流程一：時事靈感，一鍵生成三平台貼文</h3>
+  <div class="grid g4">
+    <div class="card"><h3><span class="num">1</span>抓熱點</h3><p>Google Trends、PTT、Dcard、新聞媒體的熱門話題一次彙整。</p></div>
+    <div class="card"><h3><span class="num">2</span>評可蹭度</h3><p>品牌相關性、安全性、時效性三面向評分，標出蹭／觀望／跳過。</p></div>
+    <div class="card"><h3><span class="num">3</span>定切角</h3><p>決定用什麼角度把熱點接到你的商品上，避開翻車地雷。</p></div>
+    <div class="card"><h3><span class="num">4</span>生貼文</h3><p>FB、IG、Threads 三平台各自產出完整貼文與 hashtag。</p></div>
+  </div>
+  <div class="vs">
+    <div class="col bad"><h4>手動做要多久</h4><p>逛四個平台找話題 20 分鐘，判斷能不能蹭 10 分鐘，寫三平台貼文 30 分鐘。一天一次，一個月 30 小時。</p></div>
+    <div class="col good"><h4>串成流程之後</h4><p>打開輿情雷達，挑一個可蹭度高的熱點，一鍵帶進借勢決策台，三平台貼文直接出。全程 5 分鐘。</p></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start"><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('c5')">📋 提示詞 3-1</button><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f8')">🤖 ChatGPT 代理模式：每天早上自己跑</button></div>
+
+  <h3 class="h3">流程二：從下單到邀請評論的完整 SOP</h3>
+  <div class="tw"><table>
+    <thead><tr><th>節點</th><th>時機</th><th>做什麼</th></tr></thead>
+    <tbody>
+      <tr><td><b>下單</b></td><td>訂單成立當下</td><td>自動確認信、預計出貨時間、加購最後機會</td></tr>
+      <tr><td><b>聊聊</b></td><td>出貨前的疑問</td><td>常見問題自動回覆、客製問題轉人工，話術先寫好</td></tr>
+      <tr><td><b>收單</b></td><td>包裹送達</td><td>到貨關懷訊息、使用教學、開箱引導</td></tr>
+      <tr><td><b>邀評</b></td><td>送達後 3 到 7 天</td><td>三頻道請評論話術，時機抓對，評論率差很多</td></tr>
+      <tr><td><b>回購</b></td><td>30 到 90 天</td><td>依商品消耗週期推播，附專屬回購券</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><b>每一個節點都只做一件事：</b>把「你本來就該說的話」提前寫好，時間到了自動送出。AI 負責寫，你負責決定什麼時候送。<button class="btn btn-ghost btn-sm" style="margin-left:8px" type="button" onclick="goPrompt('c6')">📋 提示詞 3-2</button></div>
+
+  <h3 class="h3">蝦皮全年檔期節奏：先記住這個框架</h3>
+  <div class="tw"><table>
+    <thead><tr><th>類型</th><th>時間</th><th>力度與特性</th><th>你要做的事</th></tr></thead>
+    <tbody>
+      <tr><td><b>每月同數字日</b></td><td>9/9、10/10、11/11、12/12</td><td>平台資源集中，流量最大</td><td>提前 14 天備貨與預熱</td></tr>
+      <tr><td><b>每月固定活動</b></td><td>5 號發薪補貨日、18 號會員日、25 號商城狂購節</td><td>力度中等，但每月都有</td><td>排成月固定節奏，不要每次重想</td></tr>
+      <tr><td><b>年度最大檔</b></td><td>雙 11（10 月底開始暖身）</td><td>全年最大，力度第一</td><td>當作全年主戰場，資源集中</td></tr>
+      <tr><td><b>年末雙檔</b></td><td>雙 12 與年終慶</td><td>雙 12 約為雙 11 的七到八成</td><td>庫存出清、深折扣</td></tr>
+      <tr><td><b>季節性檔期</b></td><td>母親節、父親節、中秋、年貨節</td><td>看品類，禮盒型商品特別吃這一段</td><td>提前 30 天備素材</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted-note">力度概略排序：雙 11 ＞ 雙 12 ＞ 99 購物節 ＞ 10/10 品牌慶。實際檔期與規則每年會調整，正式規劃請以蝦皮賣家中心公告為準。</p>
+
+  <h3 class="h3">單一檔期的 30 天作戰流程</h3>
+  <div class="grid g4">
+    <div class="card"><h3>D-14 預熱</h3><p>素材備齊、社群開始鋪陳、蒐藏加購引導。<br><small>素材：貼文、短影音、直播預告</small></p></div>
+    <div class="card"><h3>D-7 預購</h3><p>開放預購或早鳥、發折價券給名單、KOL 發文。<br><small>素材：EDM、LINE 推播、加購組合</small></p></div>
+    <div class="card"><h3>D-Day 衝刺</h3><p>直播、限時加碼、庫存與出貨盯緊。<br><small>素材：即時客服、追加廣告</small></p></div>
+    <div class="card"><h3>D+3 收尾</h3><p>出貨進度、客服高峰、邀請評論。<br><small>素材：回購券、評論邀請、補貨</small></p></div>
+  </div>
+  <div class="callout ok"><b>這四段的所有素材，都可以在 D-21 那一天用同一份商品素材包一次做完。</b>做完放著，到日子再貼，這就是為什麼前面要先建素材包。</div>
+
+  <div class="poll" id="poll_q5"></div>
+
+  <h3 class="h3">🔥 現場實作 3：建立一條你明天就能跑的工作流</h3>
+  <div class="grid g4">
+    <div class="card"><h3><span class="num">1</span>挑一條流程</h3><p>從時事貼文流程、檔期 30 天流程、下單到邀評 SOP 這三條裡面，挑一條你最缺的。</p></div>
+    <div class="card"><h3><span class="num">2</span>寫下五個節點</h3><p>每一步寫清楚：誰做、什麼時候做、用哪個工具。</p></div>
+    <div class="card"><h3><span class="num">3</span>把提示詞補齊</h3><p>每一步需要 AI 的地方，用提示詞模板填上你自己的變數。</p></div>
+    <div class="card"><h3><span class="num">4</span>設一個提醒</h3><p>在手機行事曆設一個重複提醒，這條流程才會真的活下來。沒有提醒就沒有流程。</p></div>
+  </div>
+  <div class="callout"><b>實作時間 10 分鐘，最後 10 分鐘保留給現場示範。</b><br><b>驗收標準：</b>把你的流程講給旁邊的人聽 30 秒。如果對方聽完知道明天早上第一步要做什麼，這條流程就成立了。</div>
+  <div class="hero-btns" style="justify-content:flex-start"><button class="btn btn-teal" type="button" onclick="goUpload('t3')">📤 繳交實作 3</button></div>
+
+  <h3 class="h3">重點彙整</h3>
+  <div class="grid g3">
+    <div class="card"><h3><span class="num">1</span>從 LV.1 走到 LV.2 就夠了</h3><p>把常用提示詞存起來、換商品只改變數，你已經贏過大部分人。</p></div>
+    <div class="card"><h3><span class="num">2</span>檔期要提前，不是當天努力</h3><p>所有素材在 D-21 用同一份素材包一次做完，到日子再貼。</p></div>
+    <div class="card"><h3><span class="num">3</span>流程要有觸發時機才會活</h3><p>沒有提醒就沒有流程。手機行事曆三個重複提醒，比任何自動化工具都有效。</p></div>
+  </div>
+  <div class="card dk" style="margin-top:12px"><h3>💡 一句話帶走</h3><p>你要建立的不是一堆提示詞，是一套「不用想也會發生」的節奏。</p></div>
+</div></section>
+
+<!-- ===================== 提示詞 ===================== -->
+<section class="tab-section" data-tab="prompts"><div class="wrap">
+  <div class="sec-tag">照抄就能用</div>
+  <h2 class="sec-title">今天的提示詞，<span class="em">一鍵複製</span>直接貼 📋</h2>
+  <div class="callout"><b>用法：</b>按「複製」→ 開 ChatGPT 或 Gemini → 貼上 → 把〔括號〕裡的字換成你的商品資料。分成兩頁的提示詞已經幫你合併成一份，複製一次就完整。</div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-bottom:6px">
+    <button class="btn btn-ghost btn-sm pfilter on" data-pf="all" type="button">全部</button>
+    <button class="btn btn-ghost btn-sm pfilter" data-pf="core" type="button">三段實作</button>
+    <button class="btn btn-ghost btn-sm pfilter" data-pf="flow" type="button">素材與文案</button>
+    <button class="btn btn-ghost btn-sm pfilter" data-pf="auto" type="button">流程與自動化</button>
+  </div>
+  <div id="promptHost"></div>
+</div></section>
+
+<!-- ===================== 工具 ===================== -->
+<section class="tab-section" data-tab="tools"><div class="wrap">
+  <div class="sec-tag">今天用到的工具</div>
+  <h2 class="sec-title">網址一次給你 🧰</h2>
+  <div class="callout"><b>電商營運工具箱全站 200 個工具免費使用</b>，登入後每天有免費額度，很多工具按「載入範例」不耗額度。⭐ 是今天課堂會用到的。</div>
+  <h3 class="h3">內容與素材</h3>
+  <div class="toolgrid" id="toolA"></div>
+  <h3 class="h3">營運與流程</h3>
+  <div class="toolgrid" id="toolB"></div>
+  <h3 class="h3">蝦皮賣家加碼（簡報沒講，但你們一定用得到）</h3>
+  <div class="toolgrid" id="toolD"></div>
+  <h3 class="h3">AI 模型與外部資源</h3>
+  <div class="toolgrid" id="toolC"></div>
+</div></section>
+
+<!-- ===================== 上傳 ===================== -->
+<section class="tab-section" data-tab="upload"><div class="wrap">
+  <div class="sec-tag">分組競賽 · 交一篇 ＋1 分</div>
+  <h2 class="sec-title">把你的實作成果 <span class="em">交上來</span> 📤</h2>
+  <div class="callout"><b>每一次上傳都會保留，不會蓋掉前一版。</b>同桌每個人都可以交，交幾版都算，講師會在後台看到全部，挑幾位上台分享（上台再加 2 分）。可以打字，也可以拍照或截圖上傳。</div>
+  <div id="whoBox"></div>
+  <div class="up">
+    <label class="lb2" for="subTask">要交哪一段 *</label>
+    <select id="subTask"></select>
+    <div class="muted-note" id="taskHint" style="margin-top:6px"></div>
+    <label class="lb2">用什麼交？</label>
+    <div class="modeseg" id="subMode"><button type="button" data-m="text" class="on">📝 文字</button><button type="button" data-m="image">🖼️ 圖片</button></div>
+    <div id="subTextWrap" style="margin-top:9px">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:6px"><button class="btn btn-ghost btn-sm" id="tplBtn" type="button">📋 套用這段的範本</button></div>
+      <textarea id="subText" placeholder="把你的成果貼在這裡，或先按「套用這段的範本」照格式填"></textarea>
+    </div>
+    <div id="subImgWrap" style="margin-top:9px;display:none">
+      <div class="dropz" id="dropz">📷 點這裡選一張圖片上傳<br><small>手機截圖、AI 產出的畫面、白板照片都可以（10MB 內）</small></div>
+      <input id="subFile" type="file" accept="image/*" style="display:none">
+    </div>
+    <div class="hero-btns" style="justify-content:flex-start;margin-top:14px"><button class="btn btn-primary" id="subBtn" type="button">🚀 送出這一版</button></div>
+    <p class="muted-note" id="subStatus">選好段落就能送出，交幾版都會保留。</p>
+  </div>
+
+  <h3 class="h3" id="subListTitle">我們這桌的上傳紀錄</h3>
+  <div id="subList"><p class="muted-note">報到後選好段落，這裡會顯示你們這桌交過的版本。</p></div>
+
+  <h3 class="h3">🏆 各桌即時分數<span class="pill-live">每上傳 1 篇 ＋1，講師另有加碼</span></h3>
+  <div id="miniBoard" class="mboard"></div>
+  <p class="muted-note" style="margin-top:8px">投影版排行榜：<a href="board.html" target="_blank" rel="noopener">board.html</a></p>
+</div></section>
+
+<!-- ===================== 帶走 ===================== -->
+<section class="tab-section" data-tab="done"><div class="wrap">
+  <div class="sec-tag">15:50 - 16:00</div>
+  <h2 class="sec-title">帶回去做的事 🎁</h2>
+
+  <h3 class="h3">三小時總複習</h3>
+  <div class="grid g3">
+    <div class="card"><h3>PART 1　素材</h3><p><b>AI 做三件事</b>：變版本、變結論、變流程<br><b>R-T-C-F</b>：情境那段最關鍵<br><b>素材包</b>：你真正的競爭力</p></div>
+    <div class="card"><h3>PART 2　決策</h3><p><b>六個維度</b>：曝光到口碑，順序有意義<br><b>先給資料再問</b>：別問業績為何掉<br><b>ICE 排序</b>：逼自己只做三件</p></div>
+    <div class="card"><h3>PART 3　流程</h3><p><b>LV.1 到 LV.2</b>：把提示詞存起來重複用<br><b>檔期提前 21 天</b>：素材一次做完放著<br><b>觸發時機</b>：沒提醒就沒流程</p></div>
+  </div>
+  <div class="callout ok">這三件事有先後：沒有素材包就寫不出好內容，沒有數據就排不出優先順序，沒有流程就撐不過一個檔期。</div>
+
+  <h3 class="h3">現場示範：票選你最想解決的痛點</h3>
+  <div class="poll" id="poll_pain"></div>
+
+  <h3 class="h3">回去之後的 7 天行動清單</h3>
+  <p class="lead">勾起來會存到後台，講師看得到誰認真。不用一次做完，但不要一件都不做。</p>
+  <div id="d7Host"></div>
+  <label class="lb2" for="commitText">我的第一件事（越具體越好）</label>
+  <textarea id="commitText" placeholder="例：今晚把 A 商品的素材包打成一份文件，明天早上用提示詞 1-1 跑三版 IG 貼文"></textarea>
+  <div class="hero-btns" style="justify-content:flex-start;margin-top:10px">
+    <button class="btn btn-primary" id="saveCommit" type="button">💾 存起來</button>
+    <button class="btn btn-ghost" id="printCommit" type="button">🖨️ 列印／存 PDF</button>
+    <button class="btn btn-ghost" id="shareBtn" type="button">🔗 分享這一頁</button>
+  </div>
+  <p class="muted-note" id="commitStatus" style="margin-top:8px"></p>
+
+  <h3 class="h3">回到開場那張表：現在再估一次</h3>
+  <div class="callout">回「🚀 開始」分頁，把「用 AI 之後」那一欄填完，就會算出你省下多少。<button class="btn btn-ghost btn-sm" style="margin-left:8px" type="button" onclick="switchTab('start')">↩ 去填表</button><br><span class="muted-note">一個月後蝦皮的課後問卷會問你：今天的工具和行動清單，有沒有幫你省時間、提升效率？</span></div>
+
+  <h3 class="h3">回去之後最容易遇到的五個問題</h3>
+  <div class="tw"><table>
+    <thead><tr><th>你會遇到</th><th>原因</th><th>怎麼解</th></tr></thead>
+    <tbody>
+      <tr><td><b>AI 寫的還是很空</b></td><td>情境 Context 給太少</td><td>把素材包補完整，尤其是「常見客訴」跟「真實好評」</td></tr>
+      <tr><td><b>每次結果都不一樣</b></td><td>沒有固定提示詞</td><td>存成模板，只改變數，不要每次重打</td></tr>
+      <tr><td><b>做了一週就沒做了</b></td><td>沒有觸發時機</td><td>行事曆設重複提醒，時間到就做，不靠記憶</td></tr>
+      <tr><td><b>不敢把數據貼給 AI</b></td><td>擔心資料外洩</td><td>先把客人姓名、電話、地址遮掉，只留數字與問題內容</td></tr>
+      <tr><td><b>工具太多不知道用哪個</b></td><td>想一次全部學會</td><td>一次只加一個工具進流程，跑順了再加下一個</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><b>第四點特別重要：</b>任何含個資的資料，遮掉再貼。這是回去之後一定要建立的習慣。</div>
+
+  <h3 class="h3">參考來源與延伸資源</h3>
+  <ul class="srcs" id="srcList"></ul>
+
+  <div class="card dk" style="margin-top:18px"><h3>🛒 謝謝你的三小時</h3><p>工具會一直換，但「先建素材包、再看數字、最後跑流程」這個順序不會變。<br><b>何佳勳（小圭）</b>｜圭話行銷股份有限公司 創辦人｜AI 賦能講師・行銷顧問</p></div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div><b>AI 電商實戰工作坊</b>｜蝦皮大學 × 圭話行銷股份有限公司｜講師 何佳勳（小圭）</div>
+    <div class="fl">
+      <a href="https://atmarketing.tw/" target="_blank" rel="noopener" data-own="1">圭話行銷官網</a>
+      <a href="https://ecom.atmarketing.tw/" target="_blank" rel="noopener" data-own="1">電商營運工具箱</a>
+      <a href="https://university.shopee.tw/Course/615" target="_blank" rel="noopener">蝦皮大學課程頁</a>
+      <a href="board.html" target="_blank" rel="noopener">即時計分板</a>
+    </div>
+    <div class="muted-note" style="color:#c2aba4;margin-top:10px">本頁僅記錄課堂互動所需的桌號、暱稱與作業內容，課後匯出即刪除，不會用於其他用途。請勿在上傳內容中填寫客戶個資。</div>
+  </div>
+</footer>
+
+<div class="hud" id="hud" title="我的進度"><div class="bar"><i id="hudBar"></i></div><span class="gp" id="hudGp">👋 <small id="hudGpSub">點我報到</small></span></div>
+
+<div class="overlay" id="regOverlay" role="dialog" aria-modal="true" aria-labelledby="regTitle"><div class="modal">
+  <h2 id="regTitle">🙋 學員報到</h2>
+  <p class="sub">先選你坐的桌號，再填一個暱稱（或賣場名）。互動與作業都會算進你們這桌。</p>
+  <label>你坐第幾桌 *</label>
+  <div class="tpick" id="tpick"></div>
+  <label for="regNick">暱稱或賣場名 *</label>
+  <input id="regNick" type="text" maxlength="18" placeholder="例如：小圭 / 居家好物店">
+  <label for="regCat">你賣什麼（選填）</label>
+  <select id="regCat">
+    <option value="">不填也可以</option>
+    <option>居家生活</option><option>食品飲料</option><option>美妝保養</option>
+    <option>保健食品</option><option>母嬰用品</option><option>服飾配件</option>
+    <option>3C 家電</option><option>寵物用品</option><option>其他</option>
+  </select>
+  <div class="err" id="regErr">請選桌號，並填寫暱稱</div>
+  <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px" id="regBtn" type="button">開始 ▶</button>
+  <a class="skip" href="#" id="regSkip">先逛逛，等等再報到</a>
+</div></div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="printCard"></div>
+
+<script>
+(function(){
+  'use strict';
+  /* ---------- 設定 ---------- */
+  var SUPA_URL='https://dpglkagtzdwiovzbtase.supabase.co';
+  var KEY='sb_publishable_Tuj9p4DXvO-jEqVcBnumTg_TqZ1NnRu';
+  var COURSE='shopee-ai-workshop', STORE='shopee0922_v1', BUCKET='lw-workshop';
+  var TABLES=['第1桌','第2桌','第3桌','第4桌','第5桌','第6桌','第7桌'];
+  var UTM='utm_source=shopee-ai-workshop&utm_medium=workshop&utm_campaign=shopee-0922';
+  function todayStr(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+  var COHORT=(new URLSearchParams(location.search).get('c')||'').trim()||todayStr();
+  function H(){return {apikey:KEY,Authorization:'Bearer '+KEY};}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
+  function siteUTM(u){ if(!/^https?:\/\/[^/]*(ecom\.atmarketing\.tw|atmtut\.com|atmarketing\.tw)/.test(u)) return u; return u+(u.indexOf('?')>=0?'&':'?')+UTM; }
+  function track(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
+  async function fetchT(url,opt,ms){
+    opt=opt||{}; var c=new AbortController(), t=setTimeout(function(){c.abort();},ms||12000);
+    try{ return await fetch(url,Object.assign({},opt,{signal:c.signal})); } finally{ clearTimeout(t); }
+  }
+
+  /* ---------- 提示詞 ---------- */
+  var PROMPTS=[
+    {id:'c1',g:'core',t:'提示詞 1-1：商品內容一次到位',src:'簡報 p.65 到 66（兩頁已合併）',b:
+'# 角色 Role\n你是專門經營蝦皮賣場的資深電商小編，服務對象是【填入你的客群，例：25-35 歲的上班族女性】。\n你的文字口語、具體、不說空話，不使用誇大療效或最高級用語。\n\n# 任務 Task\n根據下方商品素材，一次產出四份素材：\n1. Instagram 貼文 3 版，每版 150 字內\n2. Facebook 貼文 1 版，250 字內\n3. 短影音腳本 1 支，30 秒，含前三秒鉤子與分鏡\n4. 直播開場 1 段，90 秒，含破冰與商品帶入\n\n# 情境 Context\n商品名稱：\n規格與材質：\n三個真實賣點：\n目標客群與使用情境：\n價格與檔期優惠：\n常見客訴或購買疑慮：\n已有的兩則真實好評：\n\n# 格式 Format\n用標題分段輸出，每一段結尾附上「這一版主打的賣點是什麼」一句話。\nIG 貼文附 10 個 hashtag。短影音腳本用表格：秒數 / 畫面 / 口白 / 字卡。\n所有內容都要能通過台灣廣告法規檢查，不得出現療效、絕對化、比較性用語。'},
+    {id:'c2',g:'core',t:'提示詞 1-4：商品情境圖',src:'簡報 p.61 · 直接貼給 ChatGPT 或 Gemini 生圖',b:
+'# 角色 Role\n你是電商商品攝影指導，擅長把商品放進真實生活情境，讓買家一眼看懂用途。\n\n# 任務 Task\n幫我生成 1 張商品情境圖，並附上你使用的畫面描述，方便我再調整。\n\n# 情境 Context\n商品：【商品名稱與外觀，建議同時上傳一張商品去背圖】\n使用情境：【誰、在哪裡、什麼時間、正在做什麼】\n要突顯的賣點：【只選一個，例：12 小時保溫】\n風格：【溫暖自然／高級質感／清新文青，三選一】\n\n# 格式 Format\n比例 1:1，商品清楚放在前景，約占畫面三分之一，背景淺景深，自然光。\n畫面中不要出現文字、浮水印或其他品牌標誌。'},
+    {id:'c3',g:'core',t:'提示詞 2-1：蝦皮賣場營運健檢',src:'簡報 p.85 到 86（兩頁已合併）',b:
+'# 角色 Role\n你是台灣電商營運顧問，專長是蝦皮賣場的成效診斷。你講話直接，只講可以驗證的推論，資料不足時你會明說「這一段資料不夠，我不下結論」，不編造原因。\n\n# 任務 Task\n根據下方六個維度的數據，完成三件事：\n1. 指出目前最可能的破口落在哪一段（曝光 / 點擊 / 轉換 / 客單 / 回購 / 口碑），並說明推論依據\n2. 列出 6 到 8 個具體可執行的改善項目\n3. 用 ICE（Impact 影響力 / Confidence 把握度 / Ease 容易度，各 1-10 分）評分並排序\n\n# 情境 Context\n賣場類型與主力商品：\n最近 30 天：商品曝光數＿＿ 瀏覽數＿＿ 轉換率＿＿ 客單價＿＿ 退貨率＿＿\n對照組（上個月同期）：曝光數＿＿ 瀏覽數＿＿ 轉換率＿＿ 客單價＿＿ 退貨率＿＿\n目前廣告投放狀況與月預算：\n人力狀況（幾個人在顧、每天可投入多少小時）：\n本季最想達成的目標：\n\n# 格式 Format\n先用一段話說結論，再用表格輸出改善項目：項目 / 對應維度 / I 分 / C 分 / E 分 / ICE 總分 / 預估完成時間。\n表格依 ICE 總分由高到低排序，最後給「本週只做三件」的建議清單，每件標註可驗證的成功指標。\n真的沒有數字的欄位就寫「無資料」，不要亂填。'},
+    {id:'c4',g:'core',t:'提示詞 2-2：競品分析',src:'簡報 p.76 到 77（兩頁已合併）',b:
+'# 角色 Role\n你是電商市場分析師，只根據我提供的實際資料下結論，不使用你的既有印象或推測。\n\n# 任務 Task\n比較下方三個競品，從五個維度做出對照分析：\n價格與促銷 / 商品頁 / 評價內容 / 社群與內容 / 出貨與服務。\n最後指出：對手最大的弱點是什麼，我最可能贏在哪一點。\n\n# 情境 Context\n我的商品與定位：\n競品 A（貼上商品頁重點資訊，或直接截圖上傳）：\n競品 B：\n競品 C：\n我目前的價格與出貨天數：\n\n# 格式 Format\n先輸出五維度對照表（維度 / 我 / A / B / C）。\n再輸出「機會點」三條，每條寫清楚：要做什麼、為什麼現在做、怎麼驗證有沒有效。\n資料不足的欄位一律寫「無資料」，不要推測。'},
+    {id:'c5',g:'core',t:'提示詞 3-1：時事靈感生成三平台貼文',src:'簡報 p.103 到 104（兩頁已合併）',b:
+'# 角色 Role\n你是台灣品牌的社群操盤手，熟悉 FB、IG、Threads 三個平台的內容差異與台灣網路輿論的敏感界線。\n\n# 任務 Task\n針對我提供的熱門話題，完成四件事：\n1. 可蹭度評分：從品牌相關性、安全性、時效性三面向各給 1-10 分，並給出「蹭 / 觀望 / 跳過」的明確結論\n2. 若結論是「蹭」，提出 3 個不同的切入角度，說明各自適合哪一種客群\n3. 選出最佳角度，產出 FB、IG、Threads 三平台完整貼文\n4. 標出這個題目最可能的翻車風險，以及規避寫法\n\n# 情境 Context\n熱門話題（貼上標題與 2-3 句描述）：\n我的品牌與主力商品：\n目標客群：\n品牌的語氣與禁忌（不能說的話）：\n\n# 格式 Format\n先輸出評分表（面向 / 分數 / 理由），再輸出結論一句話。\n三平台貼文分開標題呈現：FB 偏敘事 250 字內、IG 偏情緒 150 字內附 10 個 hashtag、Threads 偏對話 100 字內。\n最後用一段話寫「如果這題被罵，最可能是因為什麼」。\n\n# 硬性規則\n涉及天災傷亡、疾病、刑案、政治立場、族群爭議的話題，一律直接回覆「跳過」並提供替代題目，不得生成商品貼文。'},
+    {id:'c6',g:'core',t:'提示詞 3-2：下單到邀評的完整 SOP',src:'簡報 p.105 到 106（兩頁已合併）',b:
+'# 角色 Role\n你是蝦皮賣場的營運企劃，負責設計顧客從下單到回購的訊息流程。你的文字簡短、口語、不推銷過頭。\n\n# 任務 Task\n設計一套完整的顧客旅程訊息 SOP，涵蓋五個節點：下單確認、出貨前聊聊、到貨關懷、邀請評論、回購推播。\n每個節點請提供：\n1. 觸發條件（第幾天、什麼事件之後）\n2. 訊息文案（蝦皮聊聊版本，60 字內；LINE 版本，100 字內）\n3. 這封訊息的唯一目的（一句話）\n4. 什麼情況下應該跳過不發\n\n# 情境 Context\n商品類型與平均單價：\n商品的消耗或使用週期（幾天會用完或需要再買）：\n目前的出貨天數：\n最常見的三個購後問題：\n可以提供的回購誘因（折價券、贈品、會員點數）：\n\n# 格式 Format\n用表格輸出：節點 / 觸發時機 / 蝦皮聊聊文案 / LINE 文案 / 唯一目的 / 跳過條件。\n表格後面補一段「這套流程上線後，兩週內要看哪三個數字」。\n\n# 硬性規則\n所有文案不得索取或處理顧客個資，不得承諾平台規則以外的補償，不得使用療效或絕對化用語。'},
+    {id:'f1',g:'flow',t:'R-T-C-F 四格填空（換商品只改 C）',src:'簡報 p.32 保溫瓶範例改成填空版',b:
+'R：你是專做【你的品類，例：上班族通勤用品】的蝦皮賣場小編\nT：寫 3 版 IG 貼文，每版 150 字內\nC：【商品名稱與規格，例：日本 316 不鏽鋼保溫瓶，12 小時保溫保冷，230g】，\n　　【檔期優惠，例：週年慶 85 折】，【客群，例：25-35 歲上班族】\nF：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag'},
+    {id:'f2',g:'flow',t:'校正三招：把不準的結果修回來',src:'簡報 p.33',b:
+'第 1 招 給範例：\n參考下面這篇我覺得寫得好的貼文，語氣和長度照這個來寫。\n【貼上你覺得好的那一篇】\n\n第 2 招 指出錯在哪：\n第二段太誇張了，改成實際使用一週的感受，不要用最、第一這種字。\n\n第 3 招 叫它先問你：\n開始寫之前，先問我 5 個問題，確認你需要的商品資訊，我回答完你再寫。'},
+    {id:'f3',g:'flow',t:'結合時事寫貼文（我是誰＋想做什麼＋目的）',src:'簡報 p.35 到 36 工作流範例',b:
+'我販售【商品，例：蘇打餅】，特色是【特色，例：減去過多的食品添加物，加上營養的天然食材如藜麥】，\n我要針對近期 Google 上最熱門的時事「【熱點關鍵字】」進行社群貼文撰寫，\n目的是銷售，希望電商月銷售額從【現在數字】變【目標數字】。\n\n請先告訴我這個熱點適不適合我的品牌蹭，再寫兩個版本：一個溫暖貼近風格，一個資訊導向加信任訴求。\n每一篇都要有：痛點開場、真實情境、產品優勢、限定優惠、CTA、互動提問。'},
+    {id:'f4',g:'flow',t:'十個高點閱率標題 ＋ 四個進階追問',src:'簡報 p.52 到 53',b:
+'我賣【商品】，特色是【特色】，想要【誰】來買，給我十個高點閱率的標題。\n\n（拿到之後接著問，一次問一句）\n延伸標題：根據第 X 個再產出 10 個標題\n社群文案：根據第 X 個標題，寫社群文案\n行銷活動：根據上面寫行銷活動\n產生圖片：根據上面做一張社群用圖'},
+    {id:'f5',g:'flow',t:'換風格寫同一篇（瓊瑤／金庸／偶像劇／哈利波特／譬喻）',src:'簡報 p.46 到 51',b:
+'先寫基本版：\n我是【行業，例：彰化旅遊公司】，近期的優惠是【活動，例：春節出遊行程優惠】，幫我寫一篇貼文。\n\n再換風格（一次挑一個）：\n使用瓊瑤風格寫\n使用金庸風格寫\n使用偶像劇風格寫\n使用哈利波特風格寫\n幫我用譬喻的方式寫文（例如：旅行就像一本還沒寫完的小說）\n\n最後請它比較：這幾個版本分別適合哪一種客群、放哪一個平台。'},
+    {id:'f6',g:'flow',t:'ICE 排序：逼自己這週只做三件',src:'簡報 p.81',b:
+'以下是我列出的 8 件待辦，請用 Impact（影響力）、Confidence（把握度）、Ease（容易度）分別評分並排序，\n說明每一項的評分理由，最後給我本週只做三件的建議。\n\n【貼上你的待辦清單】'},
+    {id:'f7',g:'flow',t:'競品五維度：五句直接問',src:'簡報 p.75',b:
+'價格與促銷：比較這三個賣場的實際到手價，列出誰最便宜、差多少\n商品頁：這三個商品頁，賣點的排序有什麼不同，誰的第一屏最有說服力\n評價內容：把這些評價分成五類，告訴我對手最大的弱點是什麼\n社群與內容：這個對手最近 20 篇貼文，哪三種型態互動最好\n出貨與服務：整理出這三家的出貨與退換貨條件差異表'},
+    {id:'f8',g:'auto',t:'ChatGPT 代理模式：每天早上自己跑一次',src:'簡報 p.55 · 需要 ChatGPT 代理程式功能',b:
+'每天早上 9 點到以下網站查詢\nhttps://trends.google.com.tw/trending?geo=TW&sort=search-volume\n找出 48 小時內搜尋量有高於 20000 的主題，列出這些主題，並針對我的產品【你的商品】，\n產品介紹到【你的商品網址】查看，根據產品特性與今日熱點，來撰寫一篇貼文。\n我的目的是讓消費者看了會感興趣進而點進來網站購買產品，每個主題幫我寫一篇 500 字左右的社群貼文，\n我要使用內容矩陣，針對 IG / FB / Threads，根據不同平台客群特性撰寫內容。\n如果當天搜尋量沒有超過 20000 的主題，就改為選前三個主題來撰寫內容即可。\n如果遇到問題需要停止，依據我的主要目的幫我決定即可。'},
+    {id:'f9',g:'auto',t:'客服對話變 FAQ ＋ 自動回覆模板',src:'簡報 p.87 到 88 延伸',b:
+'# 角色 Role\n你是蝦皮賣場的客服主管，擅長把重複問題整理成可以直接貼上商品頁的 FAQ。\n\n# 任務 Task\n我會貼上最近 30 則客服對話（個資已遮蔽）。請你：\n1. 歸納出重複出現的問題，依出現次數排序\n2. 每一題寫成 FAQ：問題一句、回答三句內、語氣親切不推銷\n3. 針對前五題，各寫一段「自動回覆」版本，60 字內\n4. 指出哪些問題應該改商品頁而不是回答（例如規格沒寫清楚）\n\n# 情境 Context\n商品類型：\n目前出貨天數：\n【貼上 30 則對話，姓名、電話、地址請先遮掉】\n\n# 格式 Format\n表格輸出：排序 / 問題 / FAQ 回答 / 自動回覆版 / 建議改哪裡。'},
+    {id:'f10',g:'auto',t:'檔期 30 天作戰：一次把四段素材做完',src:'簡報 p.98 延伸（D-21 一次做完）',b:
+'# 角色 Role\n你是蝦皮賣場的檔期企劃，熟悉台灣電商的檔期節奏。\n\n# 任務 Task\n幫我規劃【檔期名稱，例：雙 11】的 30 天作戰流程，並一次把四個階段的素材都寫出來：\nD-14 預熱、D-7 預購、D-Day 當天衝刺、D+3 收尾補貨。\n每個階段給我：要做的事、要準備的素材清單、一則可直接用的文案。\n\n# 情境 Context\n主力商品與售價：\n這次檔期的優惠機制：\n庫存與出貨能力：\n可用的通路（蝦皮聊聊、LINE、IG、FB、EDM）：\n\n# 格式 Format\n先給一張時間表（日期 / 階段 / 要做的事 / 素材），再依階段附上文案。\n最後提醒我：哪三件事如果沒提前做，當天一定會出事。'}
+  ];
+
+  /* ---------- 工具 ---------- */
+  var TOOLS_A=[
+    {n:'社群貼文產生器',s:1,d:'輸入一次商品資訊，同時產出 IG、FB、LINE、Threads 四個平台的貼文，語氣長度 hashtag 分開處理。',u:'https://ecom.atmarketing.tw/social-post'},
+    {n:'短影音腳本產生器',s:1,d:'給主題和秒數，一次出三版（情境共鳴、反差幽默、數據衝擊），含前三秒鉤子與分鏡。',u:'https://ecom.atmarketing.tw/short-video-script'},
+    {n:'直播腳本產生器',s:1,d:'輸入商品與直播時長，產出有時間軸的腳本：開場、商品輪播、逼單話術、收尾。',u:'https://ecom.atmarketing.tw/live-script'},
+    {n:'熱點借勢決策台',s:1,d:'先幫你判斷這個熱點能不能蹭（相關性、安全性、時效性），再產出 IG／Threads／FB 三平台貼文。',u:'https://ecom.atmarketing.tw/trend-piggyback'},
+    {n:'AI 商品情境圖 Prompt 設計器',s:1,d:'輸入商品、客群、想拍的情境，一次產出 15 組生圖提示詞，貼到 ChatGPT 或 Gemini 就能出圖。',u:'https://ecom.atmarketing.tw/product-scene-prompt'},
+    {n:'商品主圖文案產生器',s:1,d:'主圖上那一句字怎麼寫，一次給 5 組方案，附配色與字體建議。',u:'https://ecom.atmarketing.tw/hero-image-text'}
+  ];
+  var TOOLS_B=[
+    {n:'社群輿情雷達',s:1,d:'全球與台灣熱榜、輿情監測、競品廣告一站彙整。時事貼文流程的第一站。',u:'https://ecom.atmarketing.tw/trend'},
+    {n:'多通路營收儀表板',s:1,d:'把蝦皮、momo、PChome 等十大平台數據整合成一頁，AI 直接給營運洞察與可執行方案。',u:'https://ecom.atmarketing.tw/dashboard'},
+    {n:'電商體檢報告',s:1,d:'回答 10 道營運現況題，得到健康分數與弱項排序，適合當「該從哪開始改」的起點。',u:'https://ecom.atmarketing.tw/store-checkup'},
+    {n:'競品追蹤器',s:0,d:'簡報上的「競品監控雷達」就是這支。它是單次快照比較，不是自動監控：填入你和三個對手的數字，出排名表與 SWOT。蝦皮頁面會擋抓取，請用截圖或手動填；月銷量是 AI 推估值。',u:'https://ecom.atmarketing.tw/competitor'},
+    {n:'FAQ 萃取器',s:0,d:'簡報提到的那支：貼上客服歷史對話，萃取 20 到 30 則 FAQ 並標出可以自動回覆的題目。',u:'https://ecom.atmarketing.tw/faq-extractor'},
+    {n:'結帳流程診斷',s:0,d:'簡報上的「結帳流程健檢」。貼結帳流程或網址，找出運費、金流、取貨選項的摩擦點並排修復順序。',u:'https://ecom.atmarketing.tw/checkout-flow-audit'},
+    {n:'客服回覆產生器',s:1,d:'貼上客人的訊息，三秒產出專業又不失溫度的回覆，可搭配 FAQ 萃取整批對話。',u:'https://ecom.atmarketing.tw/cs-reply'},
+    {n:'促銷檔期日曆',s:1,d:'全年電商大檔期整理成一張日曆，附備貨提醒與促銷文案建議。',u:'https://ecom.atmarketing.tw/promo-calendar'},
+    {n:'AI 工作流範本庫',s:1,d:'七大經典電商工作流現成範本，每個步驟都附 AI 提示詞（雙 11 30 天、新品上市 14 天等）。',u:'https://ecom.atmarketing.tw/workflow-templates'},
+    {n:'評論索取 SOP 設計師',s:1,d:'產出 EDM、LINE、SMS 三頻道的請評論話術，並告訴你最佳發送時機。',u:'https://ecom.atmarketing.tw/review-request-designer'},
+    {n:'電商營運工具箱（全站）',s:0,d:'200 個電商 AI 工具全部免費，登入後每天有免費額度。找不到的工具用站上搜尋。',u:'https://ecom.atmarketing.tw/'}
+  ];
+  var TOOLS_D=[
+    {n:'蝦皮手續費試算器',s:1,d:'輸入售價或目標利潤，雙向試算蝦皮各項費用與你實際拿到多少。定價、做活動前先跑這支。',u:'https://ecom.atmarketing.tw/shopee-fee-calc'},
+    {n:'關鍵字探勘',s:0,d:'找出買家實際在搜什麼。改蝦皮標題前先跑，標題關鍵字覆蓋才有依據。',u:'https://ecom.atmarketing.tw/keyword-digger'},
+    {n:'商品標題健檢',s:0,d:'AI 幫你的標題打分數，指出缺了哪一類關鍵字。',u:'https://ecom.atmarketing.tw/title-scorer'},
+    {n:'標題 A/B 變體機',s:0,d:'一個商品產 10 個標題與點擊率預估，跟標題健檢一組用。',u:'https://ecom.atmarketing.tw/title-ab'},
+    {n:'商品頁轉換率診斷',s:0,d:'有流量沒轉換時用這支找病因，對應今天的「轉換」維度。',u:'https://ecom.atmarketing.tw/page-doctor'},
+    {n:'整檔促銷方案總設計器',s:0,d:'一個檔期同時試算五種促銷組合（全店折、滿額階梯、買 X 送 Y、組合包、限時）與利潤對比。雙 11 前必跑。',u:'https://ecom.atmarketing.tw/promo-package-designer'},
+    {n:'庫存備貨計算機',s:0,d:'安全庫存、再訂購點、檔期備貨量，不再憑感覺叫貨。',u:'https://ecom.atmarketing.tw/stock-planner'},
+    {n:'購買異議話術庫',s:0,d:'太貴、怕假貨、運費貴、再想想，每種三種回法。蝦皮聊聊實戰很好用。',u:'https://ecom.atmarketing.tw/objection-handler'},
+    {n:'商品評價回覆產生器',s:0,d:'好評感謝、差評滅火三秒搞定，對應今天的「口碑」維度。',u:'https://ecom.atmarketing.tw/review-reply'},
+    {n:'直播切片腳本拆解器',s:0,d:'貼直播逐字稿，拆出 5 到 8 條短影音切片腳本含時間戳。直播主變現最快的一支。',u:'https://ecom.atmarketing.tw/live-clip-scripter'},
+    {n:'跨平台上架轉換器',s:0,d:'一份商品資料轉成多平台上架格式，蝦皮轉 momo 或官網很省事。',u:'https://ecom.atmarketing.tw/listing-converter'},
+    {n:'IG Reels 鉤點設計器',s:0,d:'前三秒鉤點 × 10 種公式，短影音腳本寫不出開頭時用。',u:'https://ecom.atmarketing.tw/ig-reels-hook'}
+  ];
+  var TOOLS_C=[
+    {n:'ChatGPT',s:1,d:'今天三段實作的主力。提示詞複製過去就能跑，付費版可用代理模式排每天自動跑。',u:'https://chatgpt.com/'},
+    {n:'Gemini',s:1,d:'與 Google 文件、表單、信件整合好用，生圖與讀長檔案也強。',u:'https://gemini.google.com/app'},
+    {n:'Manus',s:0,d:'會自己動手做完整份任務的 AI 代理，適合「整理競品、做成一份報告」這種多步驟工作。',u:'https://manus.im/invitation/XH1GG4CT5VGK1A2?utm_source=invitation&utm_medium=social&utm_campaign=copy_link'},
+    {n:'Google Trends 台灣熱搜',s:1,d:'代理模式提示詞裡用的那個網址，看 48 小時內的熱門搜尋。',u:'https://trends.google.com.tw/trending?geo=TW&sort=search-volume'},
+    {n:'蝦皮大學課程頁（本場次）',s:0,d:'課程資訊與後續課程都在這裡。',u:'https://university.shopee.tw/Course/615'},
+    {n:'蝦皮賣家幫助中心',s:0,d:'規範與檔期公告以此為準，課堂講的檔期節奏是整理版。',u:'https://seller.shopee.tw/edu/article/27617'},
+    {n:'四大受眾 × 廣告五門',s:0,d:'講師整理的受眾與廣告切角表，寫文案前先想清楚賣給誰。',u:'https://atmtut.com/廣告五門'},
+    {n:'2026 購物節檔期參考',s:0,d:'全年購物節節奏的公開整理，搭配促銷檔期日曆看。',u:'https://bejias.com/article/shopping-festival-2026'},
+    {n:'圭話行銷官網',s:0,d:'講師的公司網站，企業內訓與顧問服務。',u:'https://atmarketing.tw/'}
+  ];
+  var SOURCES=[
+    {n:'電商營運工具箱（本課使用工具站）',u:'https://ecom.atmarketing.tw/'},
+    {n:'圭話行銷股份有限公司',u:'https://atmarketing.tw/'},
+    {n:'蝦皮大學課程頁（本場次）',u:'https://university.shopee.tw/Course/615'},
+    {n:'蝦皮賣家幫助中心（規範與檔期公告以此為準）',u:'https://seller.shopee.tw/edu/article/27617'},
+    {n:'2026 購物節檔期節奏參考',u:'https://bejias.com/article/shopping-festival-2026'},
+    {n:'Google Trends 台灣熱搜',u:'https://trends.google.com.tw/trending?geo=TW&sort=search-volume'}
+  ];
+
+  /* ---------- 互動題 ---------- */
+  var POLLS={
+    lv:{q:'先問一題：你現在用 AI 的程度到哪裡？',o:[['A','完全沒用過，或只有玩過幾次'],['B','偶爾拿來寫文案，但每次都要重打一次'],['C','有固定幾組提示詞在用，會存起來重複用'],['D','已經串成流程，甚至接了自動化']],hint:'投完看全場比例，等一下的節奏會照現場程度調整。'},
+    fake:{q:'三真一假：你覺得哪一個是假的？',o:[['A','「小圭」這個外號，是把「佳」字右半邊拆開來的'],['B','蝦皮直播第一次三萬，第二次破百萬營業額'],['C','一個月虛擬貨幣交易 1 億美金'],['D','Podcast《圭話行銷》已經連續更新超過 100 集']],hint:'答案講師現場公布，先投再說。'},
+    q1:{q:'PART 1 互動題①：下面哪一種工作，最適合現在就交給 AI？',o:[['A','決定這一季主推哪三支商品'],['B','把 30 則客服對話整理成 FAQ'],['C','跟供應商談進貨價'],['D','判斷這個熱點該不該蹭']],ans:'B',
+      why:'AI 最強的地方是「讀很多、輸出結構化的結果」。30 則對話丟進去，它可以歸納出重複問題、寫成 FAQ、再產出自動回覆話術，這件事你自己做要一小時，它三分鐘就給你初稿。',
+      ext:'A 和 C 需要你的商業判斷與談判籌碼，AI 只能給你參考資料；D 是介於中間，AI 可以幫你評分，但要不要蹭最後還是你決定，熱點借勢決策台就是在做這件事。'},
+    q2:{q:'PART 1 互動題②：R-T-C-F 裡面，哪一段沒寫好，最容易讓 AI 寫出「誰都能用」的空話？',o:[['A','R 角色'],['B','T 任務'],['C','C 情境'],['D','F 格式']],ans:'C',
+      why:'角色、任務、格式沒寫好，頂多是語氣不對或格式要重排，改一下就好。但情境給得不夠，AI 手上沒有你的商品資料，只能寫出一般化的內容，所以你才會覺得「看起來很順但不能用」。',
+      ext:'回去之後，把每支主力商品的素材包各建一份文件存起來。以後要寫任何東西，都是把同一份素材包貼進 C 那一段，這就是你自己的內容資產。'},
+    q3:{q:'PART 2 互動題①：商品「瀏覽數正常、加入購物車正常，但結帳掉一半」，最該先修哪裡？',o:[['A','再加廣告預算把流量拉高'],['B','檢查運費、金流與結帳流程'],['C','把主圖重拍一次'],['D','多發幾篇社群貼文']],ans:'B',
+      why:'瀏覽和加購都正常，代表曝光、點擊、商品頁說服力這三段沒問題，破口在最後一段。這時候加預算等於把更多人帶到同一個破洞前面，錢會直接漏掉。',
+      ext:'常見的結帳破口：運費在最後一步才出現、免運門檻差一點點卻沒提示、超商取貨選項不夠、付款方式太少。'},
+    q4:{q:'PART 2 互動題②：把客服對話丟給 AI，最有價值的產出是哪一個？',o:[['A','一封更客氣的回覆'],['B','一份 FAQ 加上自動回覆模板'],['C','客服人員的績效評分'],['D','客人的個人資料整理']],ans:'B',
+      why:'單筆回覆只解決一次，FAQ 解決的是「以後所有人都會問的這件事」。把重複問題寫進商品頁與自動回覆，客服量會實際下降，而且降下來的是最沒有價值的那部分工時。',
+      ext:'D 涉及個資，不要把客人的姓名、電話、地址丟進任何 AI 工具。整理前先把個資遮掉，只留問題內容。這是回去之後一定要建立的習慣。'},
+    q5:{q:'PART 3 互動題①：一條工作流最容易死掉的原因是什麼？',o:[['A','提示詞寫得不夠好'],['B','沒有設定固定的觸發時機'],['C','工具選錯了'],['D','AI 模型不夠新']],ans:'B',
+      why:'提示詞不好可以慢慢改，工具不合可以換，模型每隔幾個月就會更新。但一條流程如果沒有「什麼時候該跑」的觸發條件，它就只會存在你的文件裡，永遠不會被執行。',
+      ext:'最低成本的做法：手機行事曆設重複提醒。每天早上 9 點看輿情雷達，每週一上午做競品檢查，每月 25 號排下個月檔期。三個提醒，比任何自動化工具都有效。'},
+    pain:{q:'最後 10 分鐘：你最想看我現場示範哪一題？',o:[['1','有很多想法，但不知道怎麼下指令（22%）'],['2','AI 生成的內容不夠精準（18%）'],['3','商品圖片普通，突顯不出賣點（16%）'],['4','不知道怎麼設計商品情境圖（12%）'],['5','做商品圖文或影片太花時間（10%）'],['6','不會寫短影音腳本（8%）'],['7','商品文案寫不出吸引力（6%）'],['8','想做自動化，不知道從哪開始']],hint:'每人投一次，票數最高的那一題，講師現場直接做給你看。'}
+  };
+  var pollAgg={}, pollN={};
+  Object.keys(POLLS).forEach(function(k){pollAgg[k]={};pollN[k]=0;});
+
+  /* ---------- 作業 ---------- */
+  var TASKS=[['t1','實作 1：一個商品，四種素材一次做完'],['t2','實作 2：營運健檢 ＋ ICE 前三名'],['t3','實作 3：我明天就能跑的工作流'],['other','其他／加碼分享']];
+  var TASKMAP={}; TASKS.forEach(function(x){TASKMAP[x[0]]=x[1];});
+  var HINT={
+    t1:'貼上你的商品素材包，或 AI 產出的貼文／短影音腳本。<b>加分：</b>寫出「只有你的商品才寫得出來」的那一句。',
+    t2:'貼上 AI 指出的破口與 ICE 前三名。<b>加分：</b>第一件事要具體到可以用數字驗證。',
+    t3:'貼上你的五個節點（誰做、什麼時候做、用哪個工具），以及你設的提醒時間。',
+    other:'任何想分享的成果都可以交在這裡，截圖也行。'
+  };
+  var TPL={
+    t1:'【商品】\n【三個真實賣點】\n1.\n2.\n3.\n【客群與使用情境】\n【價格與檔期優惠】\n【AI 產出裡我最滿意的一句】\n【只有我的商品才寫得出來的那一句】',
+    t2:'【我的破口在哪一段】曝光／點擊／轉換／客單／回購／口碑\n【推論依據（數字）】\n【ICE 前三名】\n1. ＿＿＿（I＿ C＿ E＿ ＝＿）\n2. ＿＿＿（I＿ C＿ E＿ ＝＿）\n3. ＿＿＿（I＿ C＿ E＿ ＝＿）\n【這週第一件事】\n【做完怎麼驗證】',
+    t3:'【我挑的流程】時事貼文／檔期 30 天／下單到邀評\n【節點 1】誰做＿＿ 什麼時候＿＿ 用什麼工具＿＿\n【節點 2】\n【節點 3】\n【節點 4】\n【節點 5】\n【我設的提醒】每＿＿ 的＿＿點',
+    other:''
+  };
+  var D7=[
+    ['Day 1','建立第一份商品素材包','挑一支主力商品，把規格、賣點、客群、價格、常見疑慮打成一份文件'],
+    ['Day 2','把三段提示詞存起來','把今天的提示詞存到你常用的地方，改成你自己的版本'],
+    ['Day 3','跑一次營運健檢','用實作 2 的提示詞跑一次，把 ICE 前三名寫下來'],
+    ['Day 4','設定競品追蹤','挑 3 個真正的直接競品，建立追蹤'],
+    ['Day 5','排下一個檔期','打開檔期日曆，把下一個大檔往前推 14 天設提醒'],
+    ['Day 6','寫下一條 SOP','下單到邀評，五個節點的訊息先寫好'],
+    ['Day 7','設三個重複提醒','每天早上看輿情、每週一看競品、每月 25 號排檔期']
+  ];
+  var TIME_TASKS=['寫一篇商品社群貼文','寫一支 30 秒短影音腳本','整理一週的客服常見問題','準備一個檔期的行銷素材'];
+
+  /* ---------- 狀態 ---------- */
+  var state={table:'',nick:'',cat:'',d7:[false,false,false,false,false,false,false],commitText:'',quiz:{},tmin:[['',''],['',''],['',''],['','']],freq:4,tools:{}};
+  try{var raw=localStorage.getItem(STORE);if(raw){var ps=JSON.parse(raw);if(ps.cohort===COHORT){
+    state.table=ps.table||'';state.nick=ps.nick||'';state.cat=ps.cat||'';
+    state.d7=(ps.d7&&ps.d7.length===7)?ps.d7:state.d7;state.commitText=ps.commitText||'';
+    state.quiz=ps.quiz||{};state.tmin=(ps.tmin&&ps.tmin.length===4)?ps.tmin:state.tmin;
+    state.freq=ps.freq||4;state.tools=ps.tools||{};
+  }}}catch(e){}
+  function save(){try{localStorage.setItem(STORE,JSON.stringify({cohort:COHORT,table:state.table,nick:state.nick,cat:state.cat,d7:state.d7,commitText:state.commitText,quiz:state.quiz,tmin:state.tmin,freq:state.freq,tools:state.tools}));}catch(e){}}
+  function loggedIn(){return !!(state.table&&state.nick);}
+  function myCode(){return state.table+'｜'+state.nick;}
+  function me(){return state.nick;}
+
+  /* ---------- Supabase 同步 ---------- */
+  function payload(){
+    return {course:COURSE,cohort:COHORT,code:myCode(),name:state.nick,office:state.table+(state.cat?'｜'+state.cat:''),
+      commit_checks:state.d7,commit_text:state.commitText||'',
+      quiz:Object.assign({},state.quiz,{d7:state.d7,tmin:state.tmin,freq:state.freq,cat:state.cat}),
+      score:0,cert_at:null};
+  }
+  async function syncRow(){
+    if(!loggedIn())return false;
+    try{
+      var r=await fetchT(SUPA_URL+'/rest/v1/lw_line_students?on_conflict=course,cohort,code',{method:'POST',
+        headers:Object.assign(H(),{'Content-Type':'application/json',Prefer:'resolution=merge-duplicates,return=minimal'}),
+        body:JSON.stringify(payload())},15000);
+      return r.ok;
+    }catch(e){return false;}
+  }
+  async function fetchMe(){
+    if(!loggedIn())return null;
+    try{
+      var u=SUPA_URL+'/rest/v1/lw_line_students?course=eq.'+encodeURIComponent(COURSE)+'&cohort=eq.'+encodeURIComponent(COHORT)+'&code=eq.'+encodeURIComponent(myCode())+'&select=quiz,commit_text,commit_checks';
+      var r=await fetchT(u,{headers:H()},12000); var rows=await r.json();
+      return Array.isArray(rows)&&rows[0]?rows[0]:null;
+    }catch(e){return null;}
+  }
+
+  /* ---------- 分頁 ---------- */
+  function switchTab(t){
+    document.querySelectorAll('.tab-section').forEach(function(s){s.classList.toggle('active',s.getAttribute('data-tab')===t);});
+    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-tab')===t);});
+    window.scrollTo({top:0,behavior:'smooth'});
+    track('tab',{tab:t});
+    if(t==='upload'){loadSubs();loadBoard();}
+    if(t==='start'||t==='p1'||t==='p2'||t==='p3'||t==='done')refreshPollStats();
+  }
+  window.switchTab=switchTab;
+
+  function toast(m){var el=document.getElementById('toast');el.textContent=m;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('show');},2600);}
+
+  /* ---------- 投票 ---------- */
+  function renderPoll(k){
+    var host=document.getElementById('poll_'+k); if(!host)return;
+    var P=POLLS[k], mine=state.quiz[k], voted=!!mine, n=pollN[k]||0;
+    var html='<div class="q">'+esc(P.q)+'</div>';
+    P.o.forEach(function(o){
+      var c=(pollAgg[k]&&pollAgg[k][o[0]])||0, pct=n?Math.round(c/n*100):0;
+      html+='<button class="popt'+(mine===o[0]?' mine':'')+'" type="button" data-poll="'+k+'" data-v="'+o[0]+'">'
+        +(voted?'<span class="bar" style="width:'+pct+'%"></span>':'')
+        +'<span class="k">'+o[0]+'</span><span class="lb">'+esc(o[1])+'</span>'
+        +(voted?'<span class="pc">'+pct+'%</span>':'')+'</button>';
+    });
+    html+='<div class="n">'+(voted?('目前 '+n+' 人作答'+(P.hint?' · '+esc(P.hint):'')):(P.hint?esc(P.hint):'點一個選項投票'))+'</div>';
+    if(P.ans){
+      html+='<div class="ansbox'+(voted?' show':'')+'"><div class="a">✅ 正解：'+P.ans+'　'+esc((P.o.filter(function(o){return o[0]===P.ans;})[0]||['',''])[1])+'</div>'
+        +'<p><b>為什麼：</b>'+esc(P.why)+'</p><div class="ext"><b>課堂延伸：</b>'+esc(P.ext)+'</div></div>';
+    }
+    host.innerHTML=html;
+  }
+  function renderAllPolls(){Object.keys(POLLS).forEach(renderPoll);}
+  async function vote(k,v){
+    if(!loggedIn()){toast('先報到才能投票');openReg();return;}
+    state.quiz[k]=v; save(); renderPoll(k);
+    track('poll_vote',{poll:k,value:v});
+    await syncRow(); refreshPollStats();
+  }
+  async function refreshPollStats(){
+    try{
+      var u=SUPA_URL+'/rest/v1/lw_line_students?course=eq.'+encodeURIComponent(COURSE)+'&cohort=eq.'+encodeURIComponent(COHORT)+'&select=quiz';
+      var r=await fetchT(u,{headers:H()},12000); var rows=await r.json(); if(!Array.isArray(rows))return;
+      Object.keys(POLLS).forEach(function(k){pollAgg[k]={};pollN[k]=0;});
+      rows.forEach(function(row){
+        var q=row.quiz||{};
+        Object.keys(POLLS).forEach(function(k){ var v=q[k]; if(v){pollAgg[k][v]=(pollAgg[k][v]||0)+1;pollN[k]++;} });
+      });
+      renderAllPolls();
+    }catch(e){}
+  }
+
+  /* ---------- 時間對照 ---------- */
+  function renderTime(){
+    document.getElementById('timeRows').innerHTML=TIME_TASKS.map(function(t,i){
+      var a=state.tmin[i][0], b=state.tmin[i][1];
+      var save=(a!==''&&b!=='')?Math.max(0,(+a)-(+b)):'';
+      return '<tr><td><b>'+(i+1)+'. '+esc(t)+'</b></td>'
+        +'<td><input type="number" min="0" max="999" data-tm="'+i+'" data-col="0" value="'+esc(a)+'"> 分</td>'
+        +'<td><input type="number" min="0" max="999" data-tm="'+i+'" data-col="1" value="'+esc(b)+'"> 分</td>'
+        +'<td><b style="color:var(--orange)">'+(save===''?'＿':save+' 分')+'</b></td></tr>';
+    }).join('');
+    calcTime();
+  }
+  function calcTime(){
+    var tot=0, filled=0;
+    state.tmin.forEach(function(p){ if(p[0]!==''&&p[1]!==''){ tot+=Math.max(0,(+p[0])-(+p[1])); filled++; } });
+    var el=document.getElementById('timeOut');
+    if(!filled){ el.textContent='先填「現在花多久」，下課前再回來填「用 AI 之後」。'; return; }
+    var f=state.freq||4, yr=Math.round(tot*f*12/60*10)/10;
+    el.innerHTML='這四件事每做一輪，省下 <b>'+tot+'</b> 分鐘。一個月各做 '+f+' 次的話，<b>一年省下 '+yr+' 小時</b>（約 '+(Math.round(yr/8*10)/10)+' 個工作天）。'
+      +(filled<4?'<br><span class="muted-note">還有 '+(4-filled)+' 列沒填完。</span>':'');
+  }
+  function timeText(){
+    var lines=['我的 AI 時間差對照（AI 電商實戰工作坊 2026/09/22）'];
+    TIME_TASKS.forEach(function(t,i){var p=state.tmin[i];lines.push((i+1)+'. '+t+'：'+(p[0]||'＿')+' 分 → '+(p[1]||'＿')+' 分');});
+    lines.push('一個月各做 '+(state.freq||4)+' 次');
+    lines.push(document.getElementById('timeOut').textContent.replace(/\s+/g,' '));
+    return lines.join('\n');
+  }
+
+  /* ---------- 提示詞 ---------- */
+  function renderPrompts(f){
+    var host=document.getElementById('promptHost');
+    host.innerHTML=PROMPTS.filter(function(p){return !f||f==='all'||p.g===f;}).map(function(p){
+      var badge=p.g==='core'?'<span class="badge">三段實作</span>':(p.g==='auto'?'<span class="badge g">流程與自動化</span>':'<span class="badge t">素材與文案</span>');
+      return '<div class="tcard" id="prompt_'+p.id+'">'
+        +'<div class="hd"><h3>'+esc(p.t)+'</h3>'+badge+'</div>'
+        +'<div class="pbody" id="pb_'+p.id+'">'+esc(p.b)+'</div>'
+        +'<div class="prow"><button class="btn btn-primary btn-sm" data-cp="'+p.id+'" type="button">📋 複製提示詞</button>'
+        +'<button class="btn btn-ghost btn-sm" data-ex="'+p.id+'" type="button">展開全文</button>'
+        +'<span class="ai-go"><a href="https://chatgpt.com/" target="_blank" rel="noopener">🤖 開 ChatGPT</a><a href="https://gemini.google.com/app" target="_blank" rel="noopener">✨ 開 Gemini</a></span>'
+        +'<span class="src">'+esc(p.src)+'</span></div></div>';
+    }).join('');
+  }
+  function copyTxt(btn,txt,okMsg){
+    var done=function(){var o=btn.innerHTML;btn.innerHTML='✓ 已複製';toast(okMsg||'✓ 已複製，貼到 ChatGPT 或 Gemini');setTimeout(function(){btn.innerHTML=o;},1600);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallback(txt);done();});}
+    else{fallback(txt);done();}
+    function fallback(t){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);}
+  }
+  function goPrompt(id){
+    switchTab('prompts'); renderPrompts('all');
+    document.querySelectorAll('.pfilter').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-pf')==='all');});
+    setTimeout(function(){
+      var el=document.getElementById('prompt_'+id); if(!el)return;
+      el.scrollIntoView({behavior:'smooth',block:'center'});
+      el.style.boxShadow='0 0 0 3px rgba(238,77,45,.35)';
+      setTimeout(function(){el.style.boxShadow='';},2200);
+    },160);
+  }
+  window.goPrompt=goPrompt;
+
+  /* ---------- 工具卡 ---------- */
+  function toolCard(t){
+    var href=siteUTM(t.u);
+    var disp=t.u.replace(/^https?:\/\//,'').replace(/\/$/,'');
+    return '<div class="toolcard"><div class="tn">'+(t.s?'<span class="star">⭐</span>':'')+esc(t.n)+'</div>'
+      +'<div class="td">'+esc(t.d)+'</div><div class="tu">'+esc(disp)+'</div>'
+      +'<a class="btn btn-primary btn-sm go" href="'+esc(href)+'" target="_blank" rel="noopener">開啟 →</a></div>';
+  }
+  function renderTools(){
+    document.getElementById('toolA').innerHTML=TOOLS_A.map(toolCard).join('');
+    document.getElementById('toolB').innerHTML=TOOLS_B.map(toolCard).join('');
+    document.getElementById('toolD').innerHTML=TOOLS_D.map(toolCard).join('');
+    document.getElementById('toolC').innerHTML=TOOLS_C.map(toolCard).join('');
+    document.getElementById('srcList').innerHTML=SOURCES.map(function(s){
+      return '<li>'+esc(s.n)+'：<a href="'+esc(siteUTM(s.u))+'" target="_blank" rel="noopener">'+esc(s.u)+'</a></li>';
+    }).join('');
+    var eco=document.getElementById('ecomLogin'); if(eco)eco.href=siteUTM(eco.getAttribute('href'));
+    document.querySelectorAll('footer a[data-own]').forEach(function(a){a.href=siteUTM(a.getAttribute('href'));});
+  }
+
+  /* ---------- 上傳 ---------- */
+  var subMode='text', subFileObj=null;
+  function renderWho(){
+    var box=document.getElementById('whoBox');
+    if(!loggedIn()){box.innerHTML='<div class="callout warn"><b>還沒報到：</b>要先選桌號、填暱稱，作業才會算進你們這桌。<br><button class="btn btn-primary btn-sm" type="button" style="margin-top:8px" onclick="openReg()">🙋 現在報到</button></div>';return;}
+    box.innerHTML='<div class="who"><span class="g">'+esc(state.table)+'</span><span class="n">'+esc(state.nick)+(state.cat?' · '+esc(state.cat):'')+'</span><button type="button" onclick="openReg()">換桌／改資料</button></div>';
+  }
+  function setTask(t){var sel=document.getElementById('subTask');if(t)sel.value=t;document.getElementById('taskHint').innerHTML=HINT[sel.value]||'';loadSubs();}
+  function applyTpl(force){
+    var t=document.getElementById('subTask').value, ta=document.getElementById('subText');
+    if(!TPL[t])return; if(ta.value.trim()&&!force){ if(!confirm('要用範本取代目前的內容嗎？'))return; }
+    ta.value=TPL[t]; ta.focus();
+  }
+  function goUpload(t){
+    switchTab('upload'); setTask(t);
+    var ta=document.getElementById('subText'); if(!ta.value.trim()&&TPL[t])ta.value=TPL[t];
+    if(!loggedIn())openReg();
+  }
+  window.goUpload=goUpload;
+  function safe(s){return String(s||'').replace(/[^a-zA-Z0-9]/g,'_').slice(0,24)||'x';}
+  /* 手機直出照片常常超過 10MB，也可能是 bucket 不收的格式，先在瀏覽器縮成 JPEG */
+  async function shrink(file){
+    try{
+      if(file.size<900*1024&&/image\/(png|jpe?g|webp|gif)/i.test(file.type||''))return file;
+      if(!window.createImageBitmap)return file;
+      var bmp=await createImageBitmap(file);
+      var max=1600, r=Math.min(1,max/Math.max(bmp.width,bmp.height));
+      var c=document.createElement('canvas'); c.width=Math.round(bmp.width*r); c.height=Math.round(bmp.height*r);
+      c.getContext('2d').drawImage(bmp,0,0,c.width,c.height);
+      var blob=await new Promise(function(res){c.toBlob(res,'image/jpeg',0.86);});
+      if(blob&&(blob.size<file.size||!/image\/(png|jpe?g|webp|gif)/i.test(file.type||'')))return blob;
+    }catch(e){}
+    return file;
+  }
+  async function uploadImage(file){
+    var ext=/jpeg/.test(file.type||'')?'jpg':((((file.name||'img').split('.').pop())||'png').toLowerCase().replace(/[^a-z0-9]/g,'')||'png');
+    var ti=TABLES.indexOf(state.table)+1;
+    var path=COURSE+'/'+safe(COHORT)+'/t'+(ti||0)+'/'+Date.now()+'-'+Math.floor(Math.random()*1e7)+'.'+ext;
+    var r=await fetchT(SUPA_URL+'/storage/v1/object/'+BUCKET+'/'+path,{method:'POST',headers:Object.assign(H(),{'Content-Type':file.type||'image/png','x-upsert':'false'}),body:file},60000);
+    if(!r.ok){var t='';try{t=await r.text();}catch(e){} throw new Error('圖片上傳失敗 '+r.status+' '+t.slice(0,60));}
+    return SUPA_URL+'/storage/v1/object/public/'+BUCKET+'/'+path;
+  }
+  async function insertSub(o){
+    var r=await fetchT(SUPA_URL+'/rest/v1/lw_workshop_submissions',{method:'POST',headers:Object.assign(H(),{'Content-Type':'application/json',Prefer:'return=minimal'}),body:JSON.stringify(o)},20000);
+    if(!r.ok){var t='';try{t=await r.text();}catch(e){} throw new Error('送出失敗 '+r.status+' '+t.slice(0,60));}
+  }
+  async function doSubmit(){
+    if(!loggedIn()){toast('先報到才能繳交');openReg();return;}
+    var task=document.getElementById('subTask').value; if(!task){toast('先選要交哪一段');return;}
+    var btn=document.getElementById('subBtn'), st=document.getElementById('subStatus'), orig=btn.innerHTML;
+    var base={course:COURSE,cohort:COHORT,team:state.table,submitter:state.nick,task:task};
+    btn.disabled=true;
+    try{
+      if(subMode==='text'){
+        var txt=(document.getElementById('subText').value||'').trim();
+        if(!txt||txt===(TPL[task]||'').trim()){toast('請先填寫內容');btn.disabled=false;btn.innerHTML=orig;return;}
+        btn.innerHTML='送出中…';
+        await insertSub(Object.assign({kind:'text',content:txt},base));
+        document.getElementById('subText').value='';
+      }else{
+        if(!subFileObj){toast('請先選一張圖片');btn.disabled=false;btn.innerHTML=orig;return;}
+        btn.innerHTML='處理圖片…';
+        var f2=await shrink(subFileObj);
+        if(f2.size>10*1024*1024){toast('圖片超過 10MB，請換一張或先截圖');btn.disabled=false;btn.innerHTML=orig;return;}
+        btn.innerHTML='上傳中…';
+        var url=await uploadImage(f2);
+        await insertSub(Object.assign({kind:'image',image_url:url},base));
+        subFileObj=null; document.getElementById('subFile').value='';
+        var dz=document.getElementById('dropz'); dz.classList.remove('has');
+        dz.innerHTML='📷 點這裡選一張圖片上傳<br><small>手機截圖、AI 產出的畫面、白板照片都可以（10MB 內）</small>';
+      }
+      state.tools.uploaded=1; save(); updateHud();
+      toast('✓ 已送出！'+state.table+' ＋1 分');
+      st.textContent='✓ 已送出！同桌其他人也可以再交，每一版都會保留。';
+      track('submit_work',{task:task,table:state.table});
+      try{if(window.fbq)fbq('trackCustom','SubmitWork',{task:task});}catch(e){}
+      loadSubs(); loadBoard();
+    }catch(e){ toast(String(e.message||e)); st.textContent='⚠️ '+String(e.message||e)+'（可以再試一次）'; }
+    btn.disabled=false; btn.innerHTML=orig;
+  }
+  function fmtTime(s){try{return new Date(s).toLocaleString('zh-TW',{hour12:false,month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
+  async function loadSubs(){
+    var host=document.getElementById('subList'), title=document.getElementById('subListTitle'), task=document.getElementById('subTask').value;
+    if(!loggedIn()||!task){host.innerHTML='<p class="muted-note">報到後選好段落，這裡會顯示你們這桌交過的版本。</p>';title.textContent='我們這桌的上傳紀錄';return;}
+    title.textContent=state.table+' · '+(TASKMAP[task]||task)+' 的上傳紀錄';
+    try{
+      var u=SUPA_URL+'/rest/v1/lw_workshop_submissions?course=eq.'+encodeURIComponent(COURSE)+'&cohort=eq.'+encodeURIComponent(COHORT)
+        +'&team=eq.'+encodeURIComponent(state.table)+'&task=eq.'+encodeURIComponent(task)
+        +'&select=submitter,kind,content,image_url,created_at&order=created_at.asc';
+      var r=await fetchT(u,{headers:H()},15000); var rows=await r.json(); if(!Array.isArray(rows))rows=[];
+      if(!rows.length){host.innerHTML='<p class="muted-note">這一段你們這桌還沒有人交，當第一個吧 🛒</p>';return;}
+      host.innerHTML=rows.map(function(x,i){
+        var body=x.kind==='image'
+          ?('<a href="'+esc(x.image_url)+'" target="_blank" rel="noopener"><img src="'+esc(x.image_url)+'" alt="上傳的成果圖片" loading="lazy"></a>')
+          :('<div class="txt">'+esc(x.content||'')+'</div>');
+        return '<div class="subitem"><span class="vN">第 '+(i+1)+' 版</span><div class="body"><div class="who2">'+esc(x.submitter||'')+' · '+fmtTime(x.created_at)+'</div>'+body+'</div></div>';
+      }).join('');
+    }catch(e){host.innerHTML='<p class="muted-note">讀取失敗，稍後再試。</p>';}
+  }
+  async function loadBoard(){
+    var host=document.getElementById('miniBoard');
+    try{
+      var base='course=eq.'+encodeURIComponent(COURSE)+'&cohort=eq.'+encodeURIComponent(COHORT);
+      var r1=await fetchT(SUPA_URL+'/rest/v1/lw_workshop_submissions?'+base+'&select=team',{headers:H()},15000);
+      var r2=await fetchT(SUPA_URL+'/rest/v1/lw_workshop_scores?'+base+'&select=team,points',{headers:H()},15000);
+      var subs=await r1.json(), sc=await r2.json(); if(!Array.isArray(subs))subs=[]; if(!Array.isArray(sc))sc=[];
+      var up={},bo={};
+      subs.forEach(function(x){up[x.team]=(up[x.team]||0)+1;});
+      sc.forEach(function(x){bo[x.team]=(bo[x.team]||0)+(+x.points||0);});
+      var arr=TABLES.map(function(g){return {g:g,u:up[g]||0,b:bo[g]||0,p:(up[g]||0)+(bo[g]||0)};});
+      var max=Math.max.apply(null,arr.map(function(a){return a.p;}));
+      host.innerHTML=arr.map(function(a){
+        return '<div class="mb'+(a.g===state.table?' me':'')+(max>0&&a.p===max?' top':'')+'">'
+          +'<div class="gn">'+(max>0&&a.p===max?'🏆 ':'')+esc(a.g)+'</div><div class="pt">'+a.p+'</div>'
+          +'<div class="sm">上傳 '+a.u+(a.b?' · 加碼 '+(a.b>0?'+':'')+a.b:'')+'</div></div>';
+      }).join('');
+    }catch(e){ host.innerHTML='<p class="muted-note">分數讀取中…</p>'; }
+  }
+
+  /* ---------- 7 天清單 / 承諾 ---------- */
+  function renderD7(){
+    document.getElementById('d7Host').innerHTML=D7.map(function(c,i){
+      return '<label class="chk'+(state.d7[i]?' on':'')+'"><input type="checkbox" data-d7="'+i+'" '+(state.d7[i]?'checked':'')+'>'
+        +'<span class="d">'+c[0]+'</span><span class="t">'+esc(c[1])+'<small>'+esc(c[2])+'</small></span></label>';
+    }).join('');
+    document.getElementById('commitText').value=state.commitText||'';
+    d7Status();
+  }
+  function d7Status(){
+    var n=state.d7.filter(Boolean).length;
+    document.getElementById('commitStatus').textContent=loggedIn()
+      ? (n?('已勾 '+n+' 項'+(state.commitText?'，並寫下第一件事':'')+'，記得按「存起來」。'):'勾起來並寫下第一件事，按「存起來」就會存到後台。')
+      : '報到後勾選才會存到後台。';
+  }
+  function printCard(){
+    var n=state.d7.filter(Boolean).length;
+    document.getElementById('printCard').innerHTML=
+      '<div style="border:3px solid #ee4d2d;border-radius:16px;padding:32px;max-width:720px;margin:0 auto;font-family:\'Noto Sans TC\',sans-serif;color:#2b1a14">'
+      +'<div style="font-size:.85rem;color:#a8321c;font-weight:800">AI 電商實戰工作坊 · 蝦皮大學 2026.09.22</div>'
+      +'<h2 style="font-size:1.5rem;margin:8px 0 4px">我的 7 天行動清單</h2>'
+      +'<div style="color:#7a655d;font-size:.9rem;margin-bottom:14px">'+esc(state.table||'')+' '+esc(state.nick||'')+'　已勾 '+n+' / 7</div>'
+      +D7.map(function(c,i){return '<div style="margin:7px 0;font-size:.95rem">'+(state.d7[i]?'☑':'☐')+' <b>'+c[0]+'</b>　'+esc(c[1])+'</div>';}).join('')
+      +'<div style="margin-top:14px;padding-top:12px;border-top:1px dashed #f4d9d1"><b>我的第一件事：</b><br>'+esc(state.commitText||'＿＿＿＿＿＿＿＿＿＿')+'</div>'
+      +'<div style="margin-top:14px;color:#7a655d;font-size:.82rem">講師 何佳勳（小圭）· 圭話行銷｜工具箱 ecom.atmarketing.tw</div></div>';
+    track('print_commit',{}); window.print();
+  }
+
+  /* ---------- 報到 ---------- */
+  var pickTable='';
+  function renderTpick(){
+    document.getElementById('tpick').innerHTML=TABLES.map(function(g){
+      return '<button type="button" class="'+(pickTable===g?'on':'')+'" data-t="'+g+'" aria-pressed="'+(pickTable===g)+'">'+g.replace('第','').replace('桌','')+'</button>';
+    }).join('');
+  }
+  function openReg(){
+    pickTable=state.table; renderTpick();
+    document.getElementById('regNick').value=state.nick||'';
+    document.getElementById('regCat').value=state.cat||'';
+    document.getElementById('regErr').style.display='none';
+    document.getElementById('regOverlay').classList.add('show');
+    setTimeout(function(){var n=document.getElementById('regNick');if(state.table)n.focus();},120);
+  }
+  window.openReg=openReg;
+  function closeReg(){document.getElementById('regOverlay').classList.remove('show');}
+  async function doReg(){
+    var nick=(document.getElementById('regNick').value||'').trim();
+    var cat=document.getElementById('regCat').value||'';
+    if(!pickTable||!nick){document.getElementById('regErr').style.display='block';return;}
+    var changed=(state.table!==pickTable||state.nick!==nick);
+    state.table=pickTable; state.nick=nick; state.cat=cat;
+    if(changed){ state.quiz={}; state.d7=[false,false,false,false,false,false,false]; state.commitText=''; }
+    toast('報到中…');
+    var row=await fetchMe();
+    if(row){
+      var q=(row.quiz&&typeof row.quiz==='object')?row.quiz:{};
+      state.quiz=q;
+      if(Array.isArray(q.d7)&&q.d7.length===7)state.d7=q.d7.map(function(x){return !!x;});
+      if(Array.isArray(q.tmin)&&q.tmin.length===4)state.tmin=q.tmin;
+      if(q.freq)state.freq=q.freq;
+      state.commitText=row.commit_text||'';
+    }
+    save(); closeReg(); renderAll(); await syncRow(); refreshPollStats(); loadSubs(); loadBoard();
+    track('reg',{table:state.table});
+    try{if(window.fbq)fbq('trackCustom','Register');}catch(e){}
+    toast('✓ 報到完成，'+state.table+' '+state.nick);
+  }
+
+  /* ---------- HUD ---------- */
+  function updateHud(){
+    document.getElementById('hud').classList.add('show');
+    var voted=['lv','fake','q1','q2','q3','q4','q5','pain'].filter(function(k){return state.quiz[k];}).length;
+    var timeDone=state.tmin.filter(function(p){return p[0]!==''&&p[1]!=='';}).length===4;
+    var steps=(loggedIn()?1:0)+(voted>=3?1:0)+(state.tools.copied?1:0)+(state.tools.uploaded?1:0)+((state.d7.filter(Boolean).length||state.commitText)?1:0)+(timeDone?1:0);
+    document.getElementById('hudGp').firstChild.textContent=loggedIn()?(state.table+' '):'👋 ';
+    document.getElementById('hudGpSub').textContent=loggedIn()?(state.nick+(state.tools.uploaded?' · 已交作業':'')):'點我報到';
+    document.getElementById('hudBar').style.width=(steps/6*100)+'%';
+  }
+  function renderAll(){ renderWho(); renderAllPolls(); renderD7(); renderTime(); updateHud(); }
+
+  /* ---------- 事件 ---------- */
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.addEventListener('click',function(){switchTab(b.getAttribute('data-tab'));});});
+  document.getElementById('hud').addEventListener('click',function(){ if(!loggedIn()){openReg();} else switchTab('upload'); });
+  document.getElementById('heroReg').addEventListener('click',openReg);
+  document.getElementById('tpick').addEventListener('click',function(e){var b=e.target.closest('[data-t]');if(!b)return;pickTable=b.getAttribute('data-t');renderTpick();});
+  document.getElementById('regBtn').addEventListener('click',doReg);
+  document.getElementById('regNick').addEventListener('keydown',function(e){if(e.key==='Enter')doReg();});
+  document.getElementById('regSkip').addEventListener('click',function(e){e.preventDefault();closeReg();});
+  document.getElementById('regOverlay').addEventListener('click',function(e){if(e.target===this)closeReg();});
+
+  document.addEventListener('click',function(e){
+    var pv=e.target.closest('[data-poll]');
+    if(pv){ vote(pv.getAttribute('data-poll'),pv.getAttribute('data-v')); return; }
+    var cp=e.target.closest('[data-cp]');
+    if(cp){ var p=PROMPTS.filter(function(x){return x.id===cp.getAttribute('data-cp');})[0]; if(p){copyTxt(cp,p.b);state.tools.copied=1;save();updateHud();track('copy_prompt',{id:p.id});} return; }
+    var ex=e.target.closest('[data-ex]');
+    if(ex){ var el=document.getElementById('pb_'+ex.getAttribute('data-ex')); if(el){el.classList.toggle('open');ex.textContent=el.classList.contains('open')?'收合':'展開全文';} return; }
+    var pf=e.target.closest('.pfilter');
+    if(pf){ document.querySelectorAll('.pfilter').forEach(function(b){b.classList.toggle('on',b===pf);}); renderPrompts(pf.getAttribute('data-pf')); return; }
+    var ob=e.target.closest('a[href^="http"]');
+    if(ob){ track('outbound_click',{url:ob.href}); }
+  });
+  document.addEventListener('input',function(e){
+    var tm=e.target.closest('[data-tm]');
+    if(tm){ state.tmin[+tm.getAttribute('data-tm')][+tm.getAttribute('data-col')]=tm.value; save(); calcTime(); updateHud(); if(loggedIn())clearTimeout(window._sy),window._sy=setTimeout(syncRow,1200); return; }
+    if(e.target.id==='tFreq'){ state.freq=+e.target.value||4; save(); calcTime(); return; }
+    if(e.target.id==='commitText'){ state.commitText=e.target.value; save(); updateHud(); return; }
+  });
+  document.addEventListener('change',function(e){
+    var c=e.target.closest('[data-d7]');
+    if(c){
+      state.d7[+c.getAttribute('data-d7')]=c.checked; save();
+      var lb=c.closest('.chk'); if(lb)lb.classList.toggle('on',c.checked);
+      d7Status(); updateHud(); if(loggedIn())syncRow();
+    }
+  });
+  document.getElementById('timeCopy').addEventListener('click',function(){copyTxt(this,timeText(),'📋 已複製，可以貼到備忘錄');});
+  document.getElementById('subTask').addEventListener('change',function(){setTask();});
+  document.getElementById('tplBtn').addEventListener('click',function(){applyTpl(false);});
+  document.getElementById('subMode').addEventListener('click',function(e){
+    var b=e.target.closest('[data-m]'); if(!b)return;
+    subMode=b.getAttribute('data-m');
+    this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});
+    document.getElementById('subTextWrap').style.display=subMode==='text'?'block':'none';
+    document.getElementById('subImgWrap').style.display=subMode==='image'?'block':'none';
+  });
+  document.getElementById('dropz').addEventListener('click',function(){document.getElementById('subFile').click();});
+  document.getElementById('dropz').addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();document.getElementById('subFile').click();}});
+  document.getElementById('subFile').addEventListener('change',function(){
+    var f=this.files&&this.files[0]; if(!f)return; subFileObj=f;
+    var dz=document.getElementById('dropz'); dz.classList.add('has');
+    var rd=new FileReader(); rd.onload=function(ev){dz.innerHTML='<div>✓ 已選：'+esc(f.name)+'</div><img src="'+ev.target.result+'" alt="預覽">';};
+    rd.readAsDataURL(f);
+  });
+  document.getElementById('subBtn').addEventListener('click',doSubmit);
+  document.getElementById('saveCommit').addEventListener('click',async function(){
+    if(!loggedIn()){openReg();return;}
+    var ok=await syncRow(); toast(ok?'💾 已存到後台':'⚠️ 存檔失敗，稍後再試'); renderD7();
+  });
+  document.getElementById('printCommit').addEventListener('click',printCard);
+  document.getElementById('shareBtn').addEventListener('click',function(){
+    var url=location.origin+location.pathname;
+    if(navigator.share){navigator.share({title:'AI 電商實戰工作坊',text:'三小時，把 AI 變成你店裡多請的那一個人。提示詞與工具都在這一頁。',url:url}).then(function(){track('share',{});}).catch(function(){});}
+    else{copyTxt(this,url,'🔗 已複製這一頁的網址');}
+  });
+
+  /* ---------- 啟動 ---------- */
+  document.getElementById('subTask').innerHTML=TASKS.map(function(t){return '<option value="'+t[0]+'">'+esc(t[1])+'</option>';}).join('');
+  renderPrompts('all'); renderTools(); renderAll(); setTask('t1');
+  refreshPollStats(); loadBoard();
+  document.getElementById('dropz').setAttribute('tabindex','0');
+  document.getElementById('dropz').setAttribute('role','button');
+  setInterval(function(){
+    var a=document.querySelector('.tab-section.active'); var tab=a?a.getAttribute('data-tab'):'';
+    if(tab!=='prompts'&&tab!=='tools')refreshPollStats();
+    if(tab==='upload')loadBoard();
+  },15000);
+  setInterval(function(){ if(loggedIn()&&navigator.onLine!==false)syncRow(); },45000);
+  setTimeout(function(){ if(!loggedIn()){ openReg(); } },900);
+})();
+</script>
+</body>
+</html>
