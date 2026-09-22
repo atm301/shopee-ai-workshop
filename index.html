@@ -746,6 +746,9 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
   <div class="sec-tag">今天用到的工具</div>
   <h2 class="sec-title">網址一次給你 🧰</h2>
   <div class="callout"><b>電商營運工具箱全站 200 個工具免費使用</b>，登入後每天有免費額度，很多工具按「載入範例」不耗額度。⭐ 是今天課堂會用到的。</div>
+  <h3 class="h3">🎬 AI 影片工具</h3>
+  <div class="toolgrid" id="toolTop"></div>
+
   <h3 class="h3">內容與素材</h3>
   <div class="toolgrid" id="toolA"></div>
   <h3 class="h3">營運與流程</h3>
@@ -937,6 +940,9 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
   ];
 
   /* ---------- 工具 ---------- */
+  var TOOLS_TOP=[
+    {n:'AI 影片工具（創流）',s:1,d:'AI 生成商品廣告影片、UGC 真人帶貨影片、網紅分身長影片，也能批量改圖與做銷售頁，沒有剪輯經驗也做得出來。用這個連結註冊有 500 點，可以免費先做幾支影片試試。',u:'https://aivideospeed.com/?ref=MF-zx6446'}
+  ];
   var TOOLS_A=[
     {n:'社群貼文產生器',s:1,d:'輸入一次商品資訊，同時產出 IG、FB、LINE、Threads 四個平台的貼文，語氣長度 hashtag 分開處理。',u:'https://ecom.atmarketing.tw/social-post'},
     {n:'短影音腳本產生器',s:1,d:'給主題和秒數，一次出三版（情境共鳴、反差幽默、數據衝擊），含前三秒鉤子與分鏡。',u:'https://ecom.atmarketing.tw/short-video-script'},
@@ -1214,6 +1220,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
       +'<a class="btn btn-primary btn-sm go" href="'+esc(href)+'" target="_blank" rel="noopener">開啟 →</a></div>';
   }
   function renderTools(){
+    document.getElementById('toolTop').innerHTML=TOOLS_TOP.map(toolCard).join('');
     document.getElementById('toolA').innerHTML=TOOLS_A.map(toolCard).join('');
     document.getElementById('toolB').innerHTML=TOOLS_B.map(toolCard).join('');
     document.getElementById('toolD').innerHTML=TOOLS_D.map(toolCard).join('');
