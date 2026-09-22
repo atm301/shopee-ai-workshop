@@ -8,4 +8,4 @@
 
 後端：共用 Supabase `lw_line_students`（course=`shopee-ai-workshop`，唯一鍵 course+cohort+code）＋ `lw_workshop_submissions`（上傳，append-only）＋ `lw_workshop_scores`（加減分流水帳）＋ `lw-workshop` storage bucket（10MB、圖片 MIME、不可覆蓋，前端會先縮圖成 JPEG）。
 
-⚠️ 課程網站短網址 `atmtut.com/0922`（簡報 p9 的 QR）目前指向 ecom.atmarketing.tw，要在 Lihi 後台改成本站網址。
+課程網站短網址 `atmtut.com/0922`（Lihi 管理，不在 Linode）已於 2026-09-22 指向本站，站上三處與分享按鈕都用這個短網址。
