@@ -267,11 +267,13 @@
   </div>
 
   <div class="wrap">
+    <div class="callout ok"><b>這一頁的網址：atmtut.com/0922</b>　同桌有人還沒進來，把這行唸給他，或用「帶走」分頁的分享按鈕傳給他。</div>
+
     <h2 class="h3">今天怎麼上課：三件事先準備好</h2>
     <div class="grid g3">
       <div class="card"><h3><span class="num">1</span>手機或電腦，擇一就好</h3><p>不用兩個都帶。用手機的人，實作時可以跟同桌的電腦一起看。</p></div>
       <div class="card"><h3><span class="num">2</span>登入電商營運工具箱</h3><p>免費註冊，每天有免費額度；很多工具按「載入範例」不耗額度。</p><a class="btn btn-ghost btn-sm" id="ecomLogin" href="https://ecom.atmarketing.tw/" target="_blank" rel="noopener">開工具箱 →</a></div>
-      <div class="card"><h3><span class="num">3</span>這一頁加到主畫面</h3><p>素材包、三段實作提示詞、所有工具連結，都整理在這一頁。等一下每段實作都會用到。</p></div>
+      <div class="card"><h3><span class="num">3</span>這一頁加到主畫面</h3><p>素材包、三段實作提示詞、所有工具連結，都整理在這一頁。等一下每段實作都會用到。<br><b>網址：atmtut.com/0922</b></p></div>
     </div>
 
     <div class="elf"><div class="ic">🛒</div><div class="t"><b>電商小幫手｜喊話</b>先按右上角「報到」選你這一桌，等一下的互動題、加分、作業上傳都會算進你們桌。</div></div>
@@ -785,7 +787,8 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     <button class="btn btn-ghost" id="printCommit" type="button">🖨️ 列印／存 PDF</button>
     <button class="btn btn-ghost" id="shareBtn" type="button">🔗 分享這一頁</button>
   </div>
-  <p class="muted-note" id="commitStatus" style="margin-top:8px"></p>
+  <p class="muted-note" style="margin-top:8px">分享用的短網址：<b>atmtut.com/0922</b></p>
+  <p class="muted-note" id="commitStatus" style="margin-top:4px"></p>
 
   <h3 class="h3">回到開場那張表：現在再估一次</h3>
   <div class="callout">回「🚀 開始」分頁，把「用 AI 之後」那一欄填完，就會算出你省下多少。<button class="btn btn-ghost btn-sm" style="margin-left:8px" type="button" onclick="switchTab('start')">↩ 去填表</button><br><span class="muted-note">一個月後蝦皮的課後問卷會問你：今天的工具和行動清單，有沒有幫你省時間、提升效率？</span></div>
@@ -1466,7 +1469,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
   });
   document.getElementById('printCommit').addEventListener('click',printCard);
   document.getElementById('shareBtn').addEventListener('click',function(){
-    var url=location.origin+location.pathname;
+    var url='https://atmtut.com/0922';
     if(navigator.share){navigator.share({title:'AI 電商實戰工作坊',text:'三小時，把 AI 變成你店裡多請的那一個人。提示詞與工具都在這一頁。',url:url}).then(function(){track('share',{});}).catch(function(){});}
     else{copyTxt(this,url,'🔗 已複製這一頁的網址');}
   });
