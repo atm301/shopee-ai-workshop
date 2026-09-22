@@ -456,6 +456,8 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     </div>
   </div>
 
+  <div class="hero-btns" style="justify-content:flex-start"><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('n13')">📋 提示詞 1-3：短影音前三秒鉤子</button><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('n12')">📋 提示詞 1-2：主圖與標題 A/B</button></div>
+
   <h3 class="h3">為什麼要用時事趨勢型內容</h3>
   <div class="grid g3">
     <div class="card"><h3>平台想要什麼</h3><p>演算法會優先推「現在很多人在看」的題目。搭上正在熱的話題，自然觸及就會比平常高。</p></div>
@@ -484,7 +486,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     <div class="card"><h3>Benefit 40%</h3><p>明確利益。《43 頁精華 PPT！從零開始把內容行銷講透了》</p></div>
     <div class="card"><h3>Interesting 30%</h3><p>情緒共鳴引好奇。《我們利用這三點，一個月把「冷門」寫出 10 篇爆紅文章》</p></div>
   </div>
-  <div class="hero-btns" style="justify-content:flex-start"><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f4')">📋 十個高點閱標題提示詞</button><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f5')">🎭 換風格寫（瓊瑤／金庸／偶像劇／哈利波特）</button></div>
+  <div class="hero-btns" style="justify-content:flex-start"><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f4')">📋 十個高點閱標題提示詞</button><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f5')">🎭 換風格寫（瓊瑤／金庸／偶像劇／哈利波特）</button><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('n12')">📋 提示詞 1-2：主圖與標題 A/B</button></div>
 
   <h3 class="h3">同一支商品，六種客群六種寫法</h3>
   <div class="tw"><table>
@@ -561,6 +563,8 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     </tbody>
   </table></div>
   <div class="callout"><b>課堂建議：</b>先只做「價格與促銷」跟「評價內容」這兩欄，做得完、看得懂，比五欄都做一半有用。<button class="btn btn-ghost btn-sm" style="margin-left:8px" type="button" onclick="goPrompt('f7')">📋 複製五句提問</button></div>
+
+  <div class="hero-btns" style="justify-content:flex-start"><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f9')">📋 提示詞 2-3：客服對話轉 FAQ 與自動回覆</button></div>
 
   <h3 class="h3">排優先順序：用 ICE 分數決定先做什麼</h3>
   <div class="grid g3">
@@ -677,6 +681,7 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     <div class="card"><h3>D-Day 衝刺</h3><p>直播、限時加碼、庫存與出貨盯緊。<br><small>素材：即時客服、追加廣告</small></p></div>
     <div class="card"><h3>D+3 收尾</h3><p>出貨進度、客服高峰、邀請評論。<br><small>素材：回購券、評論邀請、補貨</small></p></div>
   </div>
+  <div class="hero-btns" style="justify-content:flex-start"><button class="btn btn-ghost btn-sm" type="button" onclick="goPrompt('f10')">📋 提示詞 3-3：單一檔期 30 天作戰計畫</button></div>
   <div class="callout ok"><b>這四段的所有素材，都可以在 D-21 那一天用同一份商品素材包一次做完。</b>做完放著，到日子再貼，這就是為什麼前面要先建素材包。</div>
 
   <div class="poll" id="poll_q5"></div>
@@ -704,12 +709,34 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
 <section class="tab-section" data-tab="prompts"><div class="wrap">
   <div class="sec-tag">照抄就能用</div>
   <h2 class="sec-title">今天的提示詞，<span class="em">一鍵複製</span>直接貼 📋</h2>
-  <div class="callout"><b>用法：</b>按「複製」→ 開 ChatGPT 或 Gemini → 貼上 → 把〔括號〕裡的字換成你的商品資料。分成兩頁的提示詞已經幫你合併成一份，複製一次就完整。</div>
+  <div class="callout"><b>用法：</b>按「複製」→ 開 ChatGPT 或 Gemini → 貼上 → 把【括號】裡的字換成你的商品資料。簡報上分成兩頁的提示詞，已經幫你合併成完整一份。<br><b>換商品時只要改「情境 Context」那一段，其他三段不動。</b></div>
+
+  <div class="tw sm"><table>
+    <thead><tr><th>段</th><th>要寫什麼</th><th>常見錯誤</th></tr></thead>
+    <tbody>
+      <tr><td><b>R 角色</b></td><td>你是誰、對誰說話</td><td>只寫「你是行銷專家」，太籠統</td></tr>
+      <tr><td><b>T 任務</b></td><td>要做什麼、做幾個、多長</td><td>沒有講數量與長度，結果無法直接用</td></tr>
+      <tr><td><b>C 情境</b></td><td>商品規格、客群、檔期、限制</td><td>給太少，這是內容變空話的主因</td></tr>
+      <tr><td><b>F 格式</b></td><td>用什麼形式交回來</td><td>沒指定，每次格式都不一樣</td></tr>
+    </tbody>
+  </table></div>
+
   <div class="hero-btns" style="justify-content:flex-start;margin-bottom:6px">
-    <button class="btn btn-ghost btn-sm pfilter on" data-pf="all" type="button">全部</button>
-    <button class="btn btn-ghost btn-sm pfilter" data-pf="core" type="button">三段實作</button>
-    <button class="btn btn-ghost btn-sm pfilter" data-pf="flow" type="button">素材與文案</button>
-    <button class="btn btn-ghost btn-sm pfilter" data-pf="auto" type="button">流程與自動化</button>
+    <button class="btn btn-teal" id="copyAll" type="button">📄 一次複製提示詞總表 11 張</button>
+    <button class="btn btn-ghost" id="printPrompts" type="button">🖨️ 列印／存 PDF</button>
+  </div>
+
+  <div class="callout warn"><b>使用注意：</b>
+    ① 客人的姓名、電話、地址、訂單編號，貼進任何 AI 工具前先遮掉。
+    ② 療效、絕對化、比較性用語 AI 有時候還是會寫出來，發布前自己再看一次。
+    ③ 蝦皮活動規則與費率每年會調整，正式規劃以<a href="https://seller.shopee.tw/edu/article/27617" target="_blank" rel="noopener">賣家中心公告</a>為準。
+    ④ 這份東西的價值不是讀完，是你把它改成自己的版本存起來。
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-bottom:6px">
+    <button class="btn btn-ghost btn-sm pfilter on" data-pf="all" type="button">全部 18 張</button>
+    <button class="btn btn-ghost btn-sm pfilter" data-pf="core" type="button">📄 提示詞總表 11 張</button>
+    <button class="btn btn-ghost btn-sm pfilter" data-pf="flow" type="button">課堂延伸</button>
+    <button class="btn btn-ghost btn-sm pfilter" data-pf="auto" type="button">自動化</button>
   </div>
   <div id="promptHost"></div>
 </div></section>
@@ -871,21 +898,25 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
 
   /* ---------- 提示詞 ---------- */
   var PROMPTS=[
-    {id:'c1',g:'core',t:'提示詞 1-1：商品內容一次到位',src:'簡報 p.65 到 66（兩頁已合併）',b:
+    {id:'c1',g:'core',t:'提示詞 1-1：商品內容一次到位（實作 1）',src:'提示詞總表 1-1 · 簡報 p.65 到 66',b:
 '# 角色 Role\n你是專門經營蝦皮賣場的資深電商小編，服務對象是【填入你的客群，例：25-35 歲的上班族女性】。\n你的文字口語、具體、不說空話，不使用誇大療效或最高級用語。\n\n# 任務 Task\n根據下方商品素材，一次產出四份素材：\n1. Instagram 貼文 3 版，每版 150 字內\n2. Facebook 貼文 1 版，250 字內\n3. 短影音腳本 1 支，30 秒，含前三秒鉤子與分鏡\n4. 直播開場 1 段，90 秒，含破冰與商品帶入\n\n# 情境 Context\n商品名稱：\n規格與材質：\n三個真實賣點：\n目標客群與使用情境：\n價格與檔期優惠：\n常見客訴或購買疑慮：\n已有的兩則真實好評：\n\n# 格式 Format\n用標題分段輸出，每一段結尾附上「這一版主打的賣點是什麼」一句話。\nIG 貼文附 10 個 hashtag。短影音腳本用表格：秒數 / 畫面 / 口白 / 字卡。\n所有內容都要能通過台灣廣告法規檢查，不得出現療效、絕對化、比較性用語。'},
-    {id:'c2',g:'core',t:'提示詞 1-4：商品情境圖',src:'簡報 p.61 · 直接貼給 ChatGPT 或 Gemini 生圖',b:
+    {id:'c2',g:'core',t:'提示詞 1-4：商品情境圖',src:'提示詞總表 1-4 · 直接貼給 ChatGPT 或 Gemini 生圖',b:
 '# 角色 Role\n你是電商商品攝影指導，擅長把商品放進真實生活情境，讓買家一眼看懂用途。\n\n# 任務 Task\n幫我生成 1 張商品情境圖，並附上你使用的畫面描述，方便我再調整。\n\n# 情境 Context\n商品：【商品名稱與外觀，建議同時上傳一張商品去背圖】\n使用情境：【誰、在哪裡、什麼時間、正在做什麼】\n要突顯的賣點：【只選一個，例：12 小時保溫】\n風格：【溫暖自然／高級質感／清新文青，三選一】\n\n# 格式 Format\n比例 1:1，商品清楚放在前景，約占畫面三分之一，背景淺景深，自然光。\n畫面中不要出現文字、浮水印或其他品牌標誌。'},
-    {id:'c3',g:'core',t:'提示詞 2-1：蝦皮賣場營運健檢',src:'簡報 p.85 到 86（兩頁已合併）',b:
+    {id:'c3',g:'core',t:'提示詞 2-1：蝦皮賣場營運健檢（實作 2）',src:'提示詞總表 2-1 · 簡報 p.85 到 86',b:
 '# 角色 Role\n你是台灣電商營運顧問，專長是蝦皮賣場的成效診斷。你講話直接，只講可以驗證的推論，資料不足時你會明說「這一段資料不夠，我不下結論」，不編造原因。\n\n# 任務 Task\n根據下方六個維度的數據，完成三件事：\n1. 指出目前最可能的破口落在哪一段（曝光 / 點擊 / 轉換 / 客單 / 回購 / 口碑），並說明推論依據\n2. 列出 6 到 8 個具體可執行的改善項目\n3. 用 ICE（Impact 影響力 / Confidence 把握度 / Ease 容易度，各 1-10 分）評分並排序\n\n# 情境 Context\n賣場類型與主力商品：\n最近 30 天：商品曝光數＿＿ 瀏覽數＿＿ 轉換率＿＿ 客單價＿＿ 退貨率＿＿\n對照組（上個月同期）：曝光數＿＿ 瀏覽數＿＿ 轉換率＿＿ 客單價＿＿ 退貨率＿＿\n目前廣告投放狀況與月預算：\n人力狀況（幾個人在顧、每天可投入多少小時）：\n本季最想達成的目標：\n\n# 格式 Format\n先用一段話說結論，再用表格輸出改善項目：項目 / 對應維度 / I 分 / C 分 / E 分 / ICE 總分 / 預估完成時間。\n表格依 ICE 總分由高到低排序，最後給「本週只做三件」的建議清單，每件標註可驗證的成功指標。\n真的沒有數字的欄位就寫「無資料」，不要亂填。'},
-    {id:'c4',g:'core',t:'提示詞 2-2：競品分析',src:'簡報 p.76 到 77（兩頁已合併）',b:
+    {id:'c4',g:'core',t:'提示詞 2-2：競品分析五維度',src:'提示詞總表 2-2 · 簡報 p.76 到 77',b:
 '# 角色 Role\n你是電商市場分析師，只根據我提供的實際資料下結論，不使用你的既有印象或推測。\n\n# 任務 Task\n比較下方三個競品，從五個維度做出對照分析：\n價格與促銷 / 商品頁 / 評價內容 / 社群與內容 / 出貨與服務。\n最後指出：對手最大的弱點是什麼，我最可能贏在哪一點。\n\n# 情境 Context\n我的商品與定位：\n競品 A（貼上商品頁重點資訊，或直接截圖上傳）：\n競品 B：\n競品 C：\n我目前的價格與出貨天數：\n\n# 格式 Format\n先輸出五維度對照表（維度 / 我 / A / B / C）。\n再輸出「機會點」三條，每條寫清楚：要做什麼、為什麼現在做、怎麼驗證有沒有效。\n資料不足的欄位一律寫「無資料」，不要推測。'},
-    {id:'c5',g:'core',t:'提示詞 3-1：時事靈感生成三平台貼文',src:'簡報 p.103 到 104（兩頁已合併）',b:
+    {id:'c5',g:'core',t:'提示詞 3-1：時事靈感生成三平台貼文',src:'提示詞總表 3-1 · 簡報 p.103 到 104',b:
 '# 角色 Role\n你是台灣品牌的社群操盤手，熟悉 FB、IG、Threads 三個平台的內容差異與台灣網路輿論的敏感界線。\n\n# 任務 Task\n針對我提供的熱門話題，完成四件事：\n1. 可蹭度評分：從品牌相關性、安全性、時效性三面向各給 1-10 分，並給出「蹭 / 觀望 / 跳過」的明確結論\n2. 若結論是「蹭」，提出 3 個不同的切入角度，說明各自適合哪一種客群\n3. 選出最佳角度，產出 FB、IG、Threads 三平台完整貼文\n4. 標出這個題目最可能的翻車風險，以及規避寫法\n\n# 情境 Context\n熱門話題（貼上標題與 2-3 句描述）：\n我的品牌與主力商品：\n目標客群：\n品牌的語氣與禁忌（不能說的話）：\n\n# 格式 Format\n先輸出評分表（面向 / 分數 / 理由），再輸出結論一句話。\n三平台貼文分開標題呈現：FB 偏敘事 250 字內、IG 偏情緒 150 字內附 10 個 hashtag、Threads 偏對話 100 字內。\n最後用一段話寫「如果這題被罵，最可能是因為什麼」。\n\n# 硬性規則\n涉及天災傷亡、疾病、刑案、政治立場、族群爭議的話題，一律直接回覆「跳過」並提供替代題目，不得生成商品貼文。'},
-    {id:'c6',g:'core',t:'提示詞 3-2：下單到邀評的完整 SOP',src:'簡報 p.105 到 106（兩頁已合併）',b:
+    {id:'c6',g:'core',t:'提示詞 3-2：下單到邀評的完整 SOP',src:'提示詞總表 3-2 · 簡報 p.105 到 106',b:
 '# 角色 Role\n你是蝦皮賣場的營運企劃，負責設計顧客從下單到回購的訊息流程。你的文字簡短、口語、不推銷過頭。\n\n# 任務 Task\n設計一套完整的顧客旅程訊息 SOP，涵蓋五個節點：下單確認、出貨前聊聊、到貨關懷、邀請評論、回購推播。\n每個節點請提供：\n1. 觸發條件（第幾天、什麼事件之後）\n2. 訊息文案（蝦皮聊聊版本，60 字內；LINE 版本，100 字內）\n3. 這封訊息的唯一目的（一句話）\n4. 什麼情況下應該跳過不發\n\n# 情境 Context\n商品類型與平均單價：\n商品的消耗或使用週期（幾天會用完或需要再買）：\n目前的出貨天數：\n最常見的三個購後問題：\n可以提供的回購誘因（折價券、贈品、會員點數）：\n\n# 格式 Format\n用表格輸出：節點 / 觸發時機 / 蝦皮聊聊文案 / LINE 文案 / 唯一目的 / 跳過條件。\n表格後面補一段「這套流程上線後，兩週內要看哪三個數字」。\n\n# 硬性規則\n所有文案不得索取或處理顧客個資，不得承諾平台規則以外的補償，不得使用療效或絕對化用語。'},
+    {id:'n12',g:'core',t:'提示詞 1-2：主圖與標題 A/B 版本',src:'提示詞總表 1-2',b:
+'# 角色 Role\n你是蝦皮賣場的轉換率優化顧問，熟悉台灣消費者在搜尋結果頁的瀏覽習慣。\n\n# 任務 Task\n根據下方商品資訊，產出：\n1. 商品標題 10 版，每版 60 字內，涵蓋不同的搜尋意圖\n2. 主圖文案 8 組，每組不超過 12 個字，可直接放在主圖上\n3. 每一版標註主打的關鍵字與預期會吸引到哪一種買家\n\n# 情境 Context\n商品名稱與品類：\n核心規格（尺寸、材質、容量、規格數字）：\n買家最常搜尋的三個關鍵字：\n價格帶與競品價格：\n目前的標題（如果有）：\n\n# 格式 Format\n用表格輸出：版本 / 標題或文案 / 主打關鍵字 / 適合的買家 / 預估點擊率高低（高中低）。\n最後給「建議先測哪三版，為什麼」。'},
+    {id:'n13',g:'core',t:'提示詞 1-3：短影音前三秒鉤子',src:'提示詞總表 1-3',b:
+'# 角色 Role\n你是專做電商短影音的內容企劃，熟悉 Reels、Shorts、TikTok 的完播率邏輯。\n\n# 任務 Task\n針對下方商品，產出 10 個不同公式的前三秒鉤子，並標註各自使用的公式名稱\n（例如：反直覺、痛點提問、數字衝擊、對比展示、身份標籤、懸念未完）。\n\n# 情境 Context\n商品與核心賣點：\n目標客群：\n這支影片想達成的目的（導購 / 漲粉 / 建立信任）：\n不能說的話（品牌禁忌）：\n\n# 格式 Format\n表格輸出：編號 / 公式 / 口白逐字 / 畫面建議 / 適合的平台。\n最後挑出你認為最強的三個，說明理由。'},
     {id:'f1',g:'flow',t:'R-T-C-F 四格填空（換商品只改 C）',src:'簡報 p.32 保溫瓶範例改成填空版',b:
 'R：你是專做【你的品類，例：上班族通勤用品】的蝦皮賣場小編\nT：寫 3 版 IG 貼文，每版 150 字內\nC：【商品名稱與規格，例：日本 316 不鏽鋼保溫瓶，12 小時保溫保冷，230g】，\n　　【檔期優惠，例：週年慶 85 折】，【客群，例：25-35 歲上班族】\nF：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag'},
-    {id:'f2',g:'flow',t:'校正三招：把不準的結果修回來',src:'簡報 p.33',b:
+    {id:'f2',g:'core',t:'提示詞 1-5：AI 給得不準時的校正三招',src:'提示詞總表 1-5 · 簡報 p.33',b:
 '第 1 招 給範例：\n參考下面這篇我覺得寫得好的貼文，語氣和長度照這個來寫。\n【貼上你覺得好的那一篇】\n\n第 2 招 指出錯在哪：\n第二段太誇張了，改成實際使用一週的感受，不要用最、第一這種字。\n\n第 3 招 叫它先問你：\n開始寫之前，先問我 5 個問題，確認你需要的商品資訊，我回答完你再寫。'},
     {id:'f3',g:'flow',t:'結合時事寫貼文（我是誰＋想做什麼＋目的）',src:'簡報 p.35 到 36 工作流範例',b:
 '我販售【商品，例：蘇打餅】，特色是【特色，例：減去過多的食品添加物，加上營養的天然食材如藜麥】，\n我要針對近期 Google 上最熱門的時事「【熱點關鍵字】」進行社群貼文撰寫，\n目的是銷售，希望電商月銷售額從【現在數字】變【目標數字】。\n\n請先告訴我這個熱點適不適合我的品牌蹭，再寫兩個版本：一個溫暖貼近風格，一個資訊導向加信任訴求。\n每一篇都要有：痛點開場、真實情境、產品優勢、限定優惠、CTA、互動提問。'},
@@ -899,10 +930,10 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
 '價格與促銷：比較這三個賣場的實際到手價，列出誰最便宜、差多少\n商品頁：這三個商品頁，賣點的排序有什麼不同，誰的第一屏最有說服力\n評價內容：把這些評價分成五類，告訴我對手最大的弱點是什麼\n社群與內容：這個對手最近 20 篇貼文，哪三種型態互動最好\n出貨與服務：整理出這三家的出貨與退換貨條件差異表'},
     {id:'f8',g:'auto',t:'ChatGPT 代理模式：每天早上自己跑一次',src:'簡報 p.55 · 需要 ChatGPT 代理程式功能',b:
 '每天早上 9 點到以下網站查詢\nhttps://trends.google.com.tw/trending?geo=TW&sort=search-volume\n找出 48 小時內搜尋量有高於 20000 的主題，列出這些主題，並針對我的產品【你的商品】，\n產品介紹到【你的商品網址】查看，根據產品特性與今日熱點，來撰寫一篇貼文。\n我的目的是讓消費者看了會感興趣進而點進來網站購買產品，每個主題幫我寫一篇 500 字左右的社群貼文，\n我要使用內容矩陣，針對 IG / FB / Threads，根據不同平台客群特性撰寫內容。\n如果當天搜尋量沒有超過 20000 的主題，就改為選前三個主題來撰寫內容即可。\n如果遇到問題需要停止，依據我的主要目的幫我決定即可。'},
-    {id:'f9',g:'auto',t:'客服對話變 FAQ ＋ 自動回覆模板',src:'簡報 p.87 到 88 延伸',b:
-'# 角色 Role\n你是蝦皮賣場的客服主管，擅長把重複問題整理成可以直接貼上商品頁的 FAQ。\n\n# 任務 Task\n我會貼上最近 30 則客服對話（個資已遮蔽）。請你：\n1. 歸納出重複出現的問題，依出現次數排序\n2. 每一題寫成 FAQ：問題一句、回答三句內、語氣親切不推銷\n3. 針對前五題，各寫一段「自動回覆」版本，60 字內\n4. 指出哪些問題應該改商品頁而不是回答（例如規格沒寫清楚）\n\n# 情境 Context\n商品類型：\n目前出貨天數：\n【貼上 30 則對話，姓名、電話、地址請先遮掉】\n\n# 格式 Format\n表格輸出：排序 / 問題 / FAQ 回答 / 自動回覆版 / 建議改哪裡。'},
-    {id:'f10',g:'auto',t:'檔期 30 天作戰：一次把四段素材做完',src:'簡報 p.98 延伸（D-21 一次做完）',b:
-'# 角色 Role\n你是蝦皮賣場的檔期企劃，熟悉台灣電商的檔期節奏。\n\n# 任務 Task\n幫我規劃【檔期名稱，例：雙 11】的 30 天作戰流程，並一次把四個階段的素材都寫出來：\nD-14 預熱、D-7 預購、D-Day 當天衝刺、D+3 收尾補貨。\n每個階段給我：要做的事、要準備的素材清單、一則可直接用的文案。\n\n# 情境 Context\n主力商品與售價：\n這次檔期的優惠機制：\n庫存與出貨能力：\n可用的通路（蝦皮聊聊、LINE、IG、FB、EDM）：\n\n# 格式 Format\n先給一張時間表（日期 / 階段 / 要做的事 / 素材），再依階段附上文案。\n最後提醒我：哪三件事如果沒提前做，當天一定會出事。'}
+    {id:'f9',g:'core',t:'提示詞 2-3：客服對話轉 FAQ 與自動回覆',src:'提示詞總表 2-3',b:
+'# 角色 Role\n你是電商客服主管，負責把重複問題系統化，降低客服工時。\n\n# 任務 Task\n根據下方客服對話紀錄，完成三件事：\n1. 把問題分類，統計每一類出現的次數，由高到低排序\n2. 產出 FAQ 10 題，每題答案 80 字內，語氣親切但不囉唆\n3. 針對前 5 高頻的問題，各寫一段可直接設定的自動回覆文案\n\n# 情境 Context\n商品類型：\n客服對話紀錄（請先把客人姓名、電話、地址、訂單編號等個資遮掉再貼上）：\n\n# 格式 Format\n先輸出問題分類統計表，再輸出 FAQ，最後輸出自動回覆文案。\n每一題 FAQ 標註「建議放在商品頁的哪個位置」。\n\n# 硬性規則\n不得處理、複述或推測任何顧客個資。若貼上的內容含有個資，請提醒我先移除。'},
+    {id:'f10',g:'core',t:'提示詞 3-3：單一檔期 30 天作戰計畫',src:'提示詞總表 3-3',b:
+'# 角色 Role\n你是電商檔期操盤手，負責把一個大檔拆成可執行的 30 天工作表。\n\n# 任務 Task\n針對下方檔期，產出一份 30 天作戰計畫，分成四個階段：\nD-14 預熱 / D-7 預購 / D-Day 當天衝刺 / D+3 收尾補貨。\n每個階段要寫出：要做的事、要準備的素材、負責誰、完成的判斷標準。\n\n# 情境 Context\n檔期名稱與日期：\n主推商品與庫存數量：\n去年同檔的成績（如果有）：\n可用的行銷預算：\n團隊人力（幾個人、各自負責什麼）：\n\n# 格式 Format\n先輸出四階段總表，再輸出逐日工作清單（日期 / 任務 / 素材 / 負責人 / 完成標準）。\n最後列出「這次檔期最可能出包的三件事」與各自的預防做法。'}
   ];
 
   /* ---------- 工具 ---------- */
@@ -1135,10 +1166,12 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
   }
 
   /* ---------- 提示詞 ---------- */
+  var PORDER=['c1','n12','n13','c2','f2','c3','c4','f9','c5','c6','f10'];
+  function pSort(a,b){var ia=PORDER.indexOf(a.id),ib=PORDER.indexOf(b.id);if(ia<0&&ib<0)return 0;if(ia<0)return 1;if(ib<0)return -1;return ia-ib;}
   function renderPrompts(f){
     var host=document.getElementById('promptHost');
-    host.innerHTML=PROMPTS.filter(function(p){return !f||f==='all'||p.g===f;}).map(function(p){
-      var badge=p.g==='core'?'<span class="badge">三段實作</span>':(p.g==='auto'?'<span class="badge g">流程與自動化</span>':'<span class="badge t">素材與文案</span>');
+    host.innerHTML=PROMPTS.filter(function(p){return !f||f==='all'||p.g===f;}).sort(pSort).map(function(p){
+      var badge=p.g==='core'?'<span class="badge">提示詞總表</span>':(p.g==='auto'?'<span class="badge g">自動化</span>':'<span class="badge t">課堂延伸</span>');
       return '<div class="tcard" id="prompt_'+p.id+'">'
         +'<div class="hd"><h3>'+esc(p.t)+'</h3>'+badge+'</div>'
         +'<div class="pbody" id="pb_'+p.id+'">'+esc(p.b)+'</div>'
@@ -1153,6 +1186,12 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallback(txt);done();});}
     else{fallback(txt);done();}
     function fallback(t){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);}
+  }
+  function allPromptsText(){
+    var head='AI 電商實戰工作坊　提示詞總表\n蝦皮大學 2026/09/22 台北場｜講師 何佳勳（小圭）· 圭話行銷\n課程網站 https://atmtut.com/0922　工具站 https://ecom.atmarketing.tw/\n\n換商品時只要改「情境 Context」那一段，其他三段不動。\n\n';
+    return head+PROMPTS.filter(function(p){return p.g==='core';}).sort(pSort).map(function(p){
+      return '===== '+p.t+' =====\n'+p.b;
+    }).join('\n\n')+'\n\n（個資請先遮掉再貼進 AI；法規用語發布前自己再看一次）';
   }
   function goPrompt(id){
     switchTab('prompts'); renderPrompts('all');
@@ -1445,6 +1484,16 @@ F：每版含開頭鉤子、3 個賣點、CTA、10 個 hashtag</pre>
     }
   });
   document.getElementById('timeCopy').addEventListener('click',function(){copyTxt(this,timeText(),'📋 已複製，可以貼到備忘錄');});
+  document.getElementById('copyAll').addEventListener('click',function(){
+    copyTxt(this,allPromptsText(),'📋 11 張提示詞全部複製好了，貼到備忘錄或 Google 文件存起來');
+    state.tools.copied=1; save(); updateHud(); track('copy_prompt',{id:'all'});
+  });
+  document.getElementById('printPrompts').addEventListener('click',function(){
+    renderPrompts('core');
+    document.querySelectorAll('.pfilter').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-pf')==='core');});
+    document.querySelectorAll('.pbody').forEach(function(e){e.classList.add('open');});
+    track('print_prompts',{}); setTimeout(function(){window.print();},250);
+  });
   document.getElementById('subTask').addEventListener('change',function(){setTask();});
   document.getElementById('tplBtn').addEventListener('click',function(){applyTpl(false);});
   document.getElementById('subMode').addEventListener('click',function(e){
